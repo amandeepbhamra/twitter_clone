@@ -6,17 +6,37 @@
   		<%= javascript_include_tag "application" %>
   		<%= csrf_meta_tags %>
 	</head>
-	<body>
-		
-		<div>
-			<% if user_signed_in? %>
-				Signed in as <%= current_user.email %>. Not you?
-				<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-			<% else %>
-				<% link_to "Sign up", new_user_registration_path %>  <%= link_to "Sign in", new_user_session_path %>
-			<% end %>
-		</div>
-		<div>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+		<!-- Navbar
+    ================================================== -->
+    	<div class="navbar navbar-inverse navbar-fixed-top">
+      		<div class="navbar-inner">
+        		<div class="container">
+          			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+          			</button>
+          			<a class="brand" href="#">Twiiter</a>
+          			<div class="nav-collapse collapse">
+            			<ul class="nav">
+              				<li class="active">
+                				<a href="#">Home</a>
+             				 </li>
+              				<li class="">
+              					<% if user_signed_in? %>
+									Signed in as <%= current_user.email %>. Not you?
+									<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+								<% else %>
+									<% link_to "Sign up", new_user_registration_path %>  <%= link_to "Sign in", new_user_session_path %>
+								<% end %>
+                            </li>
+            			</ul>
+          			</div>
+        		</div>
+      		</div>
+    	</div>
+		<div class="container"><br><br><br><br><br><br><br>
 			<%= yield %>
 		</div>
 	</body>
