@@ -8,7 +8,7 @@ gem "heroku"
 gem "taps"
 gem "pg"
 gem 'mysql2'
- gem 'libv8', '~> 3.11.8'
+gem 'libv8', '~> 3.11.8'
 
 gem 'devise'
 # Gems used only for assets and not required
