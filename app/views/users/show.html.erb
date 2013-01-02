@@ -6,12 +6,18 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%#= link_to 'Edit', edit_user_path(@user) %> 
+<%#= link_to 'Back', users_path %>
 <div>
     <%#= render 'usertweets', :user => @user %>
-    <h1>Hello</h1>
-<% @user.tweets.each do |tweet| %>
-<%= tweet.status %>
-<% end %>
+    <h5>Your Tweets</h5>
+    <table>
+    	<% @user.tweets.each do |tweet| %>
+    	<tr>
+    		<td><%= tweet.status %></td>
+    	</tr>
+		<% end %>
+    </table>
+<br />
+Create a new tweet <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
   </div>
