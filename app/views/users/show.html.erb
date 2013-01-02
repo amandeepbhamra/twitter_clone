@@ -8,3 +8,10 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<div>
+    <%#= render 'usertweets', :user => @user %>
+    <h1>Hello</h1>
+<% @user.tweets.each do |tweet| %>
+<%= tweet.status %>
+<% end %>
+  </div>
