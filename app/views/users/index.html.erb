@@ -1,0 +1,48 @@
+
+    
+  <!---<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"> </span>
+        </a>
+        <a class="brand" href="#"> Twitter</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+       -->
+       <div>
+
+       <h1>Listing users</h1>
+<table>
+  <tr>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <!--<td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+  </tr>
+<% end %>
+</table>
+
+<br />
+</div>
+<div>
+    <%#= render 'usertweets', :user => @user %>
+    <h1>Hello</h1>
+<% @user.tweets.each do |tweet| %>
+<%= tweet.status %>
+<% end %>
+  </div>
+
+<!--</div>
+</div>-->
