@@ -168,11 +168,23 @@ input[type="checkbox"]{
 			a.white_color, a.signin_btn{
 					color: #fff;
 					}
-			a.frgt_pswrd_recieveconfirmation, .signup_receive_confirmation{
+			a.frgt_pswrd_recieveconfirmation{
 				text-indent: 5px;
 				background: none;
 				font-style: italic;
 				margin-top: -17px;
+				display: block;
+				color: #777;
+				&:hover{
+					color: #000;
+					text-decoration: none;
+				}
+			}
+			a.signup_receive_confirmation{
+				text-indent: 5px;
+				background: none;
+				font-style: italic;
+				margin-top: -7px;
 				display: block;
 				color: #777;
 				&:hover{
