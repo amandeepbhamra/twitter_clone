@@ -31,8 +31,70 @@
 // Example:
 // @linkColor: #ff0000;
 
-/*  styles  */
+/* Mixin */
+.box_shadow (@value){
+  -moz-box-shadow: 3px 3px 4px #000;
+  -webkit-box-shadow: 3px 3px 4px #000;
+  box-shadow: 3px 3px 4px #000;
+}
 
+.ease (){
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.rounded-corners (@radius: 3px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+@the-border: 1px solid #cecece;
+
+.gradient () {
+    background: #fdfdfd; /* Old browsers */
+background: -moz-linear-gradient(top,  #fdfdfd 0%, #dddddd 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fdfdfd 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fdfdfd 0%,#dddddd 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fdfdfd 0%,#dddddd 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #fdfdfd 0%,#dddddd 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+/* common css */
+
+label{
+	font-size: 13px;
+	height: 0;
+	&:hover{
+		color: #777;
+	}
+}
+input{
+	width: 355px;
+	border: 1px solid #ccc;
+	font-size: 13px;
+}
+input[type="checkbox"]{
+	margin-right: 5px;
+}
+.input_width{
+	width: 275px;
+}
+.float_left{
+	float: left;
+}
+
+
+
+/* header */
 .navbar{
 	.navbar-inner{
 		background: url(../assets/twitter_web_sprite_bgs.png) repeat-x 0 0;
@@ -48,4 +110,98 @@
 					}/* nav */
 				}/* nav-collapse */
 		}/* container */
+
 }/* navbar */
+
+
+/* sing in and sign up */
+.container{
+	.span5{
+		margin-top: 210px;
+		}/* span5 */
+	.span4{
+		position: relative;
+		float: right;
+		background: #f8f8f8;
+		padding: 5px;
+		.rounded-corners; /* border-radius */
+		/*.gradient;  gradient */
+		border: @the-border; /* border */
+		margin: 110px 20px 0 0;
+		h3{
+			background: white;
+			padding: 5px;
+			border: @the-border; /* border */
+			margin-top: 0px;
+			.rounded-corners; /* border-radius */
+			font-size: 21px;
+			}/* h3 */
+			.signin_btn{
+				float: right;
+			}
+			.forgot_password{
+				/*position: absolute;
+				top: 194px;
+				right: 120px;*/
+				margin-left: 110px;
+				display: block;
+				margin-top: -3px;
+				font-style: italic;
+				&:hover{
+					background: none;
+					color: #000;
+					text-decoration: none;
+				}
+			}/* forgot password */
+			.signin_receive_confirmation{
+				text-indent: 20px;
+				display: block;
+				font-size: 12px;
+				color: #777;
+				font-style: italic;
+				&:hover{
+					text-decoration: none;
+					color: #000;
+					background: none;
+				}
+			}
+			a.white_color, a.signin_btn{
+					color: #fff;
+					}
+			a.frgt_pswrd_recieveconfirmation{
+				text-indent: 5px;
+				background: none;
+				font-style: italic;
+				margin-top: -17px;
+				display: block;
+				color: #777;
+				&:hover{
+					color: #000;
+					text-decoration: none;
+				}
+			}
+			a.signup_receive_confirmation{
+				text-indent: 5px;
+				background: none;
+				font-style: italic;
+				margin-top: -7px;
+				display: block;
+				color: #777;
+				&:hover{
+					color: #000;
+					text-decoration: none;
+				}
+			}
+			a.resendcnfrmatn_singup_btn, .signin_singup_btn{
+				font-size: 13px;
+				text-decoration: none;
+				background: none;
+				margin-left: 16px;
+				display: inline-block;
+				color: #777;
+				&:hover{
+					color: #000;
+				}
+			}
+	}/* span4 */
+}/* container */
