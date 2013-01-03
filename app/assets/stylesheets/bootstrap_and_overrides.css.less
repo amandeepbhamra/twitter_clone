@@ -53,7 +53,7 @@
   border-radius: @radius;
 }
 
-@the-border: 1px solid #eee;
+@the-border: 1px solid #cecece;
 
 .gradient () {
     background: #fdfdfd; /* Old browsers */
@@ -78,7 +78,7 @@ label{
 	}
 }
 input{
-	width: 352px;
+	width: 355px;
 	border: 1px solid #ccc;
 	font-size: 13px;
 }
@@ -165,10 +165,11 @@ input[type="checkbox"]{
 					background: none;
 				}
 			}
-			a.white_color{
+			a.white_color, a.signin_btn{
 					color: #fff;
 					}
-			a.frgt_pswrd_recieveconfirmation{
+			a.frgt_pswrd_recieveconfirmation, .signup_receive_confirmation{
+				text-indent: 5px;
 				background: none;
 				font-style: italic;
 				margin-top: -17px;
@@ -177,6 +178,17 @@ input[type="checkbox"]{
 				&:hover{
 					color: #000;
 					text-decoration: none;
+				}
+			}
+			a.resendcnfrmatn_singup_btn, .signin_singup_btn{
+				font-size: 13px;
+				text-decoration: none;
+				background: none;
+				margin-left: 16px;
+				display: inline-block;
+				color: #777;
+				&:hover{
+					color: #000;
 				}
 			}
 	}/* span4 */
