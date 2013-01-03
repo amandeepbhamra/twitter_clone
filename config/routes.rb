@@ -5,7 +5,7 @@ Twitter::Application.routes.draw do
     resources :tweets
   end
 
-  root :to => 'users#show'
+  root :to => 'users#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
