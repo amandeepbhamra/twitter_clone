@@ -11,7 +11,7 @@ gem 'mysql2'
 gem 'libv8', '~> 3.11.8'
 
 gem 'devise'
-gem "acts_as_follower"
+gem 'acts_as_followable'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
