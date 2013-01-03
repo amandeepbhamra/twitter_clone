@@ -2,6 +2,10 @@ Twitter::Application.routes.draw do
   devise_for :users
 
   resources :users do
+    member do
+      get 'follow'
+      get 'unfollow'
+    end
     resources :tweets
   end
 

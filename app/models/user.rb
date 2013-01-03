@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 	acts_as_followable
 
 	attr_accessible :email, :password, :password_confirmation, :remember_me,
-	:followable_id, :followable_type, :follower_id, :follower_type
-  	attr_accessible :username, :password
+	:username, :password
+	
   	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,:token_authenticatable
 

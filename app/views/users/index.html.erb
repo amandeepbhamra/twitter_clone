@@ -23,8 +23,12 @@ Create a new tweet <%= link_to 'New Tweet',  new_user_tweet_path(@user) %>
   </tr>
   <% User.all.each do |user|%>
   <tr>
-    <td><%= link_to user.email, user %></td>
-  </tr>
+    <td><%= link_to user.email, user  %></td>
+    <td><%#= link_to 'Follow', follow_user_path(user) %>
+      <%= link_to_if(user.following?(current_user), "Unfollow", unfollow_user_path(user)) do 
+        link_to 'Follow', follow_user_path(user) end %>
+      </td>
+    </tr>
   <% end %>
 </table>
 <br />
