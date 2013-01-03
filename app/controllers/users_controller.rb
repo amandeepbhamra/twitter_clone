@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -83,5 +83,17 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+  def follow
+    user = User.find(params[:id])
+    p user
+    p current_user
+    user.follow(current_user)
+    redirect_to current_user, notice: 'You are following now to' + user.email 
+  end
+  def unfollow
+    user = User.find(params[:id])
+    user.stop_following(current_user)
+    redirect_to current_user, notice: 'You are not following now to' + user.email
+  end
+
 end

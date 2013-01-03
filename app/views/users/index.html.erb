@@ -1,14 +1,36 @@
+<p>
+  <b>Username:</b>
+  <%= @user.email%>
+</p>
+
 <table>
   <h5>Your Tweets</h5>
   <% @tweets.each do |tweet| %>
-    <tr>
-      <td><%= tweet.status %></td>
-      <td><%= link_to tweet.user.email, tweet.user %></td>
-    </tr>
+      <tr>
+        <td><%= tweet.status %></td>
+        <td><%= link_to tweet.user.email, tweet.user %></td>
+      </tr>
+    
   <% end %>
 </table>
 
 Create a new tweet <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
+
+
+<table>
+  <tr>
+    <td><h5>Other users</h5></td>
+  </tr>
+  <% User.all.each do |user|%>
+  <tr>
+    <td><%= link_to user.email, user  %></td>
+    <td><%#= link_to 'Follow', follow_user_path(user) %>
+      <%= link_to_if(user.following?(current_user), "Unfollow", unfollow_user_path(user)) do 
+        link_to 'Follow', follow_user_path(user) end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
 <br />
 </div>
 
