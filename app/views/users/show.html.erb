@@ -12,12 +12,12 @@
     <%#= render 'usertweets', :user => @user %>
     <h5>Your Tweets</h5>
     <table>
-    	<% @user.tweets.each do |tweet| %>
+    	<% @tweets.each do |tweet| %>
     	<tr>
     		<td><%= tweet.status %></td>
     	</tr>
 		<% end %>
     </table>
 <br />
-Create a new tweet <%= link_to 'New Tweet',  new_user_tweet_path(current_user) %> 
+Create a new tweet <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
   </div>

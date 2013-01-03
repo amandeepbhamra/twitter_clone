@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 
   
   def index
-    #@users = User.all
-    @tweets = current_user.tweets
+    @user = current_user
+    @tweets = @user.tweets
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
+    @tweets = @user.tweets
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
