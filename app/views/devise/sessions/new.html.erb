@@ -13,11 +13,14 @@
   <%= f.password_field :password, :class => "input_width", :placeholder => "*********"  %>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me, :class => "float_left" %> <%= f.label :remember_me %></div>
+	    <div><%= f.check_box :remember_me, :class => "float_left" %> <%= f.label :remember_me %>
+	    </div>
   <% end -%>
 
-  <div><%= f.submit "Sign in", :class => "btn btn-info signin_btn" %></div>
+  <%= f.submit "Sign in", :class => "btn btn-info signin_btn" %>
 <% end %>
+
+
 
 <%= render "devise/shared/links" %>
 </div>
