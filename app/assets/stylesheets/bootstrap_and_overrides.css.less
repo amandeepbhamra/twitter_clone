@@ -31,8 +31,33 @@
 // Example:
 // @linkColor: #ff0000;
 
-/*  styles  */
+/* Mixin */
 
+.rounded-corners (@radius: 3px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+@the-border: 1px solid #eee;
+
+.gradient () {
+    background: #fdfdfd; /* Old browsers */
+background: -moz-linear-gradient(top,  #fdfdfd 0%, #dddddd 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fdfdfd 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fdfdfd 0%,#dddddd 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fdfdfd 0%,#dddddd 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #fdfdfd 0%,#dddddd 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+
+/* header start */
 .navbar{
 	.navbar-inner{
 		background: url(../assets/twitter_web_sprite_bgs.png) repeat-x 0 0;
@@ -48,4 +73,18 @@
 					}/* nav */
 				}/* nav-collapse */
 		}/* container */
+
 }/* navbar */
+
+/* sing in and sign up */
+.container{
+	.span4{
+		float: right;
+		background: #EEE;
+		padding: 5px;
+		.rounded-corners; /* border-radius */
+		.gradient; /* gradient */
+		border: @the-border; /* border */
+		margin-right: 20px;
+	}/* span5 */
+}/* container */
