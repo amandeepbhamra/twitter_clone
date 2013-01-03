@@ -137,23 +137,23 @@ input[type="checkbox"]{
 			font-size: 21px;
 			}/* h3 */
 			.signin_btn{
-				/*position: absolute;
-				top: 152px;
-				right: 12px;
-				color: #fff;*/
-				margin-top: -9px;
+				float: right;
 			}
 			.forgot_password{
-				position: absolute;
+				/*position: absolute;
 				top: 194px;
-				right: 120px;
+				right: 120px;*/
+				margin-left: 110px;
+				display: block;
+				margin-top: -3px;
+				font-style: italic;
 				&:hover{
 					background: none;
 					color: #000;
 					text-decoration: none;
 				}
 			}/* forgot password */
-			.receive_confirmation{
+			.signin_receive_confirmation{
 				text-indent: 20px;
 				display: block;
 				font-size: 12px;
@@ -168,11 +168,16 @@ input[type="checkbox"]{
 			a.white_color{
 					color: #fff;
 					}
-			a.forgotpswrd_signinbtn{
-				position: absolute;
-				top: 130px;
-				right: 12px;
-				color: #fff;
+			a.frgt_pswrd_recieveconfirmation{
+				background: none;
+				font-style: italic;
+				margin-top: -17px;
+				display: block;
+				color: #777;
+				&:hover{
+					color: #000;
+					text-decoration: none;
+				}
 			}
 	}/* span4 */
 }/* container */

@@ -11,18 +11,23 @@
 
   <%= f.label :password %><br />
   <%= f.password_field :password, :class => "input_width", :placeholder => "*********"  %>
-  
+
 <%= f.submit "Sign in", :class => "btn btn-info signin_btn" %>
 
   <% if devise_mapping.rememberable? -%>
-	    <div><%= f.check_box :remember_me, :class => "float_left" %> <%= f.label :remember_me %>
-	    </div>
-  <% end -%>
+	    
+	    	<%= f.check_box :remember_me, :class => "float_left" %> <%= f.label :remember_me %>
+	    	
+	    	
+  	<%= link_to "Forgot your password?", new_password_path(resource_name), :class => "forgot_password" %><!-- forgot password -->
+	<%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), :class => "signin_receive_confirmation" %>
 
-  <%#= f.submit "Sign in", :class => "btn btn-info signin_btn" %>
+  <% end -%><!-- remember me -->
+	
+  
 <% end %>
+<%= link_to "Sign up for twitter", new_registration_path(resource_name), :class => "btn btn-info white_color" %>
 
 
 
-<%= render "devise/shared/links" %>
 </div>
