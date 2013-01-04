@@ -37,9 +37,7 @@ class TweetsController < ApplicationController
   end
 
   # GET /tweets/1/edit
-  def edit
-    @tweet = @user.tweets.find(params[:id])
-  end
+  
 
   # POST /tweets
   # POST /tweets.json
@@ -59,20 +57,7 @@ class TweetsController < ApplicationController
 
   # PUT /tweets/1
   # PUT /tweets/1.json
-  def update
-    @user = User.find(params[:id])
-    @tweet = @user.tweets.find(params[:id])
-
-    respond_to do |format|
-      if @tweet.update_attributes(params[:tweet])
-        format.html { redirect_to user_tweets_path(@user), notice: 'Tweet was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @tweet.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  
 
   # DELETE /tweets/1
   # DELETE /tweets/1.json
@@ -88,6 +73,6 @@ class TweetsController < ApplicationController
 
   private
   def get_user
-    @user= User.find(params[:user_id])
+    @user= current_user
   end
 end
