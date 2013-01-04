@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = current_user
-    @tweets = @user.tweets
+    
     p user_session
       respond_to do |format|
       format.html # show.html.erb
