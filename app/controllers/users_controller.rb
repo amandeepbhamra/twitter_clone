@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @tweets = @user.tweets
     p user_session
       respond_to do |format|
