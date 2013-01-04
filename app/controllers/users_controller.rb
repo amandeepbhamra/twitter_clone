@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tweets = @user.tweets
-    respond_to do |format|
+    p user_session
+      respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
     end
@@ -83,6 +84,7 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   def follow
     user = User.find(params[:id])
     p user
@@ -90,11 +92,13 @@ class UsersController < ApplicationController
     user.follow(current_user)
     redirect_to current_user, notice: 'You are following now to' + user.email 
   end
+
   def unfollow
     user = User.find(params[:id])
     user.stop_following(current_user)
     redirect_to current_user, notice: 'You are not following now to' + user.email
   end
+
   def following
     user = User.find(params[:id])
     @following = user.follows
