@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # ,,
   # :lockable, :timeoutable and :omniauthable
 	acts_as_followable
+  
 
 	attr_accessible :email, :password, :password_confirmation, :remember_me,
 	:username, :password
