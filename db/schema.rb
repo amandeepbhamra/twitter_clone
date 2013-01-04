@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130103084212) do
+ActiveRecord::Schema.define(:version => 20130104114229) do
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",   :null => false
@@ -51,6 +51,10 @@ ActiveRecord::Schema.define(:version => 20130103084212) do
     t.integer  "mobile"
     t.string   "location"
     t.text     "bio"
+    t.string   "gender"
+    t.string   "city"
+    t.string   "country"
+    t.string   "website"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   
 
 	attr_accessible :email, :password, :password_confirmation, :remember_me,
-	:password , :name, :mobile, :location, :bio
+	:password , :name, :mobile, :location, :bio, :gender, :city, :country,
+  :website
 	
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
   :trackable, :validatable, :confirmable,:token_authenticatable
