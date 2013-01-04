@@ -2,15 +2,31 @@
 
 <p>
   <b>Username:</b>
-  <%= @user.email%>
+  <%= @user.name%>
 </p>
 
 
 <div>
-
-    <%= link_to 'View Your Tweets',  user_tweets_path(@user) %>
+	<%= link_to 'Edit Profile', edit_user_path(@user) %>
+    <%= link_to 'View Tweets',  user_tweets_path(@user) %>
     
     <br />
     <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
-    <%= link_to 'View whom you are following',  following_user_path(@user) %>
+    <%= link_to 'Follower',  followers_user_path(@user) %>
+    <%= link_to 'Following',  following_user_path(@user) %>
 </div>
+
+<table>
+  <tr>
+    <td><h5>Other users</h5></td>
+  </tr>
+  <% User.all.each  do |user| %>
+  <tr>
+    <td><%= link_to user.email, user  %></td>
+    <td><%#= link_to 'Follow', follow_user_path(user) %>
+      <%= link_to_if(user.following?(current_user), "Unfollow", unfollow_user_path(user)) do 
+        link_to 'Follow', follow_user_path(user) end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
