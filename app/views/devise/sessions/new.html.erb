@@ -2,7 +2,7 @@
 <h3>Welcome to Twitter.</h3>
 <p>Find out what’s happening, right now, with the people and organizations you care about.</p>
 </div>
-<div class="span4">
+<div class="span4 signup_container">
 <h3>Sign in</h3>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -24,5 +24,5 @@
 
   <% end -%><!-- remember me -->
 <% end %>
-<%= link_to "Sign up for twitter", new_registration_path(resource_name), :class => "signin_singup_btn" %>
+<%= link_to "Sign up for twitter", new_registration_path(resource_name), :class => "signinpage_singup_btn" %>
 </div>

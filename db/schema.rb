@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(:version => 20130103084212) do
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
 
   create_table "tweets", :force => true do |t|
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.text     "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "user_id"
-    t.text     "status",     :limit => 255
   end
 
   create_table "users", :force => true do |t|
