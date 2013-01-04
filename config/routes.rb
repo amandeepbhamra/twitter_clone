@@ -12,7 +12,7 @@ Twitter::Application.routes.draw do
     resources :tweets
   end
 
-  root :to => 'devise/sessions#new'
+  root :to => 'users#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

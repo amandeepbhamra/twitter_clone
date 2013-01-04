@@ -7,5 +7,7 @@ class ApplicationController < ActionController::Base
     #stored_location_for(resource) || 
   	user_path(resource)
   end
-   def after_sign_out_path_for
+  def after_sign_out_path_for(resource_or_scope)
+    root_path
+  end
 end
