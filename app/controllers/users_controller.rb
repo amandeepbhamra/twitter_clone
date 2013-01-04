@@ -99,8 +99,13 @@ class UsersController < ApplicationController
     redirect_to current_user, notice: 'You are not following now to' + user.email
   end
 
+  def followers
+    user = User.find(params[:id])
+    @followers = user.following_users
+  end
+
   def following
     user = User.find(params[:id])
-    @following = user.following_users
+    @following = user.user_followers
   end
 end
