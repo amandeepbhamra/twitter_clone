@@ -5,6 +5,9 @@ Twitter::Application.routes.draw do
     member do
       get 'follow'
       get 'unfollow'
+      get 'following'
+      get 'followers'
+
     end
     resources :tweets
   end

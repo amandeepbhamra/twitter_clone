@@ -5,7 +5,8 @@ class TweetsController < ApplicationController
   before_filter :get_user
   
   def index
-    @tweets = @user.tweets.all
+
+    @tweets = @user.tweets
 
     respond_to do |format|
       format.html # index.html.erb
@@ -59,6 +60,7 @@ class TweetsController < ApplicationController
   # PUT /tweets/1
   # PUT /tweets/1.json
   def update
+    @user = User.find(params[:id])
     @tweet = @user.tweets.find(params[:id])
 
     respond_to do |format|

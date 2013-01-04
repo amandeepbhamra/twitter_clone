@@ -95,5 +95,8 @@ class UsersController < ApplicationController
     user.stop_following(current_user)
     redirect_to current_user, notice: 'You are not following now to' + user.email
   end
-
+  def following
+    user = User.find(params[:id])
+    @following = user.follows
+  end
 end

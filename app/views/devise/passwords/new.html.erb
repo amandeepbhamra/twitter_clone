@@ -1,4 +1,5 @@
-<h2>Forgot your password?</h2>
+<div class="span4">
+	<h3>Forgot your password?</h3>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -6,7 +7,15 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
+  <div><%= f.submit "Send me reset password instructions", :class => "btn btn-info" %>
+
+  	<%- if controller_name != 'sessions' %>
+  <%= link_to "Sign in", new_session_path(resource_name), :class => "btn btn-info signin_btn" %>
+<% end -%>
+
+  </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), :class => "frgt_pswrd_recieveconfirmation" %><br />
+  
+</div>
