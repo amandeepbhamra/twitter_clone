@@ -67,7 +67,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', end
 
 }
 
-
 /* common css */
 
 label{
@@ -91,17 +90,23 @@ input[type="checkbox"]{
 .float_left{
 	float: left;
 }
-
+.padding{
+	padding: 5px;
+}
+.margin_left{
+	margin-left: 0;
+}
 
 
 /* header */
 .navbar{
 	.navbar-inner{
-		background: url(../assets/twitter_web_sprite_bgs.png) repeat-x 0 0;
+		background: #b2b2b2 url(../assets/twitter_web_sprite_bgs.png) repeat-x 0 0;
 		height: 40px;
 	}/* navbar inner */
-	.container{
-		width: 940px;
+	.header_container{
+		width: 965px;
+		margin: 0 auto;
 		a.brand{
 			text-indent: -99999px;
 			background: url(../assets/twitter_web_sprite_icons.png) no-repeat -69px 11px;
@@ -131,19 +136,21 @@ input[type="checkbox"]{
 	margin-top: 210px;
 	padding-right: 10px;
 }
-.container{
-	width: 940px;
-	.span5{
-		}/* span5 */
-	.span4{
-		position: relative;
-		/*float: right;*/
-		background: #f8f8f8;
+.signup_container{
+background: #f8f8f8;
 		padding: 5px;
 		.rounded-corners; /* border-radius */
-		/*.gradient;  gradient */
 		border: @the-border; /* border */
 		margin: 110px 20px 0 0;
+}
+
+.container{
+	width: 1005px;
+	background: url(../assets/wrapper_background.png);
+	.rounded-corners; /* border-radius */
+	.span5{
+		}/* span5 */
+	.span4 {
 		h3{
 			background: white;
 			padding: 5px;
@@ -208,7 +215,7 @@ input[type="checkbox"]{
 					text-decoration: none;
 				}
 			}
-			a.resendcnfrmatn_singup_btn, .signin_singup_btn{
+			a.resendcnfrmatn_singup_btn, .signinpage_singup_btn{
 				font-size: 13px;
 				text-decoration: none;
 				background: none;
