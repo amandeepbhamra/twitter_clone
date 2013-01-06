@@ -13,11 +13,11 @@
   <% User.all.each  do |user| %>
   <tr>
     <td><%= link_to user.email, user  %></td>
-    <td><%#= link_to 'Follow', follow_user_path(user) %>
+    <td>
       <%= link_to_if(user.following?(current_user), "Unfollow", unfollow_user_path(user)) do 
         link_to 'Follow', follow_user_path(user) end %>
-      </td>
-    </tr>
+    </td>
+  </tr>
   <% end %>
 </table>
 <!--</div>

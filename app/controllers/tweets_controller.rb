@@ -72,7 +72,13 @@ class TweetsController < ApplicationController
   end
 
   private
+  
+  #-------------To get current user as before filter for actions----------#
+  
   def get_user
+  
     @user= current_user
+  
   end
+
 end

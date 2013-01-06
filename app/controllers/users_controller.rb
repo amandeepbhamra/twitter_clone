@@ -84,28 +84,45 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  #---------------To Follow any User-------------#
+  
   def follow
+  
     user = User.find(params[:id])
     p user
     p current_user
     user.follow(current_user)
     redirect_to current_user, notice: 'You are following now to' + user.email 
+  
   end
-
+  
+  #---------------To Unfollow any user------------#
+  
   def unfollow
+  
     user = User.find(params[:id])
     user.stop_following(current_user)
     redirect_to current_user, notice: 'You are not following now to' + user.email
+  
   end
-
+  
+  #---------------To view list of Followers------------#
+  
   def followers
+  
     user = User.find(params[:id])
     @followers = user.following_users
+  
   end
 
+  #-------------To view list of Followings-------------#
+  
   def following
+ 
     user = User.find(params[:id])
     @following = user.user_followers
+ 
   end
+
 end
