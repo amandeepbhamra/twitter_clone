@@ -13,8 +13,11 @@ class User < ActiveRecord::Base
   :trackable, :validatable, :confirmable,:token_authenticatable
 
   # Setup accessible (or protected) attributes for your model
+  validates :name, :mobile, :location, :bio, :gender, :city, :country, 
+  :website, :presence => true
   
-  
+  validates :name, :uniqueness =>true
+
 	has_many :tweets
   
   
