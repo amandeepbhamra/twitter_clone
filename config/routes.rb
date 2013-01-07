@@ -1,7 +1,7 @@
 Twitter::Application.routes.draw do
   devise_for :users
 
-  resources :users, :except => :index do
+  resources :users, :except => [:index, :destroy] do
     member do
       get 'follow'
       get 'unfollow'

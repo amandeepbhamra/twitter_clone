@@ -3,10 +3,10 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   before_filter :authenticate_user!
   before_filter :get_user
-  
+  before_filter :authorize_user, :only => :destroy
   def index
 
-    @tweets = @user.tweets.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
+    @tweets = @user.tweets
 
     respond_to do |format|
       format.html # index.html.erb
@@ -77,8 +77,18 @@ class TweetsController < ApplicationController
   
   def get_user
   
-    @user= current_user
+    @user= User.find(params[:id])
   
   end
 
+  #-------------To authorize user for editing and update-----------------#
+
+  def authorize_user
+
+    if @user == current_user
+      render :action => :destroy
+    else
+      redirect_to user_path, notice: 'you are not authorized for this action.'
+    end
+  end
 end

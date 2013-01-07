@@ -20,6 +20,6 @@ class User < ActiveRecord::Base
 
 	has_many :tweets
   
-  
+  named_scope :without_user, lambda{|user| user ? {:conditions => ["id != ?", user.id]} : {} }
 
 end
