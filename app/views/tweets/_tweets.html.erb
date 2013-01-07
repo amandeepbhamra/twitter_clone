@@ -1,9 +1,6 @@
 <table>
   <tr>
     <th>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
   <% @tweets.each do |tweet| %>
@@ -13,5 +10,5 @@
   </tr>
   <% end %>
 </table>
-
+<%= will_paginate @tweets %>
 <br />

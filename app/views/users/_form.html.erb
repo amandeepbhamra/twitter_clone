@@ -28,8 +28,11 @@
     <%= f.text_area :bio %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
+    <%= f.label(:gender, "Male") %>
+    <%= f.radio_button(:gender, "Male") %>
+
+    <%= f.label(:gender, "Female") %>
+    <%= f.radio_button(:gender, "Female") %>
   </div>
   <div class="field">
     <%= f.label :city %><br />
