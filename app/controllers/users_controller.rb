@@ -87,7 +87,7 @@ class UsersController < ApplicationController
     p user
     p current_user
     user.follow(current_user)
-    redirect_to current_user, notice: 'You are following now to' + user.email 
+    redirect_to current_user, notice: 'You are following now to ' + user.email 
   
   end
   
@@ -97,7 +97,7 @@ class UsersController < ApplicationController
   
     user = User.find(params[:id])
     user.stop_following(current_user)
-    redirect_to current_user, notice: 'You are not following now to' + user.email
+    redirect_to current_user, notice: 'You are not following now to ' + user.email
   
   end
   
