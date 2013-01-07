@@ -1,9 +1,13 @@
 class TweetsController < ApplicationController
-  # GET /tweets
-  # GET /tweets.json
+
+  
   before_filter :authenticate_user!
   before_filter :get_user
   before_filter :authorize_user, :only => :destroy
+  
+
+  # GET /tweets
+  # GET /tweets.json
   def index
 
     @tweets = @user.tweets
@@ -77,7 +81,7 @@ class TweetsController < ApplicationController
   
   def get_user
   
-    @user= User.find(params[:id])
+    @user= User.find(params[:user_id])
   
   end
 

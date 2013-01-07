@@ -6,17 +6,24 @@
   </p>
   
   <div>
-    <%= link_to 'Edit Profile', edit_user_path(@user) %>
-    
+    <% if @user==current_user %>
+      <%= link_to 'Edit Profile', edit_user_path(@user) %>
+      <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
+    <% end %>
     <%= link_to 'View Tweets',  user_tweets_path(@user) %>
     
     <br />
     
-    <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
+   
     
     <%= link_to 'Follower',  followers_user_path(@user) %>
     
     <%= link_to 'Following',  following_user_path(@user) %>
+  </div>
+  <div>
+    <% if !(@user == current_user) %>
+      <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', follow_user_path(@user) end %>
+    <% end %>
   </div>
 
   <table>
@@ -27,7 +34,7 @@
     <tr>
       <td><%= link_to user.email, user  %></td>
       <td>
-        <%= link_to_if(user.following?(current_user), "Unfollow", unfollow_user_path(user)) do link_to 'Follow', follow_user_path(user) end %>
+        
       </td>
     </tr>
     <% end %>

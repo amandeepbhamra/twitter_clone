@@ -6,7 +6,9 @@
   <% @tweets.each do |tweet| %>
   <tr>
     <td><%= tweet.status %></td>
+    <% if @user==current_user %>
     <td><%= link_to 'Destroy', user_tweet_path(params[:user_id], tweet) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
   <% end %>
 </table>

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   before_filter :authenticate_user!
-
+  before_filter :get_user
   
   def index
     @user = current_user
@@ -15,10 +15,8 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show
-    @user = current_user
-    
-    p user_session
+  def show    
+  
       respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -73,7 +71,14 @@ class UsersController < ApplicationController
     end
   end
 
+  #-------------To get current user as before filter for actions----------#
   
+  def get_user
+  
+    @user= User.find(params[:id])
+  
+  end
+
   #---------------To Follow any User-------------#
   
   def follow
