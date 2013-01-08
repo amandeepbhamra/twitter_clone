@@ -4,26 +4,28 @@
   <!-- <p id="notice"><%= notice %></p> -->
   <div class="userpic_wrapper">
     <div class="userpic">
-      <%=link_to image_tag("userthumbnail.jpeg"), "#" %>
+      <%=link_to image_tag(@user.photo.url(:thumb)), "#" %>
     </div><!-- userpic -->
-    <%=link_to @user.name, "#", :class => "username" %><br />
+    <% if !@user.name.nil? %>
+    <%=link_to @user.name, "#", :class => "username" %>
+    <% else %>
+     <%=link_to @user.email, "#", :class => "username" %>
+    <% end %>
+    <br />
+
     <%=link_to "View My Profile page", "#", :class => "view_profile" %>
     
   </div><!-- userpic_wrapper -->
 
   <p id="notice"><%= notice %></p>
   <p>
-    <%= image_tag @user.photo.url(:thumb) %>
-    <% if !@user.name.nil? %>
-      <%= @user.name %>
-    <% else %>
-      <%= @user.email %>
-    <% end %>
+    
+    
   </p>
   
   <div>
     <% if @user==current_user %>
-      <%#= link_to 'Edit Profile', edit_user_path(@user) %>
+      <%= link_to 'Edit Profile', edit_user_path(@user) %>
       <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
     <% end %>
     <%= link_to 'View Tweets',  user_tweets_path(@user) %>

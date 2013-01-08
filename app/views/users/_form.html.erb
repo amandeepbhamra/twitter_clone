@@ -1,3 +1,14 @@
+<div class="span4"></div>
+
+<div class="span5">
+  <div class="edit_profile_container">
+    <div class="edit_profile_title">
+      <h3>Profile</h3>
+      <p class="subheading">This information appears on your public profile, search results, and beyond.
+      </p>
+    </div><!-- edit_profile_title -->
+
+    <div class="edit_profile_form_wrapper">
 <%= form_for @user, :html => { :multipart => true } do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -54,3 +65,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div><!-- edit_profile_container -->
+</div><!-- span5 -->
