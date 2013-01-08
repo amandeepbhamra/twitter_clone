@@ -31,7 +31,7 @@
 // Example:
 // @linkColor: #ff0000;
 
-/* Mixin */
+/* Mixin and varialbles */
 .box_shadow (@value){
   -moz-box-shadow: 3px 3px 4px #000;
   -webkit-box-shadow: 3px 3px 4px #000;
@@ -67,6 +67,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', end
 
 }
 
+@padding: 5px;
+@float_left: left;
+@margin_right: 8px;
+@margin_all: 5px;
+@margin: 0px 5px 5px 5px;
+@background_none: none;
+@text_decoration: none;
+
 /* common css */
 
 label{
@@ -84,6 +92,7 @@ input{
 input[type="checkbox"]{
 	margin-right: 5px;
 }
+
 .input_width{
 	width: 275px;
 }
@@ -91,7 +100,7 @@ input[type="checkbox"]{
 	float: left;
 }
 .padding{
-	padding: 5px;
+	padding: @padding;
 }
 .margin_left{
 	margin-left: 0;
@@ -138,7 +147,7 @@ input[type="checkbox"]{
 }
 .signup_container{
 background: #f8f8f8;
-		padding: 5px;
+		padding: @padding;
 		.rounded-corners; /* border-radius */
 		border: @the-border; /* border */
 		margin: 110px 20px 0 0;
@@ -146,14 +155,14 @@ background: #f8f8f8;
 
 .container{
 	width: 1005px;
-	background: url(../assets/wrapper_background.png);
-	.rounded-corners; /* border-radius */
+	/*background: url(../assets/wrapper_background.png);
+	.rounded-corners;*/ /* border-radius */
 	.span5{
 		}/* span5 */
 	.span4 {
 		h3{
 			background: white;
-			padding: 5px;
+			padding: @padding;
 			border: @the-border; /* border */
 			margin-top: 0px;
 			.rounded-corners; /* border-radius */
@@ -226,5 +235,43 @@ background: #f8f8f8;
 					color: #000;
 				}
 			}
+			.span3 {
+				.user_dashboard{
+					background: #f9f9f9;
+					border: @the-border;
+					.rounded-corners; /* border-radius */
+					padding: @padding;
+						.userpic_wrapper{
+							height: 50px;
+							padding: @padding;
+						.userpic{
+							width: 32px;
+							height: 32px;
+							.rounded-corners; /* border-radius */
+							overflow: hidden;
+							float: @float_left;/* float left */
+							margin-right: @margin_right;
+							}/* userpic */
+							.username{
+								font-weight: 700;
+								font-size: 14px;
+								&:hover{
+									background: @background_none;
+									color: #2fc2ef;
+									text-decoration: @text_decoration;
+									}/* username:hover; */
+								}/* username */
+								a.view_profile{
+										color: #999;
+										font-size: 11px;
+										&:hover{
+									background: @background_none;
+									color: #999;
+									text-decoration: @text_decoration;
+										}/*  view_profile:hover; */
+									}/* view_profile */
+						}/* userpic_wrapper */
+					}/* dashboard */
+				}/* span3 */
 	}/* span4 */
 }/* container */

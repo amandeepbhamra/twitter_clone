@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-  		<title>Twitter</title>
-  		<%= stylesheet_link_tag    "application", :media => "all" %>
-  		<%= javascript_include_tag "application" %>
-  		<%= csrf_meta_tags %>
-	</head>
-	<body data-spy="scroll" data-target=".bs-docs-sidebar">
-<<<<<<< HEAD
-
-		<!-- Navbar
+<!-- Navbar
     ================================================== -->
     	<div class="navbar navbar-inverse navbar-fixed-top">
       		<div class="navbar-inner">
@@ -38,18 +27,3 @@
         		</div>
       		</div>
     	</div>
-      <div id='notice' style="<%= 'display: none; ' if flash[:notice].blank? %> text-align: center;"><%= flash[:notice].html_safe  unless flash[:notice].blank? %></div><!-- notice -->
- 
-  <div id='error' style="<%= 'display: none;' if flash[:error].blank? %>  text-align: center;"><%= flash[:error].html_safe  unless flash[:error].blank? %></div><!-- error -->
-
-=======
-		  <%=render 'layouts/header' %>
-      
->>>>>>> 5c7ab6a383b8d347323c4e3b5b856dcd990c1431
-		<div class="container margin_top padding">
-      <div class="show-grid">
-			<%= yield %>
-		</div>
-  </div>
-	</body>
-</html>
