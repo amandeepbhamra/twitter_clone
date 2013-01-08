@@ -9,7 +9,7 @@ Twitter::Application.routes.draw do
       get 'followers'
 
     end
-    resources :tweets
+    resources :tweets, :execpt=> [:show, :edit]
   end
 
   root :to => 'users#show'

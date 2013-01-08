@@ -9,8 +9,17 @@
     <%=link_to @user.name, "#", :class => "username" %><br />
     <%=link_to "View My Profile page", "#", :class => "view_profile" %>
     
-    <%= %>
   </div><!-- userpic_wrapper -->
+
+  <p id="notice"><%= notice %></p>
+  <p>
+    <b>Username:</b>
+    <% if !@user.name.nil? %>
+      <%= @user.name %>
+    <% else %>
+      <%= @user.email %>
+    <% end %>
+  </p>
   
   <div>
     <% if @user==current_user %>
