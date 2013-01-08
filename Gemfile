@@ -6,17 +6,22 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem "heroku"
 gem "taps"
-#gem "pg"
+gem "pg"
 gem 'mysql2'
 gem 'libv8', '~> 3.11.8'
 gem 'rmagick'
 gem 'devise'
 gem 'acts_as_followable'
 gem 'will_paginate', '~> 3.0'
+
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
-gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
 
+gem "paperclip", "~> 3.0"
+gem "rmagick", "~> 2.13.1"
+
+gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
+gem 'quiet_assets', :group => :development
 gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
 
 gem 'ruby-debug19', :require => 'ruby-debug'

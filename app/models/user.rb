@@ -14,12 +14,12 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   validates :name, :mobile, :location, :bio, :gender, :city, :country, 
   :website, :presence => true
-  
+
   validates :name, :uniqueness =>true
 
-	has_many :tweets
+	has_many :tweets, :order => "created_at DESC"
   
-
   has_attached_file :photo, :styles => { :medium => "100x100>", :thumb => "38x38>" }
 
+  
 end
