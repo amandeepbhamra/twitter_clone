@@ -31,7 +31,7 @@
 // Example:
 // @linkColor: #ff0000;
 
-/* Mixin */
+/* Mixin and varialbles */
 .box_shadow (@value){
   -moz-box-shadow: 3px 3px 4px #000;
   -webkit-box-shadow: 3px 3px 4px #000;
@@ -66,6 +66,7 @@ background: linear-gradient(to bottom,  #fdfdfd 0%,#dddddd 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
 
 }
+@padding: 5px;
 
 /* common css */
 
@@ -91,7 +92,7 @@ input[type="checkbox"]{
 	float: left;
 }
 .padding{
-	padding: 5px;
+	padding: @padding;
 }
 .margin_left{
 	margin-left: 0;
@@ -138,7 +139,7 @@ input[type="checkbox"]{
 }
 .signup_container{
 background: #f8f8f8;
-		padding: 5px;
+		padding: @padding;
 		.rounded-corners; /* border-radius */
 		border: @the-border; /* border */
 		margin: 110px 20px 0 0;
@@ -146,14 +147,14 @@ background: #f8f8f8;
 
 .container{
 	width: 1005px;
-	background: url(../assets/wrapper_background.png);
-	.rounded-corners; /* border-radius */
+	/*background: url(../assets/wrapper_background.png);
+	.rounded-corners;*/ /* border-radius */
 	.span5{
 		}/* span5 */
 	.span4 {
 		h3{
 			background: white;
-			padding: 5px;
+			padding: @padding;
 			border: @the-border; /* border */
 			margin-top: 0px;
 			.rounded-corners; /* border-radius */
@@ -226,5 +227,12 @@ background: #f8f8f8;
 					color: #000;
 				}
 			}
+			.span3 {
+				.userprofile_section{
+					background: #ccc;
+					.rounded-corners; /* border-radius */
+					padding: @padding;
+					}/* .userprofile_section*/
+				}/* span3 */
 	}/* span4 */
 }/* container */

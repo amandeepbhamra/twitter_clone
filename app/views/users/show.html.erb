@@ -1,4 +1,6 @@
 <div class="span4 padding margin_left">
+  <div class="span3">
+    <div class="userprofile_section">
   <p id="notice"><%= notice %></p>
   <p>
     <b>Username:</b>
@@ -25,7 +27,7 @@
       <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', follow_user_path(@user) end %>
     <% end %>
   </div>
-
- 
-</div>
+</div><!-- userprofile_section -->
+ </div><!-- span3 -->
+</div><!-- span4 -->
 <div class="span6 padding">Tweets</div>
