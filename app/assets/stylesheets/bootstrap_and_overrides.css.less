@@ -31,6 +31,11 @@
 // Example:
 // @linkColor: #ff0000;
 
+body{
+	background:#0b4f76 url(../assets/background.jpg) no-repeat top center;
+	background-attachment: fixed;
+}
+
 /* Mixin and varialbles */
 .box_shadow (@value){
   -moz-box-shadow: 3px 3px 4px #000;
@@ -178,7 +183,7 @@ background: #f8f8f8;
 					height: 30px;
 					}/*  h3  */
 					p.subheading{
-						color: #999;
+						color: #000;
 					}
 				}/* edit_profile_title */
 				.edit_profile_form_wrapper{
@@ -205,6 +210,9 @@ background: #f8f8f8;
 					}
 				}/* edit_profile_form_wrapper */
 			}/* edit_profile_container */
+			h3, p{
+				color: #fff;
+			}
 		}/* span5 */
 	.span4 {
 		h3{
