@@ -18,17 +18,6 @@ class TweetsController < ApplicationController
     end
   end
 
-  # GET /tweets/1
-  # GET /tweets/1.json
-  def show
-    @tweet = @user.tweets.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @tweet }
-    end
-  end
-
   # GET /tweets/new
   # GET /tweets/new.json
   def new

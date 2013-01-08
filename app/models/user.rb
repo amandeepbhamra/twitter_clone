@@ -20,6 +20,6 @@ class User < ActiveRecord::Base
 
 	has_many :tweets
   
-  scope :without_user, lambda{|user| user ? {:conditions => ["id != ?", user.id]} : {} }
+  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
 end

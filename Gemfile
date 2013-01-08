@@ -13,6 +13,7 @@ gem 'libv8', '~> 3.11.8'
 gem 'devise'
 gem 'acts_as_followable'
 gem 'will_paginate', '~> 3.0'
+gem "paperclip", "~> 3.0"
 
 gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
 
