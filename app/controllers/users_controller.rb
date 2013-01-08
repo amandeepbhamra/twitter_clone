@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show    
-  
+  @user = User.find_by_id(params[:id])
       respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+   
   end
 
   # POST /users
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
+   
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -74,9 +74,7 @@ class UsersController < ApplicationController
   #-------------To get current user as before filter for actions----------#
   
   def get_user
-
-  @user = User.find_by_id(params[:id])
-  
+    @user = User.find_by_id(params[:id])
     if @user.nil?
      redirect_to current_user
     end
@@ -86,40 +84,26 @@ class UsersController < ApplicationController
   #---------------To Follow any User-------------#
   
   def follow
-  
-    user = User.find(params[:id])
-    user.follow(current_user)
-    redirect_to current_user, notice: 'You are following now to ' + user.email 
-  
+    @user.follow(current_user)
+    redirect_to current_user, notice: 'You are following now to ' + @user.email 
   end
   
   #---------------To Unfollow any user------------#
   
   def unfollow
-  
-    user = User.find(params[:id])
-    user.stop_following(current_user)
-    redirect_to current_user, notice: 'You are not following now to ' + user.email
-  
+    @user.stop_following(current_user)
+    redirect_to current_user, notice: 'You are not following now to ' + @user.email
   end
   
   #---------------To view list of Followers------------#
   
   def followers
-  
-    user = User.find(params[:id])
-    @followers = user.following_users
-  
+    @followers = @user.following_users
   end
 
   #-------------To view list of Followings-------------#
   
   def following
- 
-    user = User.find(params[:id])
-    @following = user.user_followers
- 
+    @following = @user.user_followers
   end
-
-  
 end

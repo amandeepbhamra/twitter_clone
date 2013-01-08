@@ -4,10 +4,9 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
 	acts_as_followable
   
-
 	attr_accessible :email, :password, :password_confirmation, :remember_me,
 	:password , :name, :mobile, :location, :bio, :gender, :city, :country,
-  :website
+  :website, :photo
 	
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
   :trackable, :validatable, :confirmable,:token_authenticatable
@@ -20,6 +19,7 @@ class User < ActiveRecord::Base
 
 	has_many :tweets
   
-  #has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+
+  has_attached_file :photo, :styles => { :medium => "100x100>", :thumb => "38x38>" }
 
 end
