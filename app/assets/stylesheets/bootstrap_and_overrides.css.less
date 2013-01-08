@@ -66,9 +66,14 @@ background: linear-gradient(to bottom,  #fdfdfd 0%,#dddddd 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
 
 }
+
 @padding: 5px;
-
-
+@float_left: left;
+@margin_right: 8px;
+@margin_all: 5px;
+@margin: 0px 5px 5px 5px;
+@background_none: none;
+@text_decoration: none;
 
 /* common css */
 
@@ -87,6 +92,7 @@ input{
 input[type="checkbox"]{
 	margin-right: 5px;
 }
+
 .input_width{
 	width: 275px;
 }
@@ -235,10 +241,36 @@ background: #f8f8f8;
 					border: @the-border;
 					.rounded-corners; /* border-radius */
 					padding: @padding;
-					.userpic_wrapper{
-						width: 200px;
-						height: 100px;
-					}
+						.userpic_wrapper{
+							height: 50px;
+							padding: @padding;
+						.userpic{
+							width: 32px;
+							height: 32px;
+							.rounded-corners; /* border-radius */
+							overflow: hidden;
+							float: @float_left;/* float left */
+							margin-right: @margin_right;
+							}/* userpic */
+							.username{
+								font-weight: 700;
+								font-size: 14px;
+								&:hover{
+									background: @background_none;
+									color: #2fc2ef;
+									text-decoration: @text_decoration;
+									}/* username:hover; */
+								}/* username */
+								a.view_profile{
+										color: #999;
+										font-size: 11px;
+										&:hover{
+									background: @background_none;
+									color: #999;
+									text-decoration: @text_decoration;
+										}/*  view_profile:hover; */
+									}/* view_profile */
+						}/* userpic_wrapper */
 					}/* dashboard */
 				}/* span3 */
 	}/* span4 */
