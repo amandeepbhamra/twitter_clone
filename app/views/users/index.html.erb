@@ -1,0 +1,8 @@
+<p>
+  <b>Username:</b>
+  <%= @user.name%>
+</p>
+
+<%= link_to 'View your Tweets', user_tweets_path(@user) %>
+<%= link_to 'View your Followers',  following_user_path(@user) %>
+

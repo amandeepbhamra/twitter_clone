@@ -13,6 +13,12 @@ gem 'libv8', '~> 3.11.8'
 gem 'devise'
 gem 'acts_as_followable'
 gem 'will_paginate', '~> 3.0'
+
+gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
+
+gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
+
+gem 'ruby-debug19', :require => 'ruby-debug'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

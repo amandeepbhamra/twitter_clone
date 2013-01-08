@@ -74,9 +74,12 @@ class UsersController < ApplicationController
   #-------------To get current user as before filter for actions----------#
   
   def get_user
-  
-    @user= User.find(params[:id])
-  
+
+  @user = User.find_by_id(params[:id])
+  debugger
+    if @user.nil?
+     redirect_to new_user_session_path
+    end
   end
 
   #---------------To Follow any User-------------#
@@ -119,4 +122,5 @@ class UsersController < ApplicationController
  
   end
 
+  
 end
