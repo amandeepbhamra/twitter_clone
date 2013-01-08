@@ -1,11 +1,12 @@
 <div class="span4 padding margin_left">
   <div class="span3">
-    <div class="userprofile_section">
-  <p id="notice"><%= notice %></p>
-  <p>
+    <div class="user_dashboard">
+  <!-- <p id="notice"><%= notice %></p> -->
+  <div class="userpic_wrapper">
+
     <b>Username:</b>
     <%= @user.name%>
-  </p>
+  </div>
   
   <div>
     <% if @user==current_user %>
