@@ -61,7 +61,7 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
    
-
+    @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -111,9 +111,7 @@ class UsersController < ApplicationController
    #-------------To authorize user for editing and update-----------------#
 
   def authorize_user
-    if @user == current_user
-      render :action => :edit
-    else
+    if !(@user == current_user)
       redirect_to current_user, notice: 'You are not authorized for this action.'
     end
   end

@@ -62,7 +62,7 @@ class TweetsController < ApplicationController
   #-------------To get current user as before filter for actions----------#
   
   def get_user
-    @user= User.find(params[:user_id])
+    @user= User.find_by_id(params[:user_id])
   end
 
   #-------------To authorize user for editing and update-----------------#
