@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   
   validates :name, :uniqueness =>true
 
-	has_many :tweets
+	has_many :tweets, :order => "created_at DESC"
   
   has_attached_file :photo, :styles => { :medium => "100x100>", :thumb => "38x38>" }
 

@@ -128,6 +128,7 @@ GEM
     ref (1.0.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rmagick (2.13.1)
     ruby-debug-base19 (0.11.25)
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
@@ -197,6 +198,7 @@ DEPENDENCIES
   paperclip (~> 3.0)
   pg
   rails (= 3.2.9)
+  rmagick (~> 2.13.1)
   ruby-debug-base19x (~> 0.11.30.pre4)
   ruby-debug19
   sass-rails (~> 3.2.3)

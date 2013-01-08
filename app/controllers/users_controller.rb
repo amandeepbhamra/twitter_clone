@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
-  # GET /users
-  # GET /users.json
+  
   before_filter :authenticate_user!
   before_filter :get_user
+  before_filter :authorize_user, :only=>[:edit, :update]
   
+  # GET /users
+  # GET /users.json
   def index
     @user = current_user
     @tweets = @user.tweets
@@ -105,5 +107,14 @@ class UsersController < ApplicationController
   
   def following
     @following = @user.user_followers
+  end
+   #-------------To authorize user for editing and update-----------------#
+
+  def authorize_user
+    if @user == current_user
+      render :action => :edit
+    else
+      redirect_to current_user, notice: 'You are not authorized for this action.'
+    end
   end
 end

@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
 
-    @tweets = @user.tweets.order('created_at DESC')
+    @tweets = @user.tweets
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,9 +29,6 @@ class TweetsController < ApplicationController
     end
   end
 
-  # GET /tweets/1/edit
-  
-
   # POST /tweets
   # POST /tweets.json
   def create
@@ -47,10 +44,6 @@ class TweetsController < ApplicationController
       end
     end
   end
-
-  # PUT /tweets/1
-  # PUT /tweets/1.json
-  
 
   # DELETE /tweets/1
   # DELETE /tweets/1.json
@@ -69,19 +62,16 @@ class TweetsController < ApplicationController
   #-------------To get current user as before filter for actions----------#
   
   def get_user
-  
     @user= User.find(params[:user_id])
-  
   end
 
   #-------------To authorize user for editing and update-----------------#
 
   def authorize_user
-
     if @user == current_user
       render :action => :destroy
     else
-      redirect_to user_path, notice: 'you are not authorized for this action.'
+      redirect_to current_user, notice: 'you are not authorized for this action.'
     end
   end
 end

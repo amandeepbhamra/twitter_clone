@@ -14,7 +14,7 @@ gem 'devise'
 gem 'acts_as_followable'
 gem 'will_paginate', '~> 3.0'
 gem "paperclip", "~> 3.0"
-
+gem "rmagick", "~> 2.13.1"
 gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
 
 gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
