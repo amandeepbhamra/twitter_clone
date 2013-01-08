@@ -1,4 +1,16 @@
 <div class="span4 padding margin_left">
+  <div class="span3">
+    <div class="user_dashboard">
+  <!-- <p id="notice"><%= notice %></p> -->
+  <div class="userpic_wrapper">
+    <div class="userpic">
+      <%=link_to image_tag("userthumbnail.jpeg"), "#" %>
+    </div><!-- userpic -->
+    <%=link_to @user.name, "#", :class => "username" %><br />
+    <%=link_to "View My Profile page", "#", :class => "view_profile" %>
+    
+  </div><!-- userpic_wrapper -->
+
   <p id="notice"><%= notice %></p>
   <p>
     <%= image_tag @user.photo.url(:thumb) %>
@@ -11,7 +23,7 @@
   
   <div>
     <% if @user==current_user %>
-      <%= link_to 'Edit Profile', edit_user_path(@user) %>
+      <%#= link_to 'Edit Profile', edit_user_path(@user) %>
       <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
     <% end %>
     <%= link_to 'View Tweets',  user_tweets_path(@user) %>
@@ -29,7 +41,7 @@
       <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', follow_user_path(@user) end %>
     <% end %>
   </div>
-
- 
-</div>
+</div><!-- userprofile_section -->
+ </div><!-- span3 -->
+</div><!-- span4 -->
 <div class="span6 padding">Tweets</div>

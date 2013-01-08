@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
 
 	has_many :tweets, :order => "created_at DESC"
   
+
   has_attached_file :photo, :styles => { :medium => "100x100>", :thumb => "38x38>" }
 
 end
