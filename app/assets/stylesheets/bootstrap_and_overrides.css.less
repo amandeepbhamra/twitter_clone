@@ -31,6 +31,11 @@
 // Example:
 // @linkColor: #ff0000;
 
+body{
+	background: #0b4f76 url(../assets/background.jpg) no-repeat top center;
+	background-attachment: fixed;
+}
+
 /* Mixin and varialbles */
 .box_shadow (@value){
   -moz-box-shadow: 3px 3px 4px #000;
@@ -74,7 +79,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', end
 @margin: 0px 5px 5px 5px;
 @background_none: none;
 @text_decoration: none;
-
+@font_size: 13px;
 /* common css */
 
 label{
@@ -105,7 +110,13 @@ input[type="checkbox"]{
 .margin_left{
 	margin-left: 0;
 }
-
+.display_inline{
+	display: inline-block;
+}
+.text_align{
+	text-align: center!important;
+	line-height: 30px!important;
+}
 
 /* header */
 .navbar{
@@ -172,10 +183,36 @@ background: #f8f8f8;
 					height: 30px;
 					}/*  h3  */
 					p.subheading{
-						color: #999;
+						color: #000;
 					}
 				}/* edit_profile_title */
+				.edit_profile_form_wrapper{
+					padding: @padding;
+					label{
+						line-height: 40px;
+						color: #333;
+						font-size: @font_size;
+						width: 135px;
+					}/* label */
+					input, textarea{
+						width: 225px;
+						margin-bottom: 5px;
+						resize: none;
+					}/* input */
+					p{
+						width: 277px;
+						float: right;
+						font-size: 10px;
+						color: #999;
+						}/* p */
+					.control-group{
+						margin-bottom: 0;
+					}
+				}/* edit_profile_form_wrapper */
 			}/* edit_profile_container */
+			h3, p{
+				color: #fff;
+			}
 		}/* span5 */
 	.span4 {
 		h3{

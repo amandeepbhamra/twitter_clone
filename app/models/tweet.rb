@@ -4,6 +4,6 @@ class Tweet < ActiveRecord::Base
 
  	belongs_to :user
  	
- 	validate :status, :presence=>true
+ 	validate :status, :presence=>true, :limit => 140
 
 end

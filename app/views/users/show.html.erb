@@ -2,11 +2,13 @@
   <div class="span3">
     <div class="user_dashboard">
   <!-- <p id="notice"><%= notice %></p> -->
+  <p id="notice"><%= notice %></p>
   <div class="userpic_wrapper">
     <div class="userpic">
       <%=link_to image_tag(@user.photo.url(:thumb)), "#" %>
     </div><!-- userpic -->
     <% if !@user.name.nil? %>
+<<<<<<< HEAD
     <%=link_to @user.name, "#", :class => "username" %>
     <% else %>
      <%=link_to @user.email, "#", :class => "username" %>
@@ -22,7 +24,16 @@
     
     
   </p>
+=======
+      <%=link_to @user.name, "#", :class => "username" %><br />
+    <% else %>
+      <%=link_to @user.email, "#", :class => "username" %><br />
+    <% end %>
+  </div><!-- userpic_wrapper -->
+
+>>>>>>> 34b3e009670dc915cd309beac4b4857bea6c58aa
   
+    
   <div>
     <% if @user==current_user %>
       <%= link_to 'Edit Profile', edit_user_path(@user) %>
