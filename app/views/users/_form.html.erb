@@ -53,11 +53,11 @@
     <p>About yourself in 160 characters or less.</p>
   </div>
   <div class="control-group">
-    <%= f.label(:gender, "Male") %>
-    <%= f.radio_button(:gender, "Male") %>
+    <%= f.label(:gender, "Male", :class => "control-label") %>
+    <%= f.radio_button(:gender, "Male", :class => "controls") %>
 
-    <%= f.label(:gender, "Female") %>
-    <%= f.radio_button(:gender, "Female") %>
+    <%= f.label(:gender, "Female", :class => "control-label") %>
+    <%= f.radio_button(:gender, "Female", :class => "controls") %>
   </div>
   <div class="control-group">
     <%= f.label :city, :class => "control-label" %>
@@ -73,7 +73,8 @@
   </div>
   
   <div class="actions controls">
-    <%= f.submit(:class => "btn btn-primary") %>
+    <%= f.submit(:class => "btn btn-info update_btn_margintop") %>
+    
   </div>
   <%= link_to 'Show', @user, :class => "btn controls" %>
 <% end %>
