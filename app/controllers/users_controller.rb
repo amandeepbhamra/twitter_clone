@@ -76,10 +76,11 @@ class UsersController < ApplicationController
   def get_user
 
   @user = User.find_by_id(params[:id])
-  debugger
+  
     if @user.nil?
-     redirect_to new_user_session_path
+     redirect_to current_user
     end
+    
   end
 
   #---------------To Follow any User-------------#
@@ -87,8 +88,6 @@ class UsersController < ApplicationController
   def follow
   
     user = User.find(params[:id])
-    p user
-    p current_user
     user.follow(current_user)
     redirect_to current_user, notice: 'You are following now to ' + user.email 
   
