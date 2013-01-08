@@ -9,7 +9,8 @@
     </div><!-- edit_profile_title -->
 
 <div class="edit_profile_form_wrapper">
-<%= form_for @user, :html => { :multipart => true } do |f| %>
+<%= form_for @user, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+<div class="control-group">
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -22,26 +23,34 @@
     </div>
   <% end %>
   <div class="field">
-    <div class="user_profile_upload_pic">hel</div>
-    <%= f.label :photo %><br />
-    <%= f.file_field :photo %>
+
+    <%= f.label :photo, :class => "control-label" %>
+    <%#= image_tag ('../assets/userthumbnail.jpeg'), :class => "img-polaroid" %>
+    
+    <%= f.file_field :photo, :class => "controls" %>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :name, :class => "control-label" %>
+    <%= f.text_field :name, :class => "controls" %>
+    <p>Enter your real name, so people you know can recognize you.</p>
   </div>
-   <div class="field">
-    <%= f.label :mobile %><br />
-    <%= f.text_field :mobile %>
+   <div class="control-group">
+    <%= f.label :mobile, :class => "control-label" %>
+    <%= f.text_field :mobile, :class => "controls" %>
+    <p>Enter your Mobile Number, so people you know can recognize you.</p>
   </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
+
+  <div class="control-group">
+    <%= f.label :location, :class => "control-label" %>
+    <%= f.text_field :location, :class => "controls" %>
+    <p>Where in the world are you?</p>
   </div>
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio, :rows=> 4, :cols => 40 %>
+
+  <div class="control-group">
+    <%= f.label :bio, :class => "control-label" %>
+    <%= f.text_area :bio, :rows=> 2, :cols => 50, :class => "controls" %>
+    <p>About yourself in 160 characters or less.</p>
   </div>
   <div class="field">
     <%= f.label(:gender, "Male") %>
@@ -70,6 +79,15 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
 </div><!-- edit_profile_form_wrapper -->
 </div><!-- edit_profile_container -->
 </div><!-- span5 -->
+
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Email</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="Email">
+    </div>
+</form>
