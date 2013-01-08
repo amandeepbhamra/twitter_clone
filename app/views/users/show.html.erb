@@ -1,7 +1,7 @@
 <div class="span4 padding margin_left">
   <p id="notice"><%= notice %></p>
   <p>
-    <b>Username:</b>
+    <%= image_tag @user.photo.url(:thumb) %>
     <% if !@user.name.nil? %>
       <%= @user.name %>
     <% else %>

@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
 
-    @tweets = @user.tweets
+    @tweets = @user.tweets.order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb

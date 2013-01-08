@@ -4,10 +4,9 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
 	acts_as_followable
   
-
 	attr_accessible :email, :password, :password_confirmation, :remember_me,
 	:password , :name, :mobile, :location, :bio, :gender, :city, :country,
-  :website
+  :website, :photo
 	
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
   :trackable, :validatable, :confirmable,:token_authenticatable
