@@ -19,6 +19,6 @@ class User < ActiveRecord::Base
 
 	has_many :tweets
   
-  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :photo, :styles => { :medium => "100x100>", :thumb => "38x38>" }
 
 end
