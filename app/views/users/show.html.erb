@@ -8,14 +8,16 @@
       <%=link_to image_tag(@user.photo.url(:thumb)), "#" %>
     </div><!-- userpic -->
     <% if !@user.name.nil? %>
-      <%=link_to @user.name, "#", :class => "username" %><br />
+    <%=link_to @user.name, "#", :class => "username" %>
     <% else %>
-      <%=link_to @user.email, "#", :class => "username" %><br />
+     <%=link_to @user.email, "#", :class => "username" %>
     <% end %>
-  </div><!-- userpic_wrapper -->
+    <br />
 
-  
+    <%=link_to "View My Profile page", "#", :class => "view_profile" %>
     
+  </div><!-- userpic_wrapper -->
+  
   <div>
     <% if @user==current_user %>
       <%= link_to 'Edit Profile', edit_user_path(@user) %>
