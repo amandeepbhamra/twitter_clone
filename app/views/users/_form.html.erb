@@ -1,4 +1,27 @@
-<div class="span4"></div>
+<div class="span4 padding margin_left">
+  <div class="span3">
+    <div class="user_dashboard">
+  <div class="userpic_wrapper">
+    <div class="userpic">
+      <%=link_to image_tag(@user.photo.url(:thumb)), "#" %>
+    </div><!-- userpic -->
+    <% if !@user.name.nil? %>
+    <%=link_to @user.name, "#", :class => "username" %>
+    <% else %>
+     <%=link_to @user.email, "#", :class => "username" %>
+    <% end %>
+    <br />
+
+    <%=link_to "View My Profile page", "#", :class => "view_profile" %>
+  </div><!-- userpic_wrapper -->
+  
+  
+  
+</div><!-- userprofile_section -->
+ </div><!-- span3 -->
+</div><!-- span4 -->
+
+
 
 <div class="span5">
   <div class="edit_profile_container">
