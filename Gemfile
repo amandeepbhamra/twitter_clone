@@ -9,13 +9,9 @@ gem "taps"
 gem "pg"
 gem 'mysql2'
 gem 'libv8', '~> 3.11.8'
-gem 'rmagick'
 gem 'devise'
 gem 'acts_as_followable'
 gem 'will_paginate', '~> 3.0'
-
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
 
 gem "paperclip", "~> 3.0"
 gem "rmagick", "~> 2.13.1"

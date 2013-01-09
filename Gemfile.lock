@@ -5,17 +5,6 @@ GIT
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
 
-GIT
-  remote: git://github.com/thoughtbot/paperclip.git
-  revision: adddf87cf30d416d71c7b2a80a004d170d10dc2c
-  specs:
-    paperclip (3.4.0)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.4.0)
-      mime-types
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -103,16 +92,12 @@ GEM
     mysql2 (0.3.11)
     netrc (0.7.7)
     orm_adapter (0.4.0)
-<<<<<<< HEAD
-=======
     paperclip (3.4.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.4.0)
       mime-types
-    pg (0.14.1)
->>>>>>> 34b3e009670dc915cd309beac4b4857bea6c58aa
     polyglot (0.3.3)
     quiet_assets (1.0.1)
       railties (~> 3.1)
@@ -211,17 +196,10 @@ DEPENDENCIES
   libv8 (~> 3.11.8)
   linecache19!
   mysql2
-<<<<<<< HEAD
-  paperclip!
-  rails (= 3.2.9)
-  rmagick
-=======
   paperclip (~> 3.0)
-  pg
   quiet_assets
   rails (= 3.2.9)
   rmagick (~> 2.13.1)
->>>>>>> 34b3e009670dc915cd309beac4b4857bea6c58aa
   ruby-debug-base19x (~> 0.11.30.pre4)
   ruby-debug19
   sass-rails (~> 3.2.3)
