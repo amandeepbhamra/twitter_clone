@@ -51,7 +51,7 @@ GEM
     coffee-script-source (1.4.0)
     columnize (0.3.6)
     commonjs (0.2.6)
-    devise (2.1.2)
+    devise (2.2.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
@@ -82,7 +82,7 @@ GEM
     less-rails (2.2.6)
       actionpack (>= 3.1)
       less (~> 2.2.0)
-    libv8 (3.11.8.11)
+    libv8 (3.15.11.1)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -98,6 +98,10 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.4.0)
       mime-types
+<<<<<<< HEAD
+    pg (0.14.1)
+=======
+>>>>>>> a9f55534ceac7e8dcb102adfbd49dd7e1bacfbf3
     polyglot (0.3.3)
     quiet_assets (1.0.1)
       railties (~> 3.1)
@@ -193,13 +197,17 @@ DEPENDENCIES
   heroku
   jquery-rails
   less-rails
-  libv8 (~> 3.11.8)
+  libv8
   linecache19!
   mysql2
   paperclip (~> 3.0)
   quiet_assets
   rails (= 3.2.9)
+<<<<<<< HEAD
+  rmagick
+=======
   rmagick (~> 2.13.1)
+>>>>>>> a9f55534ceac7e8dcb102adfbd49dd7e1bacfbf3
   ruby-debug-base19x (~> 0.11.30.pre4)
   ruby-debug19
   sass-rails (~> 3.2.3)
