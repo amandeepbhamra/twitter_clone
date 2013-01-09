@@ -15,7 +15,7 @@ gem 'acts_as_followable'
 gem 'will_paginate', '~> 3.0'
 
 gem "paperclip", "~> 3.0"
-
+gem 'geocoder'
 
 gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
 gem 'quiet_assets', :group => :development

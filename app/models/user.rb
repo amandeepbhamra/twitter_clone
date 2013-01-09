@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   
 	attr_accessible :email, :password, :password_confirmation, :remember_me,
 	:password , :name, :mobile, :location, :bio, :gender, :city, :country,
-  :website, :photo
+  :website, :photo, :longitude, :latitude
 	
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
   :trackable, :validatable, :confirmable,:token_authenticatable
@@ -22,5 +22,8 @@ class User < ActiveRecord::Base
   
   has_attached_file :photo, :styles => { :medium => "100x100>", :thumb => "38x38>" }
 
-  
+  geocoded_by :city
+  after_validation :geocode
+
+
 end
