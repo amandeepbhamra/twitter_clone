@@ -32,8 +32,7 @@
 // @linkColor: #ff0000;
 
 body{
-	/*background: #0b4f76 url(../assets/background.jpg) no-repeat top center;
-	background-attachment: fixed;*/
+	background: #0b4f76 url(../assets/page-bg.png);
 }
 
 /* Mixin and varialbles */
@@ -304,6 +303,27 @@ background: #f8f8f8;
 					border: @the-border;
 					.rounded-corners; /* border-radius */
 					padding: @padding;
+						ul.copyright_wrapper{
+							margin: 0;
+							li.copyright{
+								color: #555;
+								margin-right: 5px;
+							}
+							li{
+								list-style-type: none;
+								float: left;
+								a{
+									padding-right: 5px;
+									font-size: @font_size;
+									color: #999;
+									&:hover{
+										background: none;
+										color: #555;
+										text-decoration: none;
+									}
+								}
+							}
+						}
 						.userpic_wrapper{
 							padding: @padding;
 						.userpic{
