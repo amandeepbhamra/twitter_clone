@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108062702) do
+ActiveRecord::Schema.define(:version => 20130109071641) do
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",   :null => false
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(:version => 20130108062702) do
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
 
   create_table "tweets", :force => true do |t|
-    t.text     "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "user_id"
+    t.text     "status",     :limit => 255
   end
 
   create_table "users", :force => true do |t|
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(:version => 20130108062702) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
