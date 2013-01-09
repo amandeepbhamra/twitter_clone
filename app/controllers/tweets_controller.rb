@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
 
-    @tweets = @user.tweets
+    @tweets = @user.tweets.paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # index.html.erb
