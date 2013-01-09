@@ -60,6 +60,7 @@ GEM
     excon (0.16.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    geocoder (1.1.6)
     heroku (2.33.5)
       heroku-api (~> 0.3.7)
       launchy (>= 0.3.2)
@@ -98,10 +99,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.4.0)
       mime-types
-<<<<<<< HEAD
     pg (0.14.1)
-=======
->>>>>>> a9f55534ceac7e8dcb102adfbd49dd7e1bacfbf3
     polyglot (0.3.3)
     quiet_assets (1.0.1)
       railties (~> 3.1)
@@ -194,6 +192,7 @@ DEPENDENCIES
   acts_as_followable
   coffee-rails (~> 3.2.1)
   devise
+  geocoder
   heroku
   jquery-rails
   less-rails
@@ -201,13 +200,10 @@ DEPENDENCIES
   linecache19!
   mysql2
   paperclip (~> 3.0)
+  pg
   quiet_assets
   rails (= 3.2.9)
-<<<<<<< HEAD
   rmagick
-=======
-  rmagick (~> 2.13.1)
->>>>>>> a9f55534ceac7e8dcb102adfbd49dd7e1bacfbf3
   ruby-debug-base19x (~> 0.11.30.pre4)
   ruby-debug19
   sass-rails (~> 3.2.3)
