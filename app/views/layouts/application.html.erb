@@ -7,8 +7,6 @@
   		<%= csrf_meta_tags %>
 	</head>
 	<body data-spy="scroll" data-target=".bs-docs-sidebar">
-
-<<<<<<< HEAD
 		<!-- Navbar
     ================================================== -->
     	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -42,13 +40,8 @@
  
   <div id='error' style="<%= 'display: none;' if flash[:error].blank? %>  text-align: center;"><%= flash[:error].html_safe  unless flash[:error].blank? %></div><!-- error -->
 
-
-		  <%=render 'layouts/header' %>
-      
-=======
 		  <%=render 'layouts/header' %>
 
->>>>>>> 34b3e009670dc915cd309beac4b4857bea6c58aa
 		<div class="container margin_top padding">
       <div class="show-grid">
 			<%= yield %>

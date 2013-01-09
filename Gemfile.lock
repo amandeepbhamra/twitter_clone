@@ -98,7 +98,10 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.4.0)
       mime-types
+<<<<<<< HEAD
     pg (0.14.1)
+=======
+>>>>>>> a9f55534ceac7e8dcb102adfbd49dd7e1bacfbf3
     polyglot (0.3.3)
     quiet_assets (1.0.1)
       railties (~> 3.1)
@@ -198,10 +201,13 @@ DEPENDENCIES
   linecache19!
   mysql2
   paperclip (~> 3.0)
-  pg
   quiet_assets
   rails (= 3.2.9)
+<<<<<<< HEAD
   rmagick
+=======
+  rmagick (~> 2.13.1)
+>>>>>>> a9f55534ceac7e8dcb102adfbd49dd7e1bacfbf3
   ruby-debug-base19x (~> 0.11.30.pre4)
   ruby-debug19
   sass-rails (~> 3.2.3)
