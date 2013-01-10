@@ -12,11 +12,11 @@ class User < ActiveRecord::Base
   :trackable, :validatable, :confirmable,:token_authenticatable
 
   # Setup accessible (or protected) attributes for your model
-  validates :name, :mobile, :location, :bio, :gender, :city, :country, 
-  :website, :presence => true
-  validates :name, :uniqueness =>true
-  validates_numericality_of :mobile
-  validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix
+  # validates :name, :mobile, :location, :bio, :gender, :city, :country, 
+  # :website, :presence => true
+  # validates :name, :uniqueness =>true
+  # validates_numericality_of :mobile
+  # validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix
 
 	has_many :tweets, :order => "created_at DESC"
   

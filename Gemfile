@@ -6,9 +6,9 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem "heroku"
 gem "taps"
-gem "pg"
+#gem "pg"
 gem 'mysql2'
-gem 'libv8'
+gem 'libv8', '~> 3.11.8.3'
 gem 'rmagick'
 gem 'devise'
 gem 'acts_as_followable'
@@ -16,7 +16,7 @@ gem 'will_paginate', '~> 3.0'
 
 gem "paperclip", "~> 3.0"
 gem 'geocoder'
-
+gem 'thinking-sphinx'
 gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
 gem 'quiet_assets', :group => :development
 gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
