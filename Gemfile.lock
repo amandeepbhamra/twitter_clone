@@ -99,7 +99,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.4.0)
       mime-types
-    pg (0.14.1)
     polyglot (0.3.3)
     quiet_assets (1.0.1)
       railties (~> 3.1)
@@ -200,7 +199,6 @@ DEPENDENCIES
   linecache19!
   mysql2
   paperclip (~> 3.0)
-  pg
   quiet_assets
   rails (= 3.2.9)
   rmagick
