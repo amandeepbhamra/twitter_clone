@@ -23,7 +23,14 @@
 								<% end %>
                       </li>
             			</ul><!-- nav -->
+
           			</div>
+
         		</div>
+
       		</div>
+           <%= form_tag search_users_path, method: :get do %>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "search" %>
+           <% end %>
     	</div>

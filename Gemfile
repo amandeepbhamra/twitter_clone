@@ -14,9 +14,11 @@ gem 'devise'
 gem 'acts_as_followable'
 gem 'will_paginate', '~> 3.0'
 
+gem 'thin'
+gem 'execjs'
 gem "paperclip", "~> 3.0"
 gem 'geocoder'
-gem 'thinking-sphinx'
+gem 'thinking-sphinx', '2.0.10'
 gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
 gem 'quiet_assets', :group => :development
 gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
