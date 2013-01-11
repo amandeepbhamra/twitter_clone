@@ -1,12 +1,14 @@
-<div class="span5 signin_page_margintop"></div>
-<div class="span4 signup_container">
-	<h3>Forgot your password?</h3>
+<div class="row-fluid padding_top">
+<div class="span7"></div>
+<div class="span4">
+	<div class="signin_background">
+	<h3 class="form-signin-heading headingborder_color">Forgot your password?</h3>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <div><%= f.label :email %>
+  <%= f.email_field :email, :class => "input-block-level" %></div>
 
   <div><%= f.submit "Send me reset password instructions", :class => "btn btn-info" %>
 
@@ -18,5 +20,6 @@
 <% end %>
 
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), :class => "frgt_pswrd_recieveconfirmation" %><br />
-  
+ </div>
+</div>
 </div>
