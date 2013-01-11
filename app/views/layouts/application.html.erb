@@ -11,15 +11,13 @@
       <div id='notice' style="<%= 'display: none; ' if flash[:notice].blank? %> text-align: center;"><%= flash[:notice].html_safe  unless flash[:notice].blank? %>
       </div><!-- notice -->
  
-  <div id='error' style="<%= 'display: none;' if flash[:error].blank? %>  text-align: center;"><%= flash[:error].html_safe  unless flash[:error].blank? %></div>
-  <!-- error -->
+        <div id='error' style="<%= 'display: none;' if flash[:error].blank? %>  text-align: center;"><%= flash[:error].html_safe  unless flash[:error].blank? %></div>
+        <!-- error -->
 
-		  <%=render 'layouts/header' %>
+		<%=render 'layouts/header' %>
 
-		<div class="container margin_top padding">
-      <div class="show-grid">
+		<div class="container padding_top">
 			<%= yield %>
-		</div>
-  </div>
-	</body>
+        </div>
+</body>
 </html>

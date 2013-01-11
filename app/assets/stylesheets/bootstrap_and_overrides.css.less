@@ -105,7 +105,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @background_none: none;
 @text_decoration: none;
 @font_size: 13px;
+
+
 /* common css */
+.signin_background{
+	background: white;
+	.rounded-corners;
+	padding: @padding;
+
+}
 
 label{
 	font-size: 13px;
@@ -123,12 +131,12 @@ input[type="checkbox"]{
 	margin-right: 5px;
 }
 
-.input_width{
+/*.input_width{
 	width: 275px;
-}
-.float_left{
+}*/
+/*.float_left{
 	float: left;
-}
+}*/
 .padding{
 	padding: @padding;
 }
@@ -161,20 +169,19 @@ input[type="checkbox"]{
 
 
 /* sing in and sign up */
-.margin_top{
-	margin-top: 50px;
+.padding_top{
+	padding: 50px 0;
 }
-.signin_page_margintop{
+/*.signin_page_margintop{
 	margin-top: 210px;
 	padding-right: 10px;
-}
-.signup_container{
+}*/
+/*.signup_container{
 background: #f8f8f8;
 		padding: @padding;
 		.rounded-corners; /* border-radius */
-		border: @the-border; /* border */
-		margin: 110px 20px 0 0;
-}
+		border: @the-border; /* border 
+}*/
 
 .container{
 	.span5{
