@@ -31,6 +31,20 @@
 // Example:
 // @linkColor: #ff0000;
 
+/* font media Query */
+	h1,h2 {
+	font-size: 2.0vw!important;
+        }
+    h3 {
+    font-size: 1.8vw!important;
+        }
+    /*p {
+    font-size: 2.5vw!important;
+   	    }*/
+	@media (max-width: 600px) {
+        aside, section { width: auto; float: none; }
+}
+
 body{
 	background: #0b4f76 url(../assets/page-bg.png);
 }
@@ -68,6 +82,18 @@ background: -o-linear-gradient(top,  #fdfdfd 0%,#dddddd 100%); /* Opera 11.10+ *
 background: -ms-linear-gradient(top,  #fdfdfd 0%,#dddddd 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #fdfdfd 0%,#dddddd 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+
+}
+
+.navbar_gradiant{
+	background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 
 }
 
@@ -124,31 +150,14 @@ input[type="checkbox"]{
 /* header */
 .navbar{
 	.navbar-inner{
-		background: #b2b2b2 url(../assets/twitter_web_sprite_bgs.png) repeat-x 0 0;
+		.navbar_gradiant;
 		height: 40px;
 	}/* navbar inner */
-	.header_container{
-		width: 965px;
-		margin: 0 auto;
-		a.brand{
+		/*a.brand{
 			text-indent: -99999px;
 			background: url(../assets/twitter_web_sprite_icons.png) no-repeat -69px 11px;
-			}/* brand/ logo */
-			.nav-collapse{
-				ul.nav{
-						float: right;
-						color: #fff;
-						li{
-							display: inline-block;
-							a{
-								display: inline-block;
-							}
-						}
-					}/* nav */
-				}/* nav-collapse */
-		}/* container */
-
-}/* navbar */
+			}*//* brand/ logo */
+		}/* navbar */
 
 
 /* sing in and sign up */
@@ -168,9 +177,6 @@ background: #f8f8f8;
 }
 
 .container{
-	width: 1005px;
-	/*background: url(../assets/wrapper_background.png);
-	.rounded-corners;*/ /* border-radius */
 	.span5{
 		.edit_profile_container{
 			background: #f9f9f9;
