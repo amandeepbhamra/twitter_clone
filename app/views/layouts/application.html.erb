@@ -7,38 +7,11 @@
   		<%= csrf_meta_tags %>
 	</head>
 	<body data-spy="scroll" data-target=".bs-docs-sidebar">
-		<!-- Navbar
-    ================================================== -->
-    	<div class="navbar navbar-inverse navbar-fixed-top">
-      		<div class="navbar-inner">
-        		<div class="header_container">
-          			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-          			</button>
-          			<%= link_to Twitter, current_user, :class => 'brand' %>
-          			<div class="nav-collapse collapse">
-            			<ul class="nav">
-              				
-              				<li>
-              					<% if user_signed_in? %>
-									Signed in as <%= current_user.email %>. Not you?
-									<%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
-								<% else %>
-									
-                  <% link_to "Sign up", new_user_registration_path %>  <%= link_to "Sign in", new_user_session_path %>
-
-								<% end %>
-                      </li>
-            			</ul><!-- nav -->
-          			</div>
-        		</div>
-      		</div>
-    	</div>
+		
       <div id='notice' style="<%= 'display: none; ' if flash[:notice].blank? %> text-align: center;"><%= flash[:notice].html_safe  unless flash[:notice].blank? %></div><!-- notice -->
  
-  <div id='error' style="<%= 'display: none;' if flash[:error].blank? %>  text-align: center;"><%= flash[:error].html_safe  unless flash[:error].blank? %></div><!-- error -->
+  <div id='error' style="<%= 'display: none;' if flash[:error].blank? %>  text-align: center;"><%= flash[:error].html_safe  unless flash[:error].blank? %></div>
+  <!-- error -->
 
 		  <%=render 'layouts/header' %>
 
