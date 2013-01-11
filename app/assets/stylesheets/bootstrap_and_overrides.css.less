@@ -31,23 +31,6 @@
 // Example:
 // @linkColor: #ff0000;
 
-/* font media Query */
-	/*h1,h2 {
-	font-size: 2.0vw!important;
-        }
-    h3 {
-    font-size: 1.8vw!important;
-        }
-    p {
-    font-size: 2.5vw!important;
-   	    }*/
-	@media (max-width: 600px) {
-        aside, section { width: auto; float: none; }
-}
-
-body{
-	background: #0b4f76 url(../assets/page-bg.png);
-}
 
 /* Mixin and varialbles */
 .box_shadow (@value){
@@ -105,17 +88,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @background_none: none;
 @text_decoration: none;
 @font_size: 13px;
-
+@box_shadow: 0 0 3px #ccc;
 
 /* common css */
 .signin_background{
-	background: white;
+	background: #f8f8f8;
 	.rounded-corners;
 	padding: @padding;
 	border: @the-border; /* border */
+	box-shadow: @box_shadow;
 }
-.border_color{
-	border: 1px solid #CECECE;
+.headingborder_color{
+	background: white;
+	padding: @padding;
+	border: @the-border; /* border */
+	margin-top: 0px;
+	.rounded-corners; /* border-radius */
+	font-size: 21px;
 }
 .padding{
 	padding: @padding;
@@ -143,11 +132,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 	.navbar-inner{
 		.navbar_gradiant;
 		height: 40px;
-	}/* navbar inner */
-		/*a.brand{
-			text-indent: -99999px;
-			background: url(../assets/twitter_web_sprite_icons.png) no-repeat -69px 11px;
-			}*//* brand/ logo */
+				}/* navbar inner */
 		}/* navbar */
 
 
@@ -155,17 +140,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 .padding_top{
 	padding: 50px 0;
 }
-/*.signin_page_margintop{
-	margin-top: 210px;
-	padding-right: 10px;
-}*/
-/*.signup_container{
-background: #f8f8f8;
-		padding: @padding;
-		.rounded-corners; /* border-radius */
-		border: @the-border; /* border 
-}*/
-
 .container{
 	.span5{
 		.edit_profile_container{
@@ -218,16 +192,7 @@ background: #f8f8f8;
 			}
 		}/* span5 */
 	.span4 {
-		h3{
-			background: white;
-			padding: @padding;
-			border: @the-border; /* border */
-			margin-top: 0px;
-			.rounded-corners; /* border-radius */
-			font-size: 21px;
-			}/* h3 */
-			
-			.forgot_password{
+		.forgot_password{
 				margin-left: 17px;
 				display: block;
 				font-style: italic;
@@ -247,8 +212,8 @@ background: #f8f8f8;
 					text-decoration: none;
 					color: #000;
 					background: none;
-				}
-			}
+				}/* &:hover; */
+			}/* signin_receive_confirmation */
 			a.white_color, a.signin_btn{
 					color: #fff;
 					}
@@ -285,6 +250,15 @@ background: #f8f8f8;
 				color: #777;
 				&:hover{
 					color: #000;
+				}
+			}
+			a.cnfrmation_singup_btn{
+				background: none;
+				font-size: 15px;
+				color: #777;
+				&:hover{
+					color:#000;
+					text-decoration: none;
 				}
 			}
 			.span3 {
