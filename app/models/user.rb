@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
   after_validation :geocode
 
 
-  define_index do
-    indexes :name
-  end
+  # define_index do
+  #   indexes :name
+  # end
 
 end
