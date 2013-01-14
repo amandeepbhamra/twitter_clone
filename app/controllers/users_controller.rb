@@ -98,8 +98,6 @@ class UsersController < ApplicationController
   
   def search 
     @users = User.search(params[:search],:page => params[:page], :per_page => 10)
-    p @users
-    #@users = User.where('user.name LIKE ?', #{params[:search]})
   end
 
 
