@@ -19,11 +19,18 @@
                                     
                   <% link_to "Sign up", new_user_registration_path %>  <%= link_to "Sign in", new_user_session_path %>
 
-                                <% end %>
-                            </li>
-                        </ul><!-- nav -->
-                    
-                  </div><!-- nav-collapse collapse -->
-        </div><!-- container -->
-      </div><!-- navbar-inner -->
-    </div><!-- navbar navbar-inverse navbar-fixed-top -->
+
+								<% end %>
+                      </li>
+            			</ul><!-- nav -->
+
+          			</div>
+
+        		</div>
+
+      		</div>
+           <%= form_tag search_users_path, method: :get do %>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "search" %>
+           <% end %>
+    	</div>
