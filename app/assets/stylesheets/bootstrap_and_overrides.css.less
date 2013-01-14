@@ -91,6 +91,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @box_shadow: 0 0 3px #ccc;
 
 /* common css */
+.padding_left{
+	padding-left: 0;
+}
+.padding_right{
+	padding-left: 5px;
+}
 .signin_background{
 	background: #f8f8f8;
 	.rounded-corners;
@@ -117,7 +123,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 }
 .text_align{
 	text-align: center!important;
-	line-height: 30px!important;
 }
 .clear_both{
 	clear: both;
@@ -316,6 +321,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 					}
 				}/* edit_profile_form_wrapper */
 			}/* edit_profile_container */
-}
+			.new_tweet_container{
+				padding: 10px 0;
+				background: #f5f5f5;
+				cursor: pointer;
+				&:hover{
+					background: #eee;
+					.ease;
+				}
+				.new_tweets{
+					text-align: center;
+					color: #2FC2EF;
+					}/* new tweets */
+					.nav{
+						ul li a{
+							border-radius: 0;
+						}
+					}
+				}/*new_tweet_container*/
+			}/* span7 */
 
 }/* container */
