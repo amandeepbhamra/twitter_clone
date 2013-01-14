@@ -98,11 +98,7 @@
     <%= f.label :mobile, :class => "" %>
     <%= f.text_field :mobile, :class => "span5" %>
     <p>Enter your Mobile Number, so people you know can recognize you.</p>
-  
 
-  
-    <%= f.label :bio, :class => ""  %>
-    <%= f.text_area :bio, :rows=> 4, :cols => 800, :class => "span5"  %>
 
  
     <%= f.label :location, :class => "" %>
@@ -113,7 +109,7 @@
 
  
     <%= f.label :bio, :class => "" %>
-    <%= f.text_area :bio, :rows=> 2, :cols => 50, :class => "span3" %>
+    <%= f.text_area :bio, :rows=> 4, :cols => 800, :class => "span5" %>
     <p>About yourself in 160 characters or less.</p>
  
   
@@ -138,9 +134,9 @@
   
   <div class="actions controls">
     <%= f.submit(:class => "btn btn-info update_btn_margintop") %>
-    
+    <%= link_to 'Show', @user, :class => "btn controls" %>
   </div>
-  <%= link_to 'Show', @user, :class => "btn controls" %>
+  
 <% end %>
 </div>
 </div><!-- edit_profile_form_wrapper -->
