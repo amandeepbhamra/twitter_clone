@@ -6,4 +6,7 @@ class Tweet < ActiveRecord::Base
  	
  	validate :status, :presence=>true, :limit => 140
 
+  define_index do
+    indexes :status
+  end
 end

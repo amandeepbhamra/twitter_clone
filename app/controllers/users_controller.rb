@@ -98,6 +98,7 @@ class UsersController < ApplicationController
   
   def search 
     @users = User.search(params[:search],:page => params[:page], :per_page => 10)
+    @tweets_count = Tweet.search(params[:search]).count
   end
 
 

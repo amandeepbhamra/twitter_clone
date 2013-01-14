@@ -6,12 +6,12 @@
   <% @tweets.each do |tweet| %>
   <tr>
     <td><%= tweet.status %></td>
-    <% if @user==current_user %>
-    <td><%= link_to 'Destroy', user_tweet_path(params[:user_id], tweet) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if current_user == tweet.user %>
+    <td><%= link_to 'Destroy', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
   </tr>
   <% end %>
 </table>
 
 <br />
-<%= will_paginate @posts %>
+<%= will_paginate @tweets %>

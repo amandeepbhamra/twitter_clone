@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 
   
   before_filter :authenticate_user!
-  before_filter :get_user
+  before_filter :get_user, :except => :search
   before_filter :authorize_user, :only => :destroy
   
 
@@ -57,6 +57,14 @@ class TweetsController < ApplicationController
     end
   end
 
+  #---------------------Search------------------------#  
+
+  def search
+    
+    @users_count = User.search(params[:search]).count
+    @tweets = Tweet.search(params[:search],:page => params[:page], :per_page => 10)
+  end
+
   private
   
   #-------------To get current user as before filter for actions----------#
@@ -75,3 +83,4 @@ class TweetsController < ApplicationController
     end
   end
 end
+

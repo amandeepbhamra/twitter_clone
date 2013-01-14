@@ -1,3 +1,9 @@
+
+<%= link_to_if(@tweets_count > 0, "Tweets (#{@tweets_count})", search_tweets_path ) do 
+	"Tweets (0)" end %>
+
+<br />
+
 <% @users.each do |user| %>
-	<%= user.name %>
+	<%= link_to user.name, user %>
 <% end %>
