@@ -24,9 +24,6 @@
     <%= link_to 'View Tweets',  user_tweets_path(@user) %>
     
     <br />
-    
-   
-    
     <%= link_to 'Follower',  followers_user_path(@user) %>
     
     <%= link_to 'Following',  following_user_path(@user) %>
@@ -37,9 +34,9 @@
     <% end %>
   </div>
 </div><!-- userprofile_section -->
-<br>
+<div class="map_container">
   <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&size=200x200&sensor=false" %>
-
+</div><!-- map_container -->
  </div><!-- span3 -->
 </div><!-- span4 -->
 <div class="span7">
