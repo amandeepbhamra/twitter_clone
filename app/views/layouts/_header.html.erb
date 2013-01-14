@@ -16,6 +16,7 @@
                                     Signed in as <%= current_user.email %>. Not you?
                                     <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
                                 <% else %>
+
                                     
                   <% link_to "Sign up", new_user_registration_path %>  <%= link_to "Sign in", new_user_session_path %>
 					<% end %>
@@ -25,11 +26,17 @@
 
             <div class="row-fluid">
                 <div class="span4 offset4 right_align">
+             <% if user_signed_in? %>
             <%= form_tag search_users_path, :html => { :class => "form-search"}, method: :get do %>
               <%= text_field_tag :search, params[:search], { :class => "input-medium search-query"} %>
               <%= submit_tag "Search", :class => "btn btn-info" %>
-           <% end %></div>
-       </div><!-- search -->
-        		</div><!-- container -->
-      		</div><!-- navbar-inner -->
-    	</div><!-- navbar navbar-inverse navbar-fixed-top -->
+           <% end %>
+           <% end %>
+
+                </div><!-- span4 offset4 right_align -->
+            </div><!-- search -->
+        </div><!-- container -->
+	</div><!-- navbar-inner -->
+</div><!-- navbar navbar-inverse navbar-fixed-top -->
+
+      		
