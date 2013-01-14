@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   before_filter :authenticate_user!
-  before_filter :get_user, :only => [:edit, :update, :follow, :unfollow, :following, :followers, :authorize_user ]
+  before_filter :get_user, :only => [:edit, :update, :follow, :unfollow, :following, :followers, :authorize_user]
   before_filter :authorize_user, :only => [:edit, :update]
   
   # GET /users
@@ -97,7 +97,8 @@ class UsersController < ApplicationController
   #---------------------Search------------------------#  
   
   def search 
-    @users = User.search(params[:search],:page => params[:page], :per_page => 10)
+    @users_searched = User.search(params[:search],:page => params[:page], :per_page => 10)
+    @users_count = User.search(params[:search]).count
     @tweets_count = Tweet.search(params[:search]).count
   end
 
@@ -110,7 +111,6 @@ class UsersController < ApplicationController
     if @user.nil?
      redirect_to current_user
     end
-    
   end
   #-------------To authorize user for editing and update-----------------#
 
