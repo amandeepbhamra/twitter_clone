@@ -18,19 +18,17 @@
                                 <% else %>
                                     
                   <% link_to "Sign up", new_user_registration_path %>  <%= link_to "Sign in", new_user_session_path %>
-
-
-								<% end %>
+					<% end %>
                       </li>
             			</ul><!-- nav -->
-
           			</div>
-                <%= form_tag search_users_path, method: :get do %>
-              <%= text_field_tag :search, params[:search] %>
+
+            <div class="search">
+            <%= form_tag search_users_path, :html => { :class => "form-search"}, method: :get do %>
+              <%= text_field_tag :search, params[:search], { :class => "input-medium search-query"} %>
               <%= submit_tag "search", :class => "btn" %>
            <% end %>
-        		</div>
-
-      		</div>
-          
-    	</div>
+       </div><!-- search -->
+        		</div><!-- container -->
+      		</div><!-- navbar-inner -->
+    	</div><!-- navbar navbar-inverse navbar-fixed-top -->
