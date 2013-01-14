@@ -3,17 +3,38 @@
     	<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-             <%= link_to Twitter, current_user, :class => 'brand' %>
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             
+          <!-- <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+          </button> -->
 
+           <div class="span4">
+            <%= link_to Twitter, current_user, :class => 'brand' %>
+           </div>
+           <div class="span7">
+            <div class="input-append pull-right">
+               
+             <% if user_signed_in? %>
+            <%= form_tag search_users_path, :html => { :class => "form-search"}, method: :get do %>
+              <%= text_field_tag :search, params[:search], { :class => "input-medium"} %>
+              <%= submit_tag "Search", :class => "btn btn-info" %>
+            
+            <div class="btn-group pull-right">
+                <button class="btn">Edit Profile</button>
+                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
 
-
-
-          <div class="nav-collapse collapse">
+              <div class="nav-collapse collapse">
                         <ul class="nav nav-pills pull-right">
                             <li>
                                 <% if user_signed_in? %>
@@ -25,37 +46,21 @@
 
                                     
                   <% link_to "Sign up", new_user_registration_path %>  <%= link_to "Sign in", new_user_session_path %>
-					<% end %>
+                    <% end %>
                       </li>
-            			</ul><!-- nav -->
-          			</div>
-
-
-            <div class="">
-                <div class="">
-             <% if user_signed_in? %>
-            <%= form_tag search_users_path, :html => { :class => "form-search"}, method: :get do %>
-              <%= text_field_tag :search, params[:search], { :class => "span5"} %>
-              <%= submit_tag "Search", :class => "btn btn-info" %>
-            
-            <div class="btn-group pull-right">
-                <button class="btn">Edit Profile</button>
-                <button class="btn dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
+                        </ul><!-- nav -->
+                    </div>
               
            <% end %>
            <% end %>
 
 
-                </div><!-- span4 offset4 right_align -->
+           </div>
+
+            
+
+
+               
             </div><!-- search -->
         </div><!-- container -->
 	</div><!-- navbar-inner -->
