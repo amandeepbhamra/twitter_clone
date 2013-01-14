@@ -1,0 +1,8 @@
+
+
+<%= link_to_if(@users_count > 0, "Users (#{@users_count})", search_users_path ) do 
+	"Users (0)" end %>
+
+<br />
+
+<%= render 'tweets' %>
