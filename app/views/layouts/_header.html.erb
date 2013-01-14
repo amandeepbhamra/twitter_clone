@@ -13,7 +13,9 @@
                         <ul class="nav nav-pills pull-right">
                             <li>
                                 <% if user_signed_in? %>
+                                <div>
                                     Signed in as <%= current_user.email %>. Not you?
+                                </div>
                                     <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
                                 <% else %>
 
@@ -25,11 +27,13 @@
           			</div>
 
             <div class="row-fluid">
-                <div class="span4 offset4 right_align">
+                <div class="span4 offset4 right_align input-append">
              <% if user_signed_in? %>
             <%= form_tag search_users_path, :html => { :class => "form-search"}, method: :get do %>
-              <%= text_field_tag :search, params[:search], { :class => "input-medium search-query"} %>
+              <%= text_field_tag :search, params[:search], { :class => "span5"} %>
               <%= submit_tag "Search", :class => "btn btn-info" %>
+
+              
            <% end %>
            <% end %>
 

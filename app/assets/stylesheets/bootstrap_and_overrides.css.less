@@ -91,6 +91,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @box_shadow: 0 0 3px #ccc;
 
 /* common css */
+.padding_left{
+	padding-left: 0;
+}
+.padding_right{
+	padding-left: 5px;
+}
 .signin_background{
 	background: #f8f8f8;
 	.rounded-corners;
@@ -117,7 +123,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 }
 .text_align{
 	text-align: center!important;
-	line-height: 30px!important;
 }
 .clear_both{
 	clear: both;
@@ -145,51 +150,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 }
 .container{
 	.span5{
-		.edit_profile_container{
-			background: #f9f9f9;
-			border: @the-border;
-			.rounded-corners; /* border-radius */
-			.edit_profile_title{
-				padding: 0 12px; 
-				border-bottom: 1px solid #e8e8e8;
-					h3{
-					font-size: 18px;
-					margin: 0;
-					font-weight: 700;
-					height: 30px;
-					color: #333;
-					}/*  h3  */
-					p.subheading{
-						color: #000;
-					}
-				}/* edit_profile_title */
-				.edit_profile_form_wrapper{
-					padding: @padding;
-					label{
-						line-height: 40px;
-						color: #333;
-						font-size: @font_size;
-					}/* label */
-					input, textarea{
-						width: 225px;
-						margin-bottom: 5px;
-						resize: none;
-					}/* input */
-					p{
-						width: 277px;
-						float: right;
-						font-size: 10px;
-						color: #999;
-						}/* p */
-					.control-group{
-						margin-bottom: 0;
-					}
-					.update_btn_margintop{
-						margin: 5px 0 0 0;
-						width: 40%;
-					}
-				}/* edit_profile_form_wrapper */
-			}/* edit_profile_container */
+		
 			h3, p{
 				color: #333;
 			}
@@ -323,4 +284,61 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 					}/* dashboard */
 				}/* span3 */
 	}/* span4 */
+
+
+
+.span7{
+	.edit_profile_container{
+			background: #f9f9f9;
+			border: @the-border;
+			.rounded-corners; /* border-radius */
+			.edit_profile_title{
+				padding: 0 12px; 
+				border-bottom: 1px solid #e8e8e8;
+					h3{
+					font-size: 18px;
+					margin: 0;
+					font-weight: 700;
+					height: 30px;
+					color: #333;
+					}/*  h3  */
+					p.subheading{
+						color: #000;
+					}
+				}/* edit_profile_title */
+				.edit_profile_form_wrapper{
+					padding: @padding;
+					p{
+						font-size: 10px;
+						color: #999;
+						}/* p */
+					.control-group{
+						margin-bottom: 0;
+					}
+					.update_btn_margintop{
+						margin: 5px 0 0 0;
+						width: 40%;
+					}
+				}/* edit_profile_form_wrapper */
+			}/* edit_profile_container */
+			.new_tweet_container{
+				padding: 10px 0;
+				background: #f5f5f5;
+				cursor: pointer;
+				&:hover{
+					background: #eee;
+					.ease;
+				}
+				.new_tweets{
+					text-align: center;
+					color: #2FC2EF;
+					}/* new tweets */
+					.nav{
+						ul li a{
+							border-radius: 0;
+						}
+					}
+				}/*new_tweet_container*/
+			}/* span7 */
+
 }/* container */
