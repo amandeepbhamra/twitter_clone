@@ -2,16 +2,15 @@
 
 <div class="span7">
     <div class="frnt_welcome_text">
-<h3>Welcome to Twitter.</h3>
-<p>Find out what’s happening, right now, with the people and organizations you care about.</p>
+        <h3>Welcome to Twitter.</h3>
+        <p>Find out what’s happening, right now, with the people and organizations you care about.</p>
+    </div>
 </div>
-</div>
-
 <div class="span4">
 <div class="signin_background">
         <h3 class="form-signin-heading headingborder_color">Sign in</h3>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
         <%= f.label :email %>
         <%= f.email_field :email, :placeholder => "nitin@fizzysoftware.com", :class => "input-block-level" %>
 
