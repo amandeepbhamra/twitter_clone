@@ -15,19 +15,15 @@
                  <ul class="nav">
                     <li><%= link_to "Home", current_user, :class => 'active' %></li>
                     <li><%= link_to "Connect", "#" %></li>
-                    <li><a href="#">Discover</a></li>
-                    <li><a href="#">Me</a></li>
+                    <li><%= link_to "Discover", "#" %></li>
+                    <li><%= link_to "Me", "#" %></li>
                     </ul>
 
                     <%= form_tag search_users_path, :class => "navbar-search pull-left", :placeholder => "Search", method: :get do %>
                     <%= text_field_tag :search, params[:search], { :class => "search-query span2"} %>
-                    <%#= submit_tag "Search", :class => "btn btn-info" %>
                      <% end %>
 
                     <ul class="nav pull-right">
-                      <!-- <li><a href="#">Link</a></li> -->
-                      
-                       <!-- <li class="divider-vertical"></li> -->
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edit Profile <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -40,20 +36,22 @@
                                 <h5 class="fullname">Nitin Grover</h5>
                                 <h5 class="edit_profile">Edit Profile</h5>
                             </a>
-                          </li>
-                          <li><a href="#">Direct Message</a></li>
-                          <li><a href="#">Lists</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Help</a></li>
-                          <li><a href="#">Keyboard Shortcuts</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Settings</a></li>
-                          <li><% if user_signed_in? %>
-                                    <%#= current_user.email %>
-                                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                                <% else %>
-                  <% link_to "Sign up", new_user_registration_path %>  
-                  <%= link_to "Sign in", new_user_session_path %>
+                        </li>
+                        <li><%= link_to "Direct Message", "#" %></li>
+                        <li><%= link_to "Lists", "#" %></li>
+                        <li class="divider"></li>
+                        <li><%= link_to "Help", "#" %></li>
+                        <li><%= link_to "Keyboard Shortcuts", "#" %></li>
+                        <li class="divider"></li>
+                        <li><%= link_to "Settings", "#" %></li>
+                        <li><% if user_signed_in? %>
+                        <%#= current_user.email %>
+                        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+
+                        <% else %>
+
+                    <% link_to "Sign up", new_user_registration_path %>  
+                    <%= link_to "Sign in", new_user_session_path %>
                     <% end %></li>
 
                         </ul>
