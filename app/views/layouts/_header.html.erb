@@ -14,6 +14,22 @@
             <%= link_to Twitter, current_user, :class => 'brand' %>
            </div>
            <div class="span7">
+            <div class="nav-collapse collapse">
+                        <ul class="nav nav-pills pull-right">
+                            <li>
+                                <% if user_signed_in? %>
+                                
+                                    Signed in as <%= current_user.email %>. Not you?
+                              
+                                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
+                                <% else %>
+
+                                    
+                  <% link_to "Sign up", new_user_registration_path %>  <%= link_to "Sign in", new_user_session_path %>
+                    <% end %>
+                      </li>
+                        </ul><!-- nav -->
+                    </div>
             <div class="input-append pull-right">
                
              <% if user_signed_in? %>
@@ -34,22 +50,7 @@
                 </ul>
               </div>
 
-              <div class="nav-collapse collapse">
-                        <ul class="nav nav-pills pull-right">
-                            <li>
-                                <% if user_signed_in? %>
-                                
-                                    Signed in as <%= current_user.email %>. Not you?
-                              
-                                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
-                                <% else %>
-
-                                    
-                  <% link_to "Sign up", new_user_registration_path %>  <%= link_to "Sign in", new_user_session_path %>
-                    <% end %>
-                      </li>
-                        </ul><!-- nav -->
-                    </div>
+              
               
            <% end %>
            <% end %>
