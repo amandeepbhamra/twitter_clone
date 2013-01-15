@@ -22,6 +22,7 @@ public/system/*
 .bundle
 db/*.sqlite3
 log/*.log
+log/searchd.development.pid
 tmp/**/*
 tags
 .sass-cache
