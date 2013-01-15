@@ -16,5 +16,5 @@
 //= require_tree .
 
 $(function(){
-	('.dropdown-toggle').dropdown();
+	('.dropdown-toggle').dropdown()
 });	
