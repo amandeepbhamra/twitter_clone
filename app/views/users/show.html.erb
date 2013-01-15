@@ -18,6 +18,7 @@
   
     <div>
         <% if @user==current_user %>
+       
         <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
         <% end %>
         <%= link_to 'View Tweets',  user_tweets_path(@user) %>
