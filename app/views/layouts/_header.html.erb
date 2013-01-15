@@ -38,7 +38,11 @@
                             </a>
                         </li>
                         <li><%= link_to "Direct Message", "#" %></li>
-                        <li><%= link_to "Lists", "#" %></li>
+                        <li>
+                            <% if @user==current_user %>
+                            <%= link_to 'Edit Profile', edit_user_path(@user) %>
+                            <% end %>
+                        </li>
                         <li class="divider"></li>
                         <li><%= link_to "Help", "#" %></li>
                         <li><%= link_to "Keyboard Shortcuts", "#" %></li>
