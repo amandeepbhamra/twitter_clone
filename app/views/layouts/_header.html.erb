@@ -33,9 +33,9 @@
                       </li>
                     </ul>
 
-                    <%= form_tag search_users_path, :class => "navbar-search pull-left", method: :get do %>
+                    <%= form_tag search_users_path, :class => "navbar-search pull-left", :placeholder => "Search", method: :get do %>
                     <%= text_field_tag :search, params[:search], { :class => "search-query span2"} %>
-                    <%= submit_tag "Search", :class => "btn btn-info" %>
+                    <%#= submit_tag "Search", :class => "btn btn-info" %>
                      <% end %>
 
                     <ul class="nav pull-right">
