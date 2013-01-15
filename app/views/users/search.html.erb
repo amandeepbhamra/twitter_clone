@@ -1,8 +1,9 @@
 
-<%= link_to_if(@users_count > 0, "Users (#{@users_count})", search_users_path(params[:search]) ) do 
-	"Users (0)" end %>
-<%= link_to_if(@tweets_count > 0, "Tweets (#{@tweets_count})", search_tweets_path(params[:search]) ) do 
-	"Tweets (0)" end %>
+<%= link_to_if(@users_count > 0, "Users (#{@users_count})", 
+search_users_path(params[:search]) ) do "Users (0)" end %>
+
+<%= link_to_if(@tweets_count > 0, "Tweets (#{@tweets_count})", 
+search_tweets_path(params[:search]) ) do "Tweets (0)" end %>
 <br />
 
 <% @users_searched.each do |user| %>
