@@ -17,7 +17,7 @@
                       <li><a href="#">Connect</a></li>
                       <li><a href="#">Discover</a></li>
                       <li><a href="#">Me</a></li>
-                      <li class="dropdown">
+                      <!-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown 
                             <b class="caret"></b>
                         </a>
@@ -30,7 +30,7 @@
                           <li><a href="#">Separated link</a></li>
                           <li><a href="#">One more separated link</a></li>
                         </ul>
-                      </li>
+                      </li> -->
                     </ul>
 
                     <%= form_tag search_users_path, :class => "navbar-search pull-left", :placeholder => "Search", method: :get do %>
@@ -40,29 +40,36 @@
 
                     <ul class="nav pull-right">
                       <!-- <li><a href="#">Link</a></li> -->
-                     
-                      <li>
-                        <% if user_signed_in? %>
-                                
-                                    <%= current_user.email %>. Not you?
-                              
-                                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
-                                <% else %>
-
-                                    
-                  <% link_to "Sign up", new_user_registration_path %>  
-                  <%= link_to "Sign in", new_user_session_path %>
-                    <% end %>
-                      </li>
-                       <li class="divider-vertical"></li>
+                      
+                       <!-- <li class="divider-vertical"></li> -->
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edit Profile <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
+
+                          <li>
+                            <a href="#">
+                                <div class="editprofile_userpic">
+                                    <%= image_tag "/assets/userthumbnail.jpeg" %> 
+                                </div>
+                                <h5 class="fullname">Nitin Grover</h5>
+                                <h5 class="edit_profile">Edit Profile</h5>
+                            </a>
+                          </li>
+                          <li><a href="#">Direct Message</a></li>
+                          <li><a href="#">Lists</a></li>
                           <li class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">Help</a></li>
+                          <li><a href="#">Keyboard Shortcuts</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Settings</a></li>
+                          <li><% if user_signed_in? %>
+                                    <%#= current_user.email %>
+                                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                                <% else %>
+                  <% link_to "Sign up", new_user_registration_path %>  
+                  <%= link_to "Sign in", new_user_session_path %>
+                    <% end %></li>
+
                         </ul>
                       </li>
                     </ul>
