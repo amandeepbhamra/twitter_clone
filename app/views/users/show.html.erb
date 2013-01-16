@@ -28,6 +28,12 @@
     
         <%= link_to 'Following',  following_user_path(@user) %>
     </div>
+
+    <div class="new_tweet_container">
+        <textarea rows="3"></textarea>
+    </div><!-- new_tweet_container -->
+    
+
     <div>
     <% if !(@user == current_user) %>
       <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', follow_user_path(@user) end %>
