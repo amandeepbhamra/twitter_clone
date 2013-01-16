@@ -58,7 +58,6 @@ class TweetsController < ApplicationController
   end
 
   private
-  
   #-------------To get user_id as before filter for actions----------#
   def get_user_id
     @user= User.find_by_id(params[:user_id])
@@ -74,4 +73,3 @@ class TweetsController < ApplicationController
   end
   
 end
-
