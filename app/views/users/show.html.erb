@@ -1,5 +1,4 @@
 <div class="span4">
-  <div class="span3">
     <div class="user_dashboard">
         <div class="userpic_wrapper">
             <div class="userpic">
@@ -28,18 +27,34 @@
     
         <%= link_to 'Following',  following_user_path(@user) %>
     </div>
+
+    <div class="new_tweet_container">
+        <textarea rows="3" placeholder="Compose new tweet &#8230;" class="span3" ></textarea>
+    </div><!-- new_tweet_container -->
+    <div class="row">
+            <div class="span3">
+                <div class="btn choosen_file"></div>
+                <div class="btn choosen_file"></div>
+            </div>
+        </div>
+    
+
     <div>
     <% if !(@user == current_user) %>
       <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', follow_user_path(@user) end %>
         <% end %>
     </div>
+    <br style="clear:both;">
     </div><!-- userprofile_section -->
 
     <div class="map_container">
   <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&size=200x200&sensor=false" %><!-- google map -->
     </div><!-- map_container -->
- </div><!-- span3 -->
+
 </div><!-- span4 -->
+
+<!--  right container  -->
+
 
 <div class="span7">
   <div class="edit_profile_container">
