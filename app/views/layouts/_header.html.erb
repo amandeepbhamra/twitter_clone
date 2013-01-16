@@ -1,69 +1,64 @@
 <!-- Navbar ================================================== -->
-
-    	<div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
         <div class="container">
-             
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-          <%= link_to Twitter, current_user, :class => 'brand' %>
-          <div class="nav-collapse collapse navbar-responsive-collapse">
-                 <ul class="nav">
+            <%= link_to Twitter, current_user, :class => 'brand' %>
+            <div class="nav-collapse collapse navbar-responsive-collapse">
+                <ul class="nav">
                     <li><%= link_to "Home", current_user, :class => 'active' %></li>
                     <li><%= link_to "Connect", "#" %></li>
                     <li><%= link_to "Discover", "#" %></li>
                     <li><%= link_to "Me", "#" %></li>
-                    </ul>
+                </ul>
 
-                    <%= form_tag search_users_path, :class => "navbar-search pull-left", :placeholder => "Search", method: :get do %>
+                <%= form_tag search_users_path, :class => "navbar-search pull-left", :placeholder => "Search", method: :get do %>
                     <%= text_field_tag :search, params[:search], { :class => "search-query span2"} %>
-                     <% end %>
+                <% end %>
 
-                    <ul class="nav pull-right">
-                      <li class="dropdown">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edit Profile <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-
-                          <li>
-                            <a href="#">
+                            <li>
+                                <a href="#">
                                 <div class="editprofile_userpic">
-                                    <%= image_tag "/assets/userthumbnail.jpeg" %> 
+                                    <%= image_tag(@user.photo.url(:thumb)) %> 
                                 </div>
-                                <h5 class="fullname">Nitin Grover</h5>
+                                <h5 class="fullname">
+                                    <%=link_to @user.name, current_user %>
+                                </h5>
                                 
-                            </a>
-                        </li>
-                        <li><%= link_to "Direct Message", "#" %></li>
-                        <li>
-                            <% if @user==current_user %>
-                            <%= link_to 'Edit Profile', edit_user_path(@user) %>
-                            <% end %>
-                        </li>
-                        <li class="divider"></li>
-                        <li><%= link_to "Help", "#" %></li>
-                        <li><%= link_to "Keyboard Shortcuts", "#" %></li>
-                        <li class="divider"></li>
-                        <li><%= link_to "Settings", "#" %></li>
-                        <li><% if user_signed_in? %>
-                        <%#= current_user.email %>
-                        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-
-                        <% else %>
-
-                    <% link_to "Sign up", new_user_registration_path %>  
-                    <%= link_to "Sign in", new_user_session_path %>
-                    <% end %></li>
-
+                                </a>
+                            </li>
+                            <li><%= link_to "Direct Message", "#" %></li>
+                            <li>
+                                <% if @user==current_user %>
+                                    <%= link_to 'Edit Profile', edit_user_path(@user) %>
+                                <% end %>
+                            </li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Help", "#" %></li>
+                            <li><%= link_to "Keyboard Shortcuts", "#" %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Settings", "#" %></li>
+                            <li><% if user_signed_in? %>
+                                    <%= link_to "Sign out", destroy_user_session_path, 
+                                    :method => :delete %>
+                                <% else %>
+                                    <% link_to "Sign up", new_user_registration_path %>  
+                                    <%= link_to "Sign in", new_user_session_path %>
+                                <% end %>
+                            </li>
                         </ul>
-                      </li>
-                    </ul>
-                  </div><!-- /.nav-collapse -->
-               
-            </div><!-- search -->
+                    </li>
+                </ul>
+            </div><!-- /.nav-collapse -->
         </div><!-- container -->
 	</div><!-- navbar-inner -->
 </div><!-- navbar navbar-inverse navbar-fixed-top -->
