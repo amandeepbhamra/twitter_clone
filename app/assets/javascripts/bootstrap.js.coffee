@@ -3,3 +3,5 @@ jQuery ->
   $(".tooltip").tooltip()
   $("a[rel=tooltip]").tooltip()
   $('.dropdown-toggle').dropdown()
+  $('#example').tooltip(boolean)
+  
