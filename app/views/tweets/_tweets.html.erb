@@ -4,14 +4,15 @@
   </tr>
 
   <% @tweets.each do |tweet| %>
-  <tr>
-    <td><%= tweet.status %></td>
-    <% if current_user == tweet.user %>
-    <td><%= link_to 'Destroy', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
+    <tr>
+      <td><%= tweet.status %></td>
+      <% if current_user == tweet.user %>
+        <td><%= link_to 'Destroy', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
   <% end %>
 </table>
 
 <br />
+
 <%= will_paginate @tweets %>

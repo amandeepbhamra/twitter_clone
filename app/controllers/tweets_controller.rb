@@ -1,17 +1,13 @@
 class TweetsController < ApplicationController
-
   
   before_filter :authenticate_user!
-  before_filter :get_user, :except => :search
+  before_filter :get_user_id, :except => :search
   before_filter :authorize_user, :only => :destroy
   
-
   # GET /tweets
   # GET /tweets.json
   def index
-
     @tweets = @user.tweets.paginate(:page => params[:page], :per_page => 5)
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tweets }
@@ -22,7 +18,6 @@ class TweetsController < ApplicationController
   # GET /tweets/new.json
   def new
     @tweet = @user.tweets.build
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @tweet }
@@ -33,7 +28,6 @@ class TweetsController < ApplicationController
   # POST /tweets.json
   def create
     @tweet = @user.tweets.build(params[:tweet])
-
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to user_tweets_path(@user), notice: 'Tweet was successfully created.' }
@@ -50,7 +44,6 @@ class TweetsController < ApplicationController
   def destroy
     @tweet = @user.tweets.find(params[:id])
     @tweet.destroy
-
     respond_to do |format|
       format.html { redirect_to  user_tweets_path(@user) }
       format.json { head :no_content }
@@ -58,7 +51,6 @@ class TweetsController < ApplicationController
   end
 
   #---------------------Search------------------------#  
-
   def search
     @tweets = Tweet.search(params[:search],:page => params[:page], :per_page => 10)
     @tweets_count = Tweet.search(params[:search]).count
@@ -67,14 +59,12 @@ class TweetsController < ApplicationController
 
   private
   
-  #-------------To get current user as before filter for actions----------#
-  
-  def get_user
+  #-------------To get user_id as before filter for actions----------#
+  def get_user_id
     @user= User.find_by_id(params[:user_id])
   end
-
-  #-------------To authorize user for editing and update-----------------#
-
+  
+  #-------------To authorize user for tweet destroy-----------------#
   def authorize_user
     if @user == current_user
       render :action => :destroy
@@ -82,5 +72,6 @@ class TweetsController < ApplicationController
       redirect_to current_user, notice: 'you are not authorized for this action.'
     end
   end
+  
 end
 

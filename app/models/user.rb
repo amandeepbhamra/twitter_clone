@@ -1,11 +1,7 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # ,,
-  # :lockable, :timeoutable and :omniauthable
+  
 	acts_as_followable
 
-
-  
 	attr_accessible :email, :password, :password_confirmation, :remember_me,
 	:password , :name, :mobile, :location, :bio, :gender, :city, :country,
   :website, :photo, :longitude, :latitude
@@ -13,7 +9,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
   :trackable, :validatable, :confirmable,:token_authenticatable
 
-  # Setup accessible (or protected) attributes for your model
   # validates :name, :mobile, :location, :bio, :gender, :city, :country, 
   # :website, :presence => true
   # validates :name, :uniqueness =>true
@@ -26,7 +21,6 @@ class User < ActiveRecord::Base
 
   geocoded_by :city
   after_validation :geocode
-
 
   define_index do
     indexes :name

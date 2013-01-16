@@ -1,19 +1,12 @@
 class UsersController < ApplicationController
   
   before_filter :authenticate_user!
-  before_filter :get_user, :only => [:edit, :update, :follow, :unfollow, :following, :followers, :authorize_user]
+  before_filter :get_user_id, :only => [:show, :edit, :update, :follow, :unfollow, :following, :followers, :authorize_user]
   before_filter :authorize_user, :only => [:edit, :update]
   
-  # GET /users
-  # GET /users.json
-  def index
-    
-  end
-
   # GET /users/1
   # GET /users/1.json
   def show    
-    @user = User.find_by_id(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -24,7 +17,6 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -33,14 +25,12 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-   
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(params[:user])
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_path, notice: 'User was successfully created.' }
@@ -55,8 +45,6 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-   
-    @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -69,54 +57,48 @@ class UsersController < ApplicationController
   end
 
   #---------------To Follow any User-------------#
-  
   def follow
     @user.follow(current_user)
     redirect_to current_user, notice: 'You are following now to ' + @user.email 
   end
   
   #---------------To Unfollow any user------------#
-  
   def unfollow
     @user.stop_following(current_user)
     redirect_to current_user, notice: 'You are not following now to ' + @user.email
   end
   
   #---------------To view list of Followers------------#
-  
   def followers
     @followers = @user.following_users
   end
 
   #-------------To view list of Followings-------------#
-  
   def following
     @following = @user.user_followerss
   end
   
   #---------------------Search------------------------#  
-  
   def search 
     @users_searched = User.search(params[:search],:page => params[:page], :per_page => 10)
     @users_count = User.search(params[:search]).count
     @tweets_count = Tweet.search(params[:search]).count
   end
 
-
   private
-  #-------------To get current user as before filter for actions----------#
-  
-  def get_user
+  #-------------To get user_id as before filter for actions----------#
+  def get_user_id
     @user = User.find_by_id(params[:id])
     if @user.nil?
      redirect_to current_user
     end
   end
-  #-------------To authorize user for editing and update-----------------#
 
+  #-------------To authorize user for editing and update-----------------#
   def authorize_user
     if !(@user == current_user)
       redirect_to current_user, notice: 'You are not authorized for this action.'
     end
   end
+
 end
