@@ -27,14 +27,14 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edit Profile <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">
+                                <a href="<%= user_url(current_user) %>">
                                 <div class="editprofile_userpic">
                                     <%= image_tag(@user.photo.url(:thumb)) %> 
                                 </div>
-                                <h5 class="fullname">
-                                    <%=link_to @user.name, current_user, :class => "fullname" %>
-                                </h5>
-                                
+                            <h5 class="fullname">
+                                <%= @user.name %>
+                            </h5>
+     
                                 </a>
                             </li>
                             <li><%= link_to "Direct Message", "#" %></li>
