@@ -159,7 +159,9 @@ a.link_color{
 .right_align{
 	text-align: right;
 }
-
+.nav_background{
+	background-color: #181818;
+}
 /* header */
 .navbar{
 	.navbar-inner{
@@ -285,6 +287,12 @@ a.link_color{
 							overflow: hidden;
 							float: @float_left;/* float left */
 							margin-right: @margin_right;
+							a.userpic_link_hover{
+								display: block;
+									&:hover{
+										background-color: transparent;
+									}/* &:hover */
+								}/* a.userpic_link_hover */
 							}/* userpic */
 							.username{
 								font-weight: 700;
