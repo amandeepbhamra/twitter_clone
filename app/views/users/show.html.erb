@@ -20,6 +20,12 @@
             <%= link_to 'View Tweets',  user_tweets_path(@user) %>
             <%= link_to 'Follower',  followers_user_path(@user) %>
             <%= link_to 'Following',  following_user_path(@user) %>
+            <div>
+            <% if !(@user == current_user) %>
+                <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', 
+                    follow_user_path(@user) end %>
+            <% end %>
+        </div>
         </div>
 
 
@@ -39,12 +45,7 @@
             </div>
         </div><!-- row-fluid show-grid -->
     
-        <div>
-            <% if !(@user == current_user) %>
-                <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', 
-                    follow_user_path(@user) end %>
-            <% end %>
-        </div>
+        
         <br style="clear:both;">
     </div><!-- user_dashboard -->
 
