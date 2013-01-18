@@ -29,10 +29,10 @@
                             <li><% if user_signed_in? %>
                                 <a href="<%= user_url(current_user) %>">
                                 <div class="editprofile_userpic">
-                                    <%= image_tag(@user.photo.url(:thumb)) %> 
+                                    <%= image_tag(current_user.photo.url(:thumb)) %> 
                                 </div>
                             <h5 class="fullname">
-                                <%= @user.name %>
+                                <%= current_user.name %>
                             </h5>
      
                                 </a><% end %>
