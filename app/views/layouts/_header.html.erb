@@ -3,14 +3,19 @@
     <div class="navbar-inner">
         <div class="container">
             <div class="span11">
+            
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
-            <%= link_to Twitter, current_user, :class => 'brand' %>
+            
+            <%= link_to_if(user_signed_in?, "Twitter", current_user) do 
+                link_to 'Twitter', new_user_session_path end %>
+            
+            <% if user_signed_in? %>
             <div class="nav-collapse collapse navbar-responsive-collapse nav_background">
+            
                 <ul class="nav">
                     <li><%= link_to "Home", current_user, :class => 'active' %></li>
                     <li><%= link_to "Connect", "#" %></li>
@@ -48,18 +53,14 @@
                             <li><%= link_to "Keyboard Shortcuts", "#" %></li>
                             <li class="divider"></li>
                             <li><%= link_to "Settings", "#" %></li>
-                            <li><% if user_signed_in? %>
-                                    <%= link_to "Sign out", destroy_user_session_path, 
+                            <li><%= link_to "Sign out", destroy_user_session_path, 
                                     :method => :delete %>
-                                <% else %>
-                                    <% link_to "Sign up", new_user_registration_path %>  
-                                    <%= link_to "Sign in", new_user_session_path %>
-                                <% end %>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div><!-- /.nav-collapse -->
+            <% end %>
           </div><!-- span11 -->
         </div><!-- container -->
 	</div><!-- navbar-inner -->
