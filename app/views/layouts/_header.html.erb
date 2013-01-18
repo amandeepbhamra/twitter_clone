@@ -10,8 +10,8 @@
                 <span class="icon-bar"></span>
             </button>
             
-            <%= link_to_if(user_signed_in?, "Twitter", current_user) do 
-                link_to 'Twitter', new_user_session_path end %>
+            <%= link_to_if(user_signed_in?, "Twitter", current_user, :class => "logo" ) do 
+                link_to 'Twitter', new_user_session_path, :class => "logo" end %>
             
             <% if user_signed_in? %>
             <div class="nav-collapse collapse navbar-responsive-collapse nav_background">
