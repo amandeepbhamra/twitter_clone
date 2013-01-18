@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   :website, :photo, :longitude, :latitude
 	
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
-  :trackable, :validatable, :confirmable,:token_authenticatable
+  :trackable, :validatable, :confirmable, :token_authenticatable
 
   # validates :name, :mobile, :location, :bio, :gender, :city, :country, 
   # :website, :presence => true

@@ -12,16 +12,19 @@ Twitter::Application.routes.draw do
       get 'search'
     end
 
-    resources :tweets, :execpt=> [:show, :edit]
+    resources :tweets, :execpt=> [:show, :edit] do
+      member do
+        get 'retweet'
+      end
+    end
   end
 
   
   resources :tweets, :only => [] do
     collection do
       get 'search'
-     end 
-
-   end 
+    end 
+  end 
 
   root :to => 'users#show'
   # The priority is based upon order of creation:

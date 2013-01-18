@@ -50,13 +50,31 @@ class TweetsController < ApplicationController
     end
   end
 
-  #---------------------Search------------------------#  
+  #-----------Searching users and tweets--------------#  
   def search
     @tweets = Tweet.search(params[:search],:page => params[:page], :per_page => 10)
     @tweets_count = Tweet.search(params[:search]).count
     @users_count = User.search(params[:search]).count
   end
+  #---------------------Retweet------------------------#  
+  def retweet
 
+    @old_tweet = Tweet.find(params[:id])
+    @retweet = Tweet.new
+    @retweet.status = @old_tweet.status
+    @retweet.user_id = current_user.id
+    @retweet.parent_tweet_id = @old_tweet.id
+    respond_to do |format|
+      if @retweet.save
+        format.html { redirect_to user_tweets_path(@user), notice: 'Retweet Done.' }
+        format.json 
+      else
+        format.html { redirect_to user_tweets_path(@user), notice: 'Retweet not done.' }
+        format.json 
+      end
+    end
+  end
+  
   private
   #-------------To get user_id as before filter for actions----------#
   def get_user_id
