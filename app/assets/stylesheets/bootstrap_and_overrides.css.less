@@ -90,6 +90,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @font_size: 13px;
 @box_shadow: 0 0 3px #ccc;
 @pad: 15px;
+@full_width: 100%;
 
 /* common css */
 a.link_color{
@@ -139,7 +140,7 @@ a.link_color{
 	padding: @padding;
 }
 .tweetbox_padding{
-	padding: 7px 9px 5px 10px;
+	padding: @pad;
 }
 .margin_left{
 	margin-left: 0;
@@ -152,7 +153,7 @@ a.link_color{
 }
 .clear_both{
 	clear: both;
-	height: 15px;
+	height: 22px;
 }
 .frnt_welcome_text{
 	padding: 100px 0;
@@ -162,6 +163,9 @@ a.link_color{
 }
 .nav_background{
 	background-color: #181818;
+}
+.mrgn_btm{
+	margin-bottom: 0;
 }
 /* header */
 .navbar{
@@ -296,6 +300,11 @@ a.link_color{
 						.userpic{
 							width: 32px;
 							height: 32px;
+							a{
+								&:hover{
+									background: transparent;
+								}
+							}
 							.rounded-corners; /* border-radius */
 							overflow: hidden;
 							float: @float_left;/* float left */
@@ -329,7 +338,7 @@ a.link_color{
 						.new_tweet_container{
 							padding: 14px 0 0 0;
 							.full_width{
-								width: 100%;
+								width: @full_width;
 								box-sizing: border-box;
 							}
 							
@@ -361,28 +370,31 @@ a.link_color{
 			border: @the-border;
 			.rounded-corners; /* border-radius */
 			.edit_profile_title{
-				padding: 0 12px; 
+				padding: @pad; 
 				border-bottom: 1px solid #e8e8e8;
 					h3{
 					font-size: 18px;
 					margin: 0;
 					font-weight: 700;
-					height: 30px;
+					height: ;
 					color: #333;
-					padding: @pad;
 					}/*  h3  */
 					p.subheading{
 						color: #000;
 					}
 				}/* edit_profile_title */
 				.edit_profile_form_wrapper{
-					padding: @padding;
+					padding: @pad;
 					p{
 						font-size: 10px;
 						color: #999;
 						}/* p */
 					.control-group{
 						margin-bottom: 0;
+						padding: 15px 15px 15px 0;
+						.full_width{
+							width: @full_width;
+						}
 					}
 					.update_btn_margintop{
 						margin: 5px 0 0 0;

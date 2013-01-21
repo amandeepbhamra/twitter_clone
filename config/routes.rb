@@ -7,6 +7,7 @@ Twitter::Application.routes.draw do
       get 'unfollow'
       get 'following'
       get 'followers'
+      get 'me'
     end
     collection do
       get 'search'

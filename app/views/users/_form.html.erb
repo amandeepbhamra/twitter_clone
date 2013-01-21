@@ -82,15 +82,15 @@
                     <%= f.file_field :photo, :class => "span5" %>
                 </div>
                 <%= f.label :name, :class => "" %>
-                <%= f.text_field :name, :class => "span5" %>
+                <%= f.text_field :name, :class => "span5 full_width" %>
                 <p>Enter your real name, so people you know can recognize you.</p>
                 
                 <%= f.label :mobile, :class => "" %>
-                <%= f.text_field :mobile, :class => "span5" %>
+                <%= f.text_field :mobile, :class => "span5 full_width" %>
                 <p>Enter your Mobile Number, so people you know can recognize you.</p>
                 
                 <%= f.label :bio, :class => "" %>
-                <%= f.text_area :bio, :rows=> 4, :cols => 800, :class => "span5" %>
+                <%= f.text_area :bio, :rows=> 4, :cols => 800, :class => "span5 full_width" %>
                 <p>About yourself in 160 characters or less.</p>
                 
                 <%= f.radio_button(:gender, "Male", :class => "radio") %>
@@ -101,13 +101,13 @@
                 <p>Specify Your Gender</p>
                 
                 <%= f.label :city, :class => "" %>
-                <%= f.text_field :city, :class => "span5" %>
+                <%= f.text_field :city, :class => "span5 full_width" %>
                 
                 <%= f.label :country, :class => "" %>
-                <%= f.text_field :country, :class => "span5" %>
+                <%= f.text_field :country, :class => "span5 full_width" %>
 
                 <%= f.label :website, :class => "" %>
-                <%= f.text_field :website, :class => "span5" %>
+                <%= f.text_field :website, :class => "span5 full_width" %>
                 
                 <div class="actions controls">
                     <%= f.submit(:class => "btn btn-info update_btn_margintop") %>
