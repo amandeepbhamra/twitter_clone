@@ -9,7 +9,7 @@
         </ul>
     </div><!-- user_dashboard -->
 
-	<div class="user_dashboard padding_bottom">
+	<div class="user_dashboard">
 		Who to Follow .
         <%= link_to "Refresh", "#", :class => "refresh" %> .
         <%= link_to "View All", "#", :class => "refresh" %>
@@ -27,9 +27,7 @@
                         MagmaConf <small>&#169; MagmaConf</small>
                     </h5>
                     Followed by Gregg Pollack
-                    
                     <br />
-                    
                     <a class="link_color" href="#">Follow</a>
                 </div><!-- media-body -->
             </div><!-- media padding -->
@@ -63,7 +61,52 @@
 
 <div class="span7">
 	<div class="edit_profile_container">
-	hello
-	</div>
+        <div class="mepage_padding">
+            <div class="user_cover_pic"></div><!-- user_cover_pic -->
+            <div class="row user_tweet_status">
+                <a href="#" class="span1 my_tweets_rating"> <strong>12</strong> <br /> Tweets</a>
+                <a href="#" class="span1 my_tweets_rating"> <strong>12</strong> <br />Following</a>
+                <a href="#" class="span1 my_tweets_rating"> <strong>12</strong> <br />
+                    Followers</a>
+            </div>
 
+        </div><!-- mepage_padding -->
+	</div><!-- edit_profile_container -->
+
+<div class="edit_profile_container">
+        <div class="edit_profile_title">
+            <h3>Tweets</h3>
+           
+        </div>
+        
+        <ul class="nav nav-pills nav-stacked">
+            <% (1..5).each do |i| %>
+            <li>
+            <div class="media tweetbox_padding border">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
+                </a>
+                <div class="media-body">
+                    <h5 class="media-heading">
+                        HCL Technologies <small>&#169; hcltech</small>
+                    </h5>
+                    Neil-Vikram-Vinay's Fun-Musical Exclusive Interview On 'David' | Bollywood Videos - Bollywood Hungama
+                    
+                    <br />
+                    
+                    <a class="link_color" href="#">bollywoodhungama.com/more/videos/view/id/1662221 …</a>
+                    
+                    <br />
+                    
+                    <%= image_tag "/assets/retweet.png" "#" %>
+                    <small>Retweeted by</small> 
+                    <%= link_to "Neil Nitin Mukesh", "#", :class => "link_color" %>
+                </div><!-- media-body -->
+            </div><!-- media padding -->
+            </li>
+
+            <% end %>
+            </ul>
 </div>
+    
+</div><!-- span7 -->
