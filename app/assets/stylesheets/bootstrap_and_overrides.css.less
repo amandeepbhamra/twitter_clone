@@ -89,6 +89,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @text_decoration: none;
 @font_size: 13px;
 @box_shadow: 0 0 3px #ccc;
+@pad: 15px;
 
 /* common css */
 a.link_color{
@@ -268,7 +269,7 @@ a.link_color{
 					background: #f9f9f9;
 					border: @the-border;
 					.rounded-corners; /* border-radius */
-					padding: @padding;
+					padding: @pad;
 						ul.copyright_wrapper{
 							margin: 0;
 							li.copyright{
@@ -327,11 +328,15 @@ a.link_color{
 						}/* userpic_wrapper */
 						.new_tweet_container{
 							padding: 14px 0 0 0;
+							.full_width{
+								width: 100%;
+								box-sizing: border-box;
+							}
 							
 						}/*  new_tweet_container*/
 					}/* dashboard */
 					.map_container{
-						padding: @padding;
+						padding: @pad;
 						margin-top: 10px;
 						background: #f9f9f9;
 						border: @the-border;
@@ -364,7 +369,7 @@ a.link_color{
 					font-weight: 700;
 					height: 30px;
 					color: #333;
-					padding: 0 0 5px;
+					padding: @pad;
 					}/*  h3  */
 					p.subheading{
 						color: #000;
@@ -386,7 +391,7 @@ a.link_color{
 				}/* edit_profile_form_wrapper */
 			}/* edit_profile_container */
 			.new_tweet_container{
-				padding: 10px 0;
+				padding: @pad;
 				background: #f5f5f5;
 				cursor: pointer;
 				&:hover{
