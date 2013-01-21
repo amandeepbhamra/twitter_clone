@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   :website, :photo, :longitude, :latitude
 	
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
-  :trackable, :validatable, :confirmable,:token_authenticatable
+  :trackable, :validatable, :confirmable, :token_authenticatable
 
   # validates :name, :mobile, :location, :bio, :gender, :city, :country, 
   # :website, :presence => true
@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
 
 	has_many :tweets, :order => "created_at DESC"
   
-  has_attached_file :photo, :styles => { :medium => "100x100>", :thumb => "38x38>" }
+  has_attached_file :photo, :styles => { :medium => "100x100>", :thumb => "38x38>" }, 
+  :default_url => "/assets/users_sticker.png"
 
   geocoded_by :city
   after_validation :geocode
