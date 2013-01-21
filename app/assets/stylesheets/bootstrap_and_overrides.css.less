@@ -122,6 +122,9 @@ a.link_color{
 .padding_right{
 	padding-right: 5px;
 }
+.padding_bottom{
+	padding-bottom: 0;
+}
 .signin_background{
 	background: #f8f8f8;
 	.rounded-corners;
@@ -142,6 +145,9 @@ a.link_color{
 }
 .tweetbox_padding{
 	padding: @pad;
+}
+.who_tofollow_padding{
+	padding: 10px 0;
 }
 .margin_left{
 	margin-left: 0;
@@ -275,6 +281,7 @@ a.link_color{
 					border: @the-border;
 					.rounded-corners; /* border-radius */
 					padding: @pad;
+					margin-bottom: 30px;
 						ul.copyright_wrapper{
 							margin: 0;
 							li.copyright{
@@ -350,8 +357,7 @@ a.link_color{
 							&:hover{
 								background-color: transparent;
 							}
-
-						}
+						}/* a.refresh */
 					}/* dashboard */
 					.map_container{
 						padding: @pad;
