@@ -4,28 +4,28 @@
             <div class="userpic">
                 <%=link_to image_tag(@user.photo.url(:thumb)), "#", :class => "userpic_link_hover" %>
             </div><!-- userpic -->
-            <% if !@user.name.nil? %>
-                <%=link_to @user.name, "#", :class => "username" %>
-            <% else %>
-                <%=link_to @user.email, "#", :class => "username" %>
-            <% end %>
-            <br />
-            <%=link_to "View My Profile page", "#", :class => "view_profile" %>
+                <% if !@user.name.nil? %>
+                    <%=link_to @user.name, "#", :class => "username" %>
+                <% else %>
+                    <%=link_to @user.email, "#", :class => "username" %>
+                <% end %>
+                <br />
+                <%=link_to "View My Profile page", "#", :class => "view_profile" %>
         </div><!-- userpic_wrapper -->
   
         <div>
-            <% if @user==current_user %>
-                <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
-            <% end %>
-            <%= link_to 'View Tweets',  user_tweets_path(@user) %>
-            <%= link_to 'Follower',  followers_user_path(@user) %>
-            <%= link_to 'Following',  following_user_path(@user) %>
+                <% if @user==current_user %>
+                    <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
+                <% end %>
+                <%= link_to 'View Tweets',  user_tweets_path(@user) %>
+                <%= link_to 'Follower',  followers_user_path(@user) %>
+                <%= link_to 'Following',  following_user_path(@user) %>
             <div>
-            <% if !(@user == current_user) %>
-                <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', 
-                    follow_user_path(@user) end %>
-            <% end %>
-        </div>
+                <% if !(@user == current_user) %>
+                    <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', 
+                        follow_user_path(@user) end %>
+                <% end %>
+            </div>
         </div>
 
 
@@ -72,6 +72,7 @@
             <div class="new_tweets">4 new tweets</div>
         </div><!-- new_tweet_container -->
         <ul class="nav nav-pills nav-stacked">
+            <% (1..5).each do |i| %>
             <li>
             <div class="media tweetbox_padding border">
                 <a class="pull-left" href="#">
@@ -96,73 +97,6 @@
             </div><!-- media padding -->
             </li>
 
-            <li>
-                <div class="media tweetbox_padding border">
-                    <a class="pull-left" href="#">
-                    <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
-                    </a>
-                    <div class="media-body">
-                        <h5 class="media-heading">Gregg Pollack <small>&#169; greggpollack</small></h5>
-                        On my way to Paris to meet up with @olivierlacan and then speak at @takeoffconf in Lille, France later this week.<br />
-                        <%= image_tag "/assets/retweet.png" "#" %>
-                        <small>Retweeted by</small> 
-                        <%= link_to "Neil Nitin Mukesh", "#", :class => "link_color" %>
-                    </div><!-- media-body -->
-                </div><!-- media padding -->
-            </li>
-
-            <li>
-            <div class="media tweetbox_padding border">
-                <a class="pull-left" href="#">
-                <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
-                </a>
-            <div class="media-body">
-                <h5 class="media-heading">Neil Nitin Mukesh <small>&#169; NeilNMukesh</small></h5>
-
-                Neil-Vikram-Vinay's Fun-Musical Exclusive Interview On 'David' | Bollywood Videos - Bollywood Hungama
-                <br />
-                <a class="link_color" href="#">bollywoodhungama.com/more/videos/view/id/1662221 …</a>
-                <br />
-                <%= image_tag "/assets/retweet.png" "#" %>
-                
-                <small>Retweeted by</small> 
-                <%= link_to "Neil Nitin Mukesh", "#", :class => "link_color" %>
-            </div><!-- media-body -->
-        </div><!-- media padding -->
-            </li>
-
-            <li>
-                <div class="media tweetbox_padding border">
-                    <a class="pull-left" href="#">
-                    <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
-                    </a>
-                <div class="media-body">
-                    <h5 class="media-heading">John Polacek <small>&#169; johnpolacek</small></h5>
-
-                    Working from home = Commute consisting of walking upstairs to the office and 2 PBJ's for lunch
-                    <br />
-                    <%= image_tag "/assets/retweet.png" "#" %>
-                    <small>Retweeted by</small> 
-                    
-                    <%= link_to "Neil Nitin Mukesh", "#", :class => "link_color" %>
-                </div><!-- media-body -->
-                </div><!-- media padding -->
-            </li>
-
-            <li>
-                <div class="media tweetbox_padding border">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
-                    </a>
-                    <div class="media-body">
-                        <h5 class="media-heading">Neil Nitin Mukesh <small>&#169; NeilNMukesh</small></h5>
-                        Neil-Vikram-Vinay's Fun-Musical Exclusive Interview On 'David' | Bollywood Videos - Bollywood Hungama<br />
-                        <a class="link_color" href="#">bollywoodhungama.com/more/videos/view/id/1662221 …</a><br />
-                        <%= image_tag "/assets/retweet.png" "#" %>
-                        <small>Retweeted by</small> 
-                        <%= link_to "Neil Nitin Mukesh", "#", :class => "link_color" %>
-                    </div><!-- media-body -->
-                </div><!-- media padding -->
-            </li>
+            <% end %>
             </ul>
 </div>
