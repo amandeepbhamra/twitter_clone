@@ -90,6 +90,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @font_size: 13px;
 @box_shadow: 0 0 3px #ccc;
 @pad: 15px;
+@full_width: 100%;
 
 /* common css */
 a.link_color{
@@ -152,7 +153,7 @@ a.link_color{
 }
 .clear_both{
 	clear: both;
-	height: 15px;
+	height: 22px;
 }
 .frnt_welcome_text{
 	padding: 100px 0;
@@ -329,7 +330,7 @@ a.link_color{
 						.new_tweet_container{
 							padding: 14px 0 0 0;
 							.full_width{
-								width: 100%;
+								width: @full_width;
 								box-sizing: border-box;
 							}
 							
@@ -382,6 +383,10 @@ a.link_color{
 						}/* p */
 					.control-group{
 						margin-bottom: 0;
+						padding: 15px 15px 15px 0;
+						.full_width{
+							width: @full_width;
+						}
 					}
 					.update_btn_margintop{
 						margin: 5px 0 0 0;
