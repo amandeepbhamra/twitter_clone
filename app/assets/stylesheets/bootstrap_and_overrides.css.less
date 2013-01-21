@@ -46,7 +46,7 @@
 	-o-transition: all .3s ease-in-out;
 }
 
-.rounded-corners (@radius: 3px) {
+.rounded-corners (@radius: 6px) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
   -ms-border-radius: @radius;
@@ -91,10 +91,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @box_shadow: 0 0 3px #ccc;
 @pad: 15px;
 @full_width: 100%;
+@color: #2FC2EF;
 
 /* common css */
 a.link_color{
-	color: #2FC2EF;
+	color: @color;
 	&:hover{
 		background-color: #f5f5f5;
 	}
@@ -321,7 +322,7 @@ a.link_color{
 								font-size: 14px;
 								&:hover{
 									background: @background_none;
-									color: #2fc2ef;
+									color: @color;
 									text-decoration: @text_decoration;
 									}/* username:hover; */
 								}/* username */
@@ -343,6 +344,14 @@ a.link_color{
 							}
 							
 						}/*  new_tweet_container*/
+						a.refresh{
+							font-size: 11px;
+							color: @color;
+							&:hover{
+								background-color: transparent;
+							}
+
+						}
 					}/* dashboard */
 					.map_container{
 						padding: @pad;
@@ -412,7 +421,7 @@ a.link_color{
 				}
 				.new_tweets{
 					text-align: center;
-					color: #2FC2EF;
+					color: @color;
 					}/* new tweets */
 					
 				}/*new_tweet_container*/
