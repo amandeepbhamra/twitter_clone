@@ -277,7 +277,7 @@ a.link_color{
 				}
 			}
 				.user_dashboard{
-					background: #f9f9f9;
+					background: #fff;
 					border: @the-border;
 					.rounded-corners; /* border-radius */
 					padding: @pad;
@@ -386,7 +386,7 @@ a.link_color{
 					.map_container{
 						padding: @pad;
 						margin-top: 10px;
-						background: #f9f9f9;
+						background: #fff;
 						border: @the-border;
 						.rounded-corners; /* border-radius */
 					}
@@ -405,19 +405,26 @@ a.link_color{
 
 .span7{
 	.edit_profile_container{
-			background: #f9f9f9;
+			background: #fff;
 			border: @the-border;
 			.rounded-corners; /* border-radius */
 			margin-bottom: 30px;
 			.edit_profile_title{
 				padding: @pad; 
 				border-bottom: 1px solid #e8e8e8;
+				background: #fff;
+				border-radius: 5px 5px 0 0;
 					h3{
 					font-size: 18px;
 					margin: 0;
 					font-weight: 700;
 					height: ;
 					color: #333;
+					cursor: pointer;
+					.ease;
+					&:hover{
+						color: @color;
+					}
 					}/*  h3  */
 					p.subheading{
 						color: #000;
@@ -486,8 +493,9 @@ a.link_color{
 					width: 20px;
 					height: 20px;
 					display: inline-block;
-					background: url(/assets/reply.png) no-repeat 0 0;
+					background: url(/assets/reply.png) no-repeat -38px 0;
 					text-indent: -999999px;
+					cursor: pointer;
 				}/* reply */
 
 			}/* span7 */
