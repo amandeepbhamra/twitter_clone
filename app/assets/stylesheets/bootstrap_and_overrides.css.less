@@ -93,6 +93,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @full_width: 100%;
 @color: #2FC2EF;
 @the-border: 1px solid #cecece;
+@width: 100%;
 
 /* common css */
 a.link_color{
@@ -489,7 +490,7 @@ a.link_color{
 					}/* new tweets */
 					
 				}/*new_tweet_container*/
-				.reply{
+				.reply, .retweet, .favourite{
 					width: 20px;
 					height: 20px;
 					display: inline-block;
@@ -497,7 +498,15 @@ a.link_color{
 					text-indent: -999999px;
 					cursor: pointer;
 				}/* reply */
-
+				.retweet_background{
+					background: url(/assets/reply.png) no-repeat 1px 0;
+				}
+				.favourite_background{
+					background: url(/assets/reply.png) no-repeat -18px 0;
+				}
+				.flexible_width{
+					width: @width;
+				}
 			}/* span7 */
 
 }/* container */

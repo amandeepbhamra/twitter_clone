@@ -83,8 +83,14 @@
                     
                     <br />
                     <div class="reply">reply</div>
-                    <a class="link_color" href="#">Reply</a>
-                    
+                    <%= link_to "Reply", "#", :class => "link_color" %>
+                    <div class="retweet retweet_background">Retweet</div>
+                    <%= link_to "Retweet", "#", :class => "link_color" %>
+                    <div class="favourite favourite_background">Favourite</div>
+                    <%= link_to "Favourite", "#", :class => "link_color" %>
+                    <div class="span6 flexible_width">
+                    <%= link_to image_tag ("/assets/proxy.jpg") %>
+                    </div>
                     <br />
                     
                     <%= image_tag "/assets/retweet.png" "#" %>
