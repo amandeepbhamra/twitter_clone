@@ -2,10 +2,10 @@
 	<div class="user_dashboard">
         <ul class="nav nav-tabs nav-stacked mrgn_btm">
             <li class="active"><a herf="#">Tweets</a></li>
-            <li><a herf="#">Following</a></li>
-            <li><a herf="#">Followers</a></li>
-            <li><a herf="#">Favourites</a></li>
-            <li><a herf="#">Lists</a></li>
+            <li><%= link_to "Activity", "#" %></li>
+            <li><%= link_to "Who to Follow", "#" %></li>
+            <li><%= link_to "Find friends", "#" %></li>
+            <li><%= link_to "Browse categories", "#" %></li>
         </ul>
     </div><!-- user_dashboard -->
 
@@ -60,21 +60,7 @@
 
 
 <div class="span7">
-	<div class="edit_profile_container">
-        <div class="mepage_padding">
-            <div class="user_cover_pic"></div><!-- user_cover_pic -->
-            <div class="row user_tweet_status">
-                <a href="#" class="span1 my_tweets_rating"> 
-                    <strong>12</strong> <br />Tweets</a>
-                <a href="#" class="span1 my_tweets_rating"> 
-                    <strong>12</strong> <br />Following</a>
-                <a href="#" class="span1 my_tweets_rating"> 
-                    <strong>12</strong> <br />
-                    Followers</a>
-            </div>
 
-        </div><!-- mepage_padding -->
-	</div><!-- edit_profile_container -->
 
 <div class="edit_profile_container">
         <div class="edit_profile_title">
@@ -96,8 +82,8 @@
                     Neil-Vikram-Vinay's Fun-Musical Exclusive Interview On 'David' | Bollywood Videos - Bollywood Hungama
                     
                     <br />
-                    
-                    <a class="link_color" href="#">bollywoodhungama.com/more/videos/view/id/1662221 …</a>
+                    <%= image_tag "/assets/reply.png" "#" %>
+                    <a class="link_color" href="#">Reply</a>
                     
                     <br />
                     
