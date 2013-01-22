@@ -2,10 +2,10 @@
 	<div class="user_dashboard">
         <ul class="nav nav-tabs nav-stacked mrgn_btm">
             <li class="active"><a herf="#">Tweets</a></li>
-            <li><a herf="#">Following</a></li>
-            <li><a herf="#">Followers</a></li>
-            <li><a herf="#">Favourites</a></li>
-            <li><a herf="#">Lists</a></li>
+            <li><%= link_to "Activity", "#" %></li>
+            <li><%= link_to "Who to Follow", "#" %></li>
+            <li><%= link_to "Find friends", "#" %></li>
+            <li><%= link_to "Browse categories", "#" %></li>
         </ul>
     </div><!-- user_dashboard -->
 
@@ -60,21 +60,7 @@
 
 
 <div class="span7">
-	<div class="edit_profile_container">
-        <div class="mepage_padding">
-            <div class="user_cover_pic"></div><!-- user_cover_pic -->
-            <div class="row user_tweet_status">
-                <a href="#" class="span1 my_tweets_rating"> 
-                    <strong>12</strong> <br />Tweets</a>
-                <a href="#" class="span1 my_tweets_rating"> 
-                    <strong>12</strong> <br />Following</a>
-                <a href="#" class="span1 my_tweets_rating"> 
-                    <strong>12</strong> <br />
-                    Followers</a>
-            </div>
 
-        </div><!-- mepage_padding -->
-	</div><!-- edit_profile_container -->
 
 <div class="edit_profile_container">
         <div class="edit_profile_title">
@@ -90,20 +76,23 @@
                     <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
                 </a>
                 <div class="media-body">
-                    <h5 class="media-heading">
+                    <h5 class="media-heading border_bottom">
                         HCL Technologies <small>&#169; hcltech</small>
                     </h5>
-                    Neil-Vikram-Vinay's Fun-Musical Exclusive Interview On 'David' | Bollywood Videos - Bollywood Hungama
+                    Neil-Vikram-Vinay's Fun-Musical Exclusive Interview On 'David' | Bollywood Videos - Bollywood Hungama Neil-Vikram-Vinay's Fun-Musical Exclusive Interview On 'David
                     
                     <br />
-                    
-                    <a class="link_color" href="#">bollywoodhungama.com/more/videos/view/id/1662221 …</a>
-                    
-                    <br />
-                    
-                    <%= image_tag "/assets/retweet.png" "#" %>
-                    <small>Retweeted by</small> 
-                    <%= link_to "Neil Nitin Mukesh", "#", :class => "link_color" %>
+                    <div class="reply">reply</div>
+                    <%= link_to "Reply", "#", :class => "link_color" %>
+                    <div class="retweet retweet_background">Retweet</div>
+                    <%= link_to "Retweet", "#", :class => "link_color" %>
+                    <div class="favourite favourite_background">Favourite</div>
+                    <%= link_to "Favourite", "#", :class => "link_color" %>
+                    <div class="span5 flexible_width">
+                    <%= link_to image_tag ("/assets/proxy.jpg") %>
+                    </div>
+                    <p class="border_bottom">BOLLYWOOD GALORE: <small>With Nitin Gadkari expected to get another term as BJP president, party member Mahesh Jethmalani today indicated he may put up a token fight by deciding to contest for the post.</small></p>
+                    <p>5:41 AM - 21 Jan 13 · Details</p>
                 </div><!-- media-body -->
             </div><!-- media padding -->
             </li>

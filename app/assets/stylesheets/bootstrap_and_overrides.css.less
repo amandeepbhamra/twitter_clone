@@ -93,12 +93,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @full_width: 100%;
 @color: #2FC2EF;
 @the-border: 1px solid #cecece;
+@width: 100%;
+@background_white_color: #fff;
 
 /* common css */
 a.link_color{
 	color: @color;
 	&:hover{
-		background-color: #f5f5f5;
+		background-color: transparent;
 	}
 }
 .pull-left{
@@ -110,8 +112,7 @@ a.link_color{
 	padding: 0 5px 5px 5px;
 	.ease;
 	&:hover{
-		background-color: #f5f5f5;
-		box-shadow: @box_shadow;
+		
 	}
 }
 .border{
@@ -144,6 +145,9 @@ a.link_color{
 }
 .tweetbox_padding{
 	padding: @pad;
+}
+.border_bottom{
+	border-bottom: 1px dashed #ccc;
 }
 .who_tofollow_padding{
 	padding: 10px 0;
@@ -230,7 +234,7 @@ a.link_color{
 				}/* &:hover; */
 			}/* signin_receive_confirmation */
 			a.white_color, a.signin_btn{
-					color: #fff;
+					color: @background_white_color;
 					}
 			a.frgt_pswrd_recieveconfirmation{
 				text-indent: 5px;
@@ -275,9 +279,9 @@ a.link_color{
 					color:#000;
 					text-decoration: none;
 				}
-			}
+			}/* a.cnfrmation_singup_btn */
 				.user_dashboard{
-					background: #f9f9f9;
+					background: @background_white_color;
 					border: @the-border;
 					.rounded-corners; /* border-radius */
 					padding: @pad;
@@ -299,10 +303,10 @@ a.link_color{
 										background: none;
 										color: #555;
 										text-decoration: none;
-									}
-								}
-							}
-						}
+									}/* &:hover */
+								}/* a */
+							}/* li */
+						}/* ul.copyright_wrapper */
 						.userpic_wrapper{
 							padding: @padding;
 						.userpic{
@@ -360,12 +364,12 @@ a.link_color{
 									background-color: transparent;
 									color: @color;
 									text-decoration: none;
-								}
-							}
+								}/* &:hover */
+							}/* a */
 							
 							.border_right{
 									border-right: none;
-								}
+								}/* border_right */
 						}
 						.new_tweet_container{
 							padding: 14px 0 0 0;
@@ -386,7 +390,7 @@ a.link_color{
 					.map_container{
 						padding: @pad;
 						margin-top: 10px;
-						background: #f9f9f9;
+						background: @background_white_color;
 						border: @the-border;
 						.rounded-corners; /* border-radius */
 					}
@@ -405,19 +409,26 @@ a.link_color{
 
 .span7{
 	.edit_profile_container{
-			background: #f9f9f9;
+			background: @background_white_color;
 			border: @the-border;
 			.rounded-corners; /* border-radius */
 			margin-bottom: 30px;
 			.edit_profile_title{
 				padding: @pad; 
 				border-bottom: 1px solid #e8e8e8;
+				background: @background_white_color;
+				border-radius: 5px 5px 0 0;
 					h3{
 					font-size: 18px;
 					margin: 0;
 					font-weight: 700;
 					height: ;
 					color: #333;
+					cursor: pointer;
+					.ease;
+					&:hover{
+						color: @color;
+						}/* &:hover */
 					}/*  h3  */
 					p.subheading{
 						color: #000;
@@ -434,12 +445,12 @@ a.link_color{
 						padding: 15px 15px 15px 0;
 						.full_width{
 							width: @full_width;
-						}
-					}
+						}/* full_width */
+					}/* control-grou */
 					.update_btn_margintop{
 						margin: 5px 0 0 0;
 						width: 40%;
-					}
+					}/* update_btn_margintop */
 				}/* edit_profile_form_wrapper */
 				.mepage_padding{
 					padding: @pad;
@@ -447,7 +458,7 @@ a.link_color{
 						width: 100%;
 						height: 300px;
 						background: url(/assets/cover_pic.jpg) no-repeat -150px -110px;
-					}
+					}/* user_cover_pic */
 					.user_tweet_status{
 							width: 100%;
 							margin-top: 10px;
@@ -463,10 +474,10 @@ a.link_color{
 								&:hover{
 									text-decoration: none;
 									color: @color;
-								}
-							}
-						}
-				}
+								}/* &:hover */
+							}/* my_tweets_rating */
+						}/* user_tweet_status */
+				}/* mepage_padding */
 			}/* edit_profile_container */
 			.new_tweet_container{
 				padding: @pad;
@@ -482,7 +493,34 @@ a.link_color{
 					}/* new tweets */
 					
 				}/*new_tweet_container*/
-
+				.reply, .retweet, .favourite{
+					width: 20px;
+					height: 20px;
+					display: inline-block;
+					background: url(/assets/reply.png) no-repeat -38px 0;
+					text-indent: -999999px;
+					cursor: pointer;
+				}/* reply */
+				.retweet_background{
+					background: url(/assets/reply.png) no-repeat 1px 0;
+				}
+				.favourite_background{
+					background: url(/assets/reply.png) no-repeat -18px 0;
+				}
+				.flexible_width{
+					padding: @pad;
+					background: @background_white_color;
+					text-align: center;
+					margin-bottom: 10px;
+					margin-top: 10px;
+					cursor: pointer;
+					.ease;
+					&:hover{
+						background: #f5f5f5;
+						box-shadow: @box_shadow;
+					}
+				}
+				
 			}/* span7 */
 
 }/* container */
@@ -501,6 +539,6 @@ a.link_color{
 	margin: 0;
 	height: 34px;
 	&:hover{
-		color: #fff;
+		color: @background_white_color;
 	}
 }
