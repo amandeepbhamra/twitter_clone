@@ -1,5 +1,10 @@
 <div class="row-fluid padding_top">
-<div class="span7"></div>
+<div class="span7">
+    <div class="frnt_welcome_text">
+        <h3>Welcome to Tweety Tweet Sign Up Page.</h3>
+        <p>Find out what’s happening, right now, with the people and organizations you care about.</p>
+    </div>
+</div>
 <div class="span4">
 <div class="signin_background user_dashboard">
 	<h3 class="form-signin-heading headingborder_color">Sign up</h3>
@@ -15,10 +20,10 @@
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, :class => "input-block-level"  %>
-  
+  <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "forgot_password" %><!-- forgot password -->
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), :class => "signup_receive_confirmation" %><br />
-
-  <%= f.submit "Sign up", :class => "btn btn-info" %>
+  <%= f.submit "Sign in", :class => "btn btn-info signin_btn" %>
+  <%= f.submit "Sign up", :class => "signinpage_singup_btn btn" %>
 <% end %>
 
 </div>

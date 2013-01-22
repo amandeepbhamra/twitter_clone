@@ -44,18 +44,23 @@ div {
 }
 
 .field_with_errors {
+  width: 100%;
   padding: 2px;
-  background-color: #f8f8f8;
+  background-color: #fff;
   display: table;
+  input.input-block-level{
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 #error_explanation {
-  width: 355px;
+  width: 100%;
   border: none;
-  padding: 7px;
+  padding: 7px 0;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f8f8f8;
+  background-color: none;
   h2 {
     text-align: left;
     font-weight: bold;
@@ -63,8 +68,9 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #EB3434;
+    background-color: #0083cc;
     color: #fff;
+    border-radius: 3px;
   }
   ul{
     margin-left: 8px;
@@ -72,5 +78,7 @@ div {
   ul li {
     font-size: 12px;
     list-style-type: none;
+    background-color: none;
+    border-radius: 0 0 3px 3px;
   }
 }

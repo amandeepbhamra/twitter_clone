@@ -2,7 +2,7 @@
 
 <div class="span7">
     <div class="frnt_welcome_text">
-        <h3>Welcome to Twitter.</h3>
+        <h3>Welcome to Tweety Tweet.</h3>
         <p>Find out what’s happening, right now, with the people and organizations you care about.</p>
     </div>
 </div>
@@ -18,15 +18,16 @@
         <%= f.password_field :password, :class => "input-block-level", :placeholder => "*********"  %>
 
  <div class="row-fluid">
-          <div class="span6">
+          <div class="span7">
             <% if devise_mapping.rememberable? -%>
-            <%= f.check_box :remember_me, :class => "checkbox" %> &nbsp; Remember me 
+            <%= f.check_box :remember_me, :class => "checkbox" %>&nbsp;Remember me 
             <%#= f.label :remember_me, :class => "checkbox" %>
 
     </div>
    
-          <div class="span3 offset3">
+          <div class="span12">
             <%= f.submit "Sign in", :class => "btn btn-info signin_btn" %>
+            <%= link_to "Sign up", new_registration_path(resource_name), :class => "signinpage_singup_btn btn" %>
         </div>
        
             <div class="span12">
@@ -35,8 +36,10 @@
 
             <% end -%>
             <% end %>
-        <br />
-        <%= link_to "Sign up for twitter", new_registration_path(resource_name), :class => "signinpage_singup_btn" %>
+        
+
+        <%#= link_to "Sign up for twitter", new_registration_path(resource_name), :class => "signinpage_singup_btn btn" %>
+        
             </div>
         </div><!-- row fluid -->
 
