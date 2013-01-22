@@ -88,7 +88,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @background_none: none;
 @text_decoration: none;
 @font_size: 13px;
-@box_shadow: 0 0 3px #ccc;
+@box_shadow: 0 0 2px #ccc;
 @pad: 15px;
 @full_width: 100%;
 @color: #2FC2EF;
@@ -173,6 +173,7 @@ a.link_color{
 .mrgn_btm{
 	margin-bottom: 0;
 }
+
 /* header */
 .navbar{
 	.navbar-inner{
@@ -342,6 +343,30 @@ a.link_color{
 										}/*  view_profile:hover; */
 									}/* view_profile */
 						}/* userpic_wrapper */
+						.homepage_tweets_wrapper{
+							border: @the-border;
+							box-shadow: @box_shadow;
+							.ease;
+							&:hover{
+								background-color: #f5f5f5;
+							}
+							a{
+								height: 36px;
+								display: inline-block;
+								line-height: 36px;
+								padding: @padding;
+								border-right: 1px solid #CCC;
+								&:hover{
+									background-color: transparent;
+									color: @color;
+									text-decoration: none;
+								}
+							}
+							
+							.border_right{
+									border-right: none;
+								}
+						}
 						.new_tweet_container{
 							padding: 14px 0 0 0;
 							.full_width{

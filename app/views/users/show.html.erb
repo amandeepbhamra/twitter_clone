@@ -13,19 +13,22 @@
                 <%=link_to "View My Profile page", "#", :class => "view_profile" %>
         </div><!-- userpic_wrapper -->
   
-        <div>
+        <div class="homepage_tweets_wrapper">
+            
                 <% if @user==current_user %>
                     <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
                 <% end %>
                 <%= link_to 'View Tweets',  user_tweets_path(@user) %>
                 <%= link_to 'Follower',  followers_user_path(@user) %>
-                <%= link_to 'Following',  following_user_path(@user) %>
+                <%= link_to 'Following',  following_user_path(@user), :class => "border_right" %>
+
             <div>
                 <% if !(@user == current_user) %>
                     <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', 
                         follow_user_path(@user) end %>
                 <% end %>
             </div>
+            
         </div>
 
 
@@ -56,7 +59,9 @@
     </div><!-- user_dashboard -->
 
     <div class="map_container">
-        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&size=200x200&sensor=false" %>
+        
+        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&size=600x600&sensor=false" %>
+        
         <!-- google map -->
     </div><!-- map_container -->
 </div><!-- span4 -->
