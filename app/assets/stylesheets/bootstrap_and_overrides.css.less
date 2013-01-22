@@ -94,6 +94,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 @color: #2FC2EF;
 @the-border: 1px solid #cecece;
 @width: 100%;
+@background_white_color: #fff;
 
 /* common css */
 a.link_color{
@@ -231,7 +232,7 @@ a.link_color{
 				}/* &:hover; */
 			}/* signin_receive_confirmation */
 			a.white_color, a.signin_btn{
-					color: #fff;
+					color: @background_white_color;
 					}
 			a.frgt_pswrd_recieveconfirmation{
 				text-indent: 5px;
@@ -278,7 +279,7 @@ a.link_color{
 				}
 			}
 				.user_dashboard{
-					background: #fff;
+					background: @background_white_color;
 					border: @the-border;
 					.rounded-corners; /* border-radius */
 					padding: @pad;
@@ -387,7 +388,7 @@ a.link_color{
 					.map_container{
 						padding: @pad;
 						margin-top: 10px;
-						background: #fff;
+						background: @background_white_color;
 						border: @the-border;
 						.rounded-corners; /* border-radius */
 					}
@@ -406,14 +407,14 @@ a.link_color{
 
 .span7{
 	.edit_profile_container{
-			background: #fff;
+			background: @background_white_color;
 			border: @the-border;
 			.rounded-corners; /* border-radius */
 			margin-bottom: 30px;
 			.edit_profile_title{
 				padding: @pad; 
 				border-bottom: 1px solid #e8e8e8;
-				background: #fff;
+				background: @background_white_color;
 				border-radius: 5px 5px 0 0;
 					h3{
 					font-size: 18px;
@@ -505,7 +506,9 @@ a.link_color{
 					background: url(/assets/reply.png) no-repeat -18px 0;
 				}
 				.flexible_width{
-					width: @width;
+					padding: @pad;
+					background: @background_white_color;
+					text-align: center;
 				}
 			}/* span7 */
 
@@ -525,6 +528,6 @@ a.link_color{
 	margin: 0;
 	height: 34px;
 	&:hover{
-		color: #fff;
+		color: @background_white_color;
 	}
 }
