@@ -62,7 +62,7 @@
             </p>
         </div><!-- edit_profile_title -->
         <div class="edit_profile_form_wrapper">
-            <%= form_for @user, :html => { :multipart => true, :class => 'well' } do |f| %>
+            <%= form_for @user, :html => { :multipart => true, :class => 'well background_none' } do |f| %>
             <div class="control-group">
                 <% if @user.errors.any? %>
                 <div id="error_explanation">
@@ -116,5 +116,16 @@
             </div>
             <% end %>
         </div><!-- edit_profile_form_wrapper -->
+        <div class="pagination pull-right">
+                  <ul>
+                    <li><a href="#">Prev</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">Next</a></li>
+                  </ul>
+            </div>
     </div><!-- edit_profile_container -->
+
 </div><!-- span5 -->
