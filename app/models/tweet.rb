@@ -5,6 +5,7 @@ class Tweet < ActiveRecord::Base
  	validate :status, :presence=>true, :limit => 140
 
  	has_many :retweets, :class_name => "Tweet", :foreign_key => "parent_tweet_id"
+ 	has_many :replies 
  	belongs_to :user, :counter_cache => true
  	
  	define_index do
