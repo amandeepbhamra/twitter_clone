@@ -1,4 +1,7 @@
 Twitter::Application.routes.draw do
+  resources :replies
+
+
   devise_for :users
 
   resources :users, :except => [ :destroy] do

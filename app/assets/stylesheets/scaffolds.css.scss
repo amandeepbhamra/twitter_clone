@@ -4,8 +4,6 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  background: #aad9f0 url(../assets/flowerbg.jpeg) no-repeat;
-  background-attachment: fixed;
 }
 
 p, ol, ul, td {
@@ -21,15 +19,13 @@ pre {
 }
 
 a {
-  /* color: #000; */
+  color: #000;
   &:visited {
-    /* color: #777;
-    text-decoration: none;
-    background-color: none; */
+    color: #666;
   }
   &:hover {
-    /* color: #777;
-    background-color: #000; */
+    color: #fff;
+    background-color: #000;
   }
 }
 
@@ -44,23 +40,18 @@ div {
 }
 
 .field_with_errors {
-  width: 100%;
   padding: 2px;
-  background-color: #fff;
+  background-color: red;
   display: table;
-  input.input-block-level{
-    width: 100%;
-    box-sizing: border-box;
-  }
 }
 
 #error_explanation {
-  width: 100%;
-  border: none;
-  padding: 7px 0;
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: none;
+  background-color: #f0f0f0;
   h2 {
     text-align: left;
     font-weight: bold;
@@ -68,17 +59,11 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #0083cc;
+    background-color: #c00;
     color: #fff;
-    border-radius: 3px;
-  }
-  ul{
-    margin-left: 8px;
   }
   ul li {
     font-size: 12px;
-    list-style-type: none;
-    background-color: none;
-    border-radius: 0 0 3px 3px;
+    list-style: square;
   }
 }
