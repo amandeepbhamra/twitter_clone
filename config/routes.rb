@@ -1,5 +1,5 @@
 Twitter::Application.routes.draw do
-  resources :replies
+  
 
 
   devise_for :users
@@ -17,9 +17,10 @@ Twitter::Application.routes.draw do
       get 'search'
     end
 
-    resources :tweets, :execpt=> [:show, :edit] do
+    resources :tweets, :execpt=> [:show, :edit, :update] do
       member do
         get 'retweet'
+        get 'reply'
       end
     end
   end

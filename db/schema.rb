@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123063037) do
+ActiveRecord::Schema.define(:version => 20130123100552) do
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",   :null => false
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(:version => 20130123063037) do
 
   create_table "tweets", :force => true do |t|
     t.text     "status",          :limit => 255
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
     t.integer  "user_id"
     t.integer  "parent_tweet_id"
+    t.integer  "reply",                          :default => 0
   end
 
   create_table "users", :force => true do |t|
