@@ -15,6 +15,7 @@
   <div class="field">
     <%= f.label :status %><br />
     <%= f.text_area :status, :maxlength=>'140', :rows=>4, :cols=>40 %>
+      <%= f.hidden_field :reply, :value => params[:reply] %>
   </div>
 
   <div class="actions">

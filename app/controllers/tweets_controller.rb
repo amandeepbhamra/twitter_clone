@@ -56,9 +56,8 @@ class TweetsController < ApplicationController
     @tweets_count = Tweet.search(params[:search]).count
     @users_count = User.search(params[:search]).count
   end
-  #---------------------Retweet------------------------#  
+  #----------------Retweet a tweet----------------#  
   def retweet
-
     @old_tweet = Tweet.find(params[:id])
     @retweet = Tweet.new
     @retweet.status = @old_tweet.status
@@ -74,7 +73,25 @@ class TweetsController < ApplicationController
       end
     end
   end
-  
+  #----------------Reply to a tweet-----------------#  
+  def reply
+    @old_tweet = Tweet.find(params[:id])
+    @reply = Tweet.new
+    @reply.status = @old_tweet.status
+    @reply.user_id = current_user.id
+    @reply.parent_tweet_id = @old_tweet.id
+    @reply.reply = 1
+    respond_to do |format|
+      if @reply.save
+        format.html { redirect_to user_tweets_path(@user), notice: 'Reply Done.' }
+        format.json 
+      else
+        format.html { redirect_to user_tweets_path(@user), notice: 'Reply not done.' }
+        format.json 
+      end
+    end
+  end
+
   private
   #-------------To get user_id as before filter for actions----------#
   def get_user_id

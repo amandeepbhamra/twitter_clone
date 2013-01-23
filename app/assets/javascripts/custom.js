@@ -5,4 +5,10 @@ $(function(){
   $(".tweet_btn").click(function () {
     $("textarea.expand").animate({ "height" : "40px" }, 200);
 	});
+
+  $("body").ezBgResize({
+            img : "/images/bg.jpg", // Required.
+        });
 });
+
+		
