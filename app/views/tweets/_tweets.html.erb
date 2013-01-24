@@ -7,7 +7,7 @@
     <tr>
       
       <td><%= tweet.status %></td>
-      
+      <td><%= link_to "reply", new_user_tweet_path(:user_id => current_user.id , :reply => tweet.id) %></td> 
       <td><%= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%></td>
 
       <% if current_user == tweet.user %>
