@@ -75,12 +75,7 @@ class TweetsController < ApplicationController
   end
   #----------------Reply to a tweet-----------------#  
   def reply
-    @old_tweet = Tweet.find(params[:id])
     @reply = Tweet.new
-    @reply.status = @old_tweet.status
-    @reply.user_id = current_user.id
-    @reply.parent_tweet_id = @old_tweet.id
-    @reply.reply = 1
     respond_to do |format|
       if @reply.save
         format.html { redirect_to user_tweets_path(@user), notice: 'Reply Done.' }
