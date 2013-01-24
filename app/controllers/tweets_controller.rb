@@ -31,10 +31,10 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to user_tweets_path(@user), notice: 'Tweet was successfully created.' }
-        format.json { render json: @tweet, status: :created, location: @tweet }
+        format.json { render json: @tweet, content: :created, location: @tweet }
       else
         format.html { render action: "new" }
-        format.json { render json: @tweet.errors, status: :unprocessable_entity }
+        format.json { render json: @tweet.errors, content: :unprocessable_entity }
       end
     end
   end
@@ -60,7 +60,7 @@ class TweetsController < ApplicationController
   def retweet
     @old_tweet = Tweet.find(params[:id])
     @retweet = Tweet.new
-    @retweet.status = @old_tweet.status
+    @retweet.content = @old_tweet.content
     @retweet.user_id = current_user.id
     @retweet.parent_tweet_id = @old_tweet.id
     respond_to do |format|
