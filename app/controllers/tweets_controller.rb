@@ -7,6 +7,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
+
     @tweets = @user.tweets.paginate(:page => params[:page], :per_page => 5)
     respond_to do |format|
       format.html # index.html.erb
@@ -73,20 +74,7 @@ class TweetsController < ApplicationController
       end
     end
   end
-  #----------------Reply to a tweet-----------------#  
-  def reply
-    @reply = Tweet.new
-    respond_to do |format|
-      if @reply.save
-        format.html { redirect_to user_tweets_path(@user), notice: 'Reply Done.' }
-        format.json 
-      else
-        format.html { redirect_to user_tweets_path(@user), notice: 'Reply not done.' }
-        format.json 
-      end
-    end
-  end
-
+  
   private
   #-------------To get user_id as before filter for actions----------#
   def get_user_id

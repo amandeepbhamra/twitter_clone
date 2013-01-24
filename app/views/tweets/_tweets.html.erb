@@ -7,7 +7,7 @@
     <tr>
       
       <td><%= tweet.content %></td>
-      <td><%= link_to "reply", new_user_tweet_path(:user_id => current_user.id , 
+      <td><%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id , 
       :reply_tweet_id => tweet.id) %></td> 
       <td><%= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%></td>
 
@@ -16,9 +16,12 @@
       <% end %>
       
       <% if !(@user == current_user) %>
-        <td><%= link_to 'Retweet', retweet_user_tweet_path(current_user, tweet)%></td>
+        <td><%= link_to 'Retweet', retweet_user_tweet_path(current_user, tweet) %></td>
       <% end %>
 
+    </tr>
+    <tr>
+      <td><%#= tweet.content %></td>
     </tr>
   <% end %>
 </table>
