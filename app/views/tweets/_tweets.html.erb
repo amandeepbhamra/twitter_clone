@@ -1,31 +1,80 @@
-<table>
-  <tr>
-    <th>Content</th>
-  </tr>
+ <div class="edit_profile_container">
+        <div class="edit_profile_title">
+            <h3>Tweets</h3>
+           
+        </div>
+        <div class="new_tweet_container">
+            <div class="new_tweets">4 new tweets</div>
+        </div><!-- new_tweet_container -->
+        <ul class="nav nav-pills nav-stacked">
+          <table>
+            <tr>
+              <th>Content</th>
+            </tr>
 
-  <% @tweets.each do |tweet| %>
-    <tr>
-      
-      <td><%= tweet.content %></td>
-      <td><%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id , 
-      :reply_tweet_id => tweet.id) %></td> 
-      <td><%= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%></td>
+            <% tweets.each do |tweet| %>
+              <tr>
+                
+                <td><%= tweet.content %></td>
+                <td><%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id , 
+                :reply_tweet_id => tweet.id) %></td> 
+                <td><%= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%></td>
 
-      <% if current_user == tweet.user %>
-        <td><%= link_to 'Destroy', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-      
-      <% if !(@user == current_user) %>
-        <td><%= link_to 'Retweet', retweet_user_tweet_path(current_user, tweet) %></td>
-      <% end %>
+                <% if current_user == tweet.user %>
+                  <td><%= link_to 'Destroy', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+                
+                <% if !(@user == current_user) %>
+                  <td><%= link_to 'Retweet', retweet_user_tweet_path(current_user, tweet) %></td>
+                <% end %>
 
-    </tr>
-    <tr>
-      <td><%#= tweet.content %></td>
-    </tr>
-  <% end %>
-</table>
+              </tr>
+              <tr>
+                <td><%#= tweet.content %></td>
+              </tr>
+            <% end %>
+          </table>
 
 <br />
 
-<%= will_paginate @tweets %>
+<%#= will_paginate @tweets %>
+            <%# (1..5).each do |i| %>
+            <!-- <li>
+            <div class="media tweetbox_padding border">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
+                </a>
+                <div class="media-body">
+                    <h5 class="media-heading">
+                        HCL Technologies <small>&#169; hcltech</small>
+                    </h5>
+                    Neil-Vikram-Vinay's Fun-Musical Exclusive Interview On 'David' | Bollywood Videos - Bollywood Hungama
+                    
+                    <br />
+                    
+                    <a class="link_color" href="#">bollywoodhungama.com/more/videos/view/id/1662221 …</a>
+                    
+                    <br />
+                     -->
+                    <%#= image_tag "/assets/retweet.png" "#" %>
+                    <!-- <small>Retweeted by</small>  -->
+                    <%#= link_to "Neil Nitin Mukesh", "#", :class => "link_color" %>
+                <!-- </div> -->
+                <!-- media-body -->
+           <!--  </div> -->
+            <!-- media padding -->
+            <!-- </li> -->
+
+            <%# end %>
+            </ul>
+            <div class="pagination pull-right">
+                  <ul>
+                    <li><a href="#">Prev</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">Next</a></li>
+                  </ul>
+            </div>
+    </div>
