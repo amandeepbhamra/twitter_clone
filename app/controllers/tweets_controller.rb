@@ -31,7 +31,7 @@ class TweetsController < ApplicationController
     @tweet = @user.tweets.build(params[:tweet])
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to user_tweets_path(@user), notice: 'Tweet was successfully created.' }
+        format.html { redirect_to @user, notice: 'Tweet was successfully created.' }
         format.json { render json: @tweet, content: :created, location: @tweet }
       else
         format.html { render action: "new" }

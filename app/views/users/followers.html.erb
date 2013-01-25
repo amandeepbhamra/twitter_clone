@@ -1,13 +1,9 @@
-<% if !@follower.nil? %> 
-	<h5><%= @user.name %>'s Followers </h5>
-	<table>
-	<% @followers.each do |user| %>
-		<tr>
-			<td><%= link_to user.name, user %></td>
-			<td><%= link_to "Follow", follow_user_path(user) %></td>
-		</tr>
-	<% end %>
-	</table>
-<% else %>
-	<h5><%= @user.name %> has no followers.</h2>
-<% end %>
+<div class="span4">
+    <%= render 'user_profile_section' %>
+    <%= render 'user_location_map' %>
+</div><!-- span4 -->
+
+<!--  right container  -->
+<div class="span7">
+  <%= render 'user_followers' %>
+</div>

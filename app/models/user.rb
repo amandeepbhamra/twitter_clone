@@ -9,11 +9,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
   :trackable, :validatable, :confirmable, :token_authenticatable
 
-  # validates :name, :mobile, :location, :bio, :gender, :city, :country, 
-  # :website, :presence => true
-  # validates :name, :uniqueness =>true
-  # validates_numericality_of :mobile
-  # validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix
+  validates :name, :mobile, :bio, :gender, :city, :country, 
+  :website, :presence => true ,:if => lambda{|a| !a.new_record?}
+  validates :name, :uniqueness =>true ,:if => lambda{|a| !a.new_record?}
+  validates_numericality_of :mobile ,:if => lambda{|a| !a.new_record?}
+  validates_format_of :website, 
+  :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix,
+  :if => lambda{|a| !a.new_record?}
 
 	has_many :tweets, :order => "created_at DESC"
   

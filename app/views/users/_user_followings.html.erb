@@ -1,0 +1,13 @@
+<% if !@following.nil? %> 
+	<h5><%= @user.name %> is Following:</h2>
+	<table>
+	<% @following.each do |user| %>
+		<tr>
+			<td><%= link_to user.name, user %></td>
+			<td><%= link_to "Unfollow", unfollow_user_path(user) %></td>
+		</tr>
+	<% end %>
+	</table>
+<% else %>
+	<h5><%= @user.name %> is not following to anyone.</h2>
+<% end %>

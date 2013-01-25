@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124060413) do
+ActiveRecord::Schema.define(:version => 20130125123034) do
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",   :null => false
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(:version => 20130124060413) do
     t.string   "unconfirmed_email"
     t.string   "name"
     t.integer  "mobile"
-    t.string   "location"
     t.text     "bio"
     t.string   "gender"
     t.string   "city"
