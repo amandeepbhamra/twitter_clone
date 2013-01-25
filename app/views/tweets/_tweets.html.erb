@@ -1,23 +1,20 @@
  <div class="edit_profile_container">
-        <div class="edit_profile_title">
-            <h3>Tweets</h3>
-           
-        </div>
-        <div class="new_tweet_container">
-            <div class="new_tweets">4 new tweets</div>
+    <div class="edit_profile_title">
+        <h3>Tweets</h3>
+    </div>
+    <div class="new_tweet_container">
+        <div class="new_tweets">4 new tweets</div>
         </div><!-- new_tweet_container -->
         <ul class="nav nav-pills nav-stacked">
-          <table>
-            <tr>
-              <th>Content</th>
-            </tr>
-
             <% tweets.each do |tweet| %>
-              <tr>
-                
-                <td><%= tweet.content %></td>
-                <td><%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id , 
-                :reply_tweet_id => tweet.id) %></td> 
+            <li>
+                <div class="media tweetbox_padding border">
+                    <a class="pull-left" href="#">
+                        <%= image_tag(tweet.user.photo.url(:thumb)) %>
+                    </a>
+                    <div class="media-body">
+                        <td><%= tweet.content %></td>
+                        <td><%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id) %></td> 
                 <td><%= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%></td>
 
                 <% if current_user == tweet.user %>
@@ -33,7 +30,7 @@
                 <td><%#= tweet.content %></td>
               </tr>
             <% end %>
-          </table>
+          
 
 <br />
 
