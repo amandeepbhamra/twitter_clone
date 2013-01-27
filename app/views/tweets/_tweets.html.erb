@@ -13,22 +13,26 @@
                         <%= image_tag(tweet.user.photo.url(:thumb)) %>
                     </a>
                     <div class="media-body">
-                        <td><%= tweet.content %></td>
-                        <td><%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id) %></td> 
-                <td><%= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%></td>
+                        <h5 class="media-heading"><%= tweet.user.name %></h5>
+                        <%= tweet.content %>
+                        <br />
+
+                        
+                        <%= image_tag "/assets/retweet.png" "#" %>
+                        <%= link_to_if(!(@user == current_user), 'Retweet', retweet_user_tweet_path(current_user, tweet)) do 'Retweeted by Me' if (current_user == tweet.user && !(tweet.parent_tweet_id.nil?)) end %>
+                        <%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id) %>
+                        <%#= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%>
 
                 <% if current_user == tweet.user %>
-                  <td><%= link_to 'Destroy', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <%= link_to 'Destroy', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
                 
-                <% if !(@user == current_user) %>
-                  <td><%= link_to 'Retweet', retweet_user_tweet_path(current_user, tweet) %></td>
-                <% end %>
+               
 
-              </tr>
-              <tr>
-                <td><%#= tweet.content %></td>
-              </tr>
+
+            
+                <%#= tweet.content %>
+              
             <% end %>
           
 
