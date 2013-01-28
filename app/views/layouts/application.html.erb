@@ -7,7 +7,13 @@
   		<%= csrf_meta_tags %>
       
 	</head>
+
 	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <script type="text/javascript" src="//localhost:3000/fizzybar.js"></script>
+<script type="text/javascript">
+  getFizzybar( 1, 1 );
+</script>
+
 
       <div id='notice' style="<%= 'display: none; ' if flash[:notice].blank? %> text-align: center;">
         <%= flash[:notice].html_safe  unless flash[:notice].blank? %>
