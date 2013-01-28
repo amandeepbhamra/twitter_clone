@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   before_filter :authenticate_user!
-  before_filter :get_user_id, :only => [:show, :edit, :update, :follow, :unfollow, :following, :followers, :authorize_user]
+  before_filter :get_user_id, :only => [:show, :edit, :update, :follow, :unfollow, :following, :followers, :authorize_user, :me]
   before_filter :authorize_user, :only => [:edit, :update]
   
   # GET /users/1
@@ -84,6 +84,10 @@ class UsersController < ApplicationController
     @users_searched = User.search(params[:search],:page => params[:page], :per_page => 10)
     @users_count = User.search(params[:search]).count
     @tweets_count = Tweet.search(params[:search]).count
+  end
+  
+  def me
+    @tweets = @user.tweets.paginate(:per_page => 10, :page => params[:page])
   end
 
   private
