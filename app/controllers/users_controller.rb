@@ -75,7 +75,7 @@ class UsersController < ApplicationController
 
   #-------------To view list of Followings-------------#
   def following
-    @following = @user.user_followerss
+    @following = @user.user_followers
   end
   
   #---------------------Search------------------------#  
