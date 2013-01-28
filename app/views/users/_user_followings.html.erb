@@ -4,7 +4,8 @@
 	</div>
 
 <ul class="nav nav-pills nav-stacked">
-            <% (1..5).each do |i| %>
+    <% if !@following.nil? %> 
+        <% @following.each do |user| %>
             <li>
             <div class="media tweetbox_padding border">
                 <a class="pull-left" href="#">
@@ -12,45 +13,20 @@
                 </a>
                 <div class="media-body">
                     <h5 class="media-heading  border_bottom">
-                        HCL Technologies <small>&#169; hcltech</small>
+                        <%= link_to user.name, user %> 
                     </h5>
-                    
-                    <% if !@following.nil? %> 
-					<h5><%= @user.name %> is Following:</h5>
-	
-					<% @following.each do |user| %>
-		
-						<%= link_to user.name, user %>
-						<%= link_to "Unfollow", unfollow_user_path(user) %>
+                    	<%= link_to "Unfollow", unfollow_user_path(user) %>
 		
 				<% end %>
 				<% else %>
 			<h5><%= @user.name %> is not following to anyone.</h2>
 		<% end %>
-
-                  
                     <div class="btn btn-info"> Following </div>
 
                 </div><!-- media-body -->
             </div><!-- media padding -->
             </li>
 
-            <% end %>
+            
             </ul>
-
-
-
-
-<% if !@following.nil? %> 
-	<h5><%= @user.name %> is Following:</h2>
-	
-	<% @following.each do |user| %>
-		
-			<%= link_to user.name, user %>
-			<%= link_to "Unfollow", unfollow_user_path(user) %>
-		
-	<% end %>
-<% else %>
-	<h5><%= @user.name %> is not following to anyone.</h2>
-<% end %>
 </div>
