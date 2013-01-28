@@ -20,11 +20,13 @@
                         
                         <%= image_tag "/assets/retweet.png" "#" %>
                         <%= link_to_if(!(@user == current_user), 'Retweet', retweet_user_tweet_path(current_user, tweet)) do 'Retweeted by Me' if (current_user == tweet.user && !(tweet.parent_tweet_id.nil?)) end %>
-                        <%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id) %>
+
+                        <%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id), :class => "reply" %>
+
                         <%#= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%>
 
                 <% if current_user == tweet.user %>
-                  <%= link_to 'Destroy', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to 'Delete', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' }, :class => "delete" %>
                 <% end %>
                 
                
