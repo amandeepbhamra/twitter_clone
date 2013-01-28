@@ -16,17 +16,23 @@
             <div class="row">
         <% if @user == current_user %>
         <div class="span1">
-            <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
+            <div>&nbsp;</div>
+            <%= link_to 'New Tweet',  new_user_tweet_path(@user) %>
         </div>
         <% end %>
         <div class="span1">
+
             <%= @user.tweets.count %>
             <%= link_to 'Tweets', me_user_path(@user) %>
         </div>
-            <%= @user.following_users.count %>
+        <div class="span1">
+            <div><%= @user.following_users.count %></div>
             <%= link_to 'Follower',  followers_user_path(@user) %>
-            <%= @user.user_followers.count %>
+        </div>
+        <div class="span1">
+            <div><%= @user.user_followers.count %></div>
             <%= link_to 'Following',  following_user_path(@user), :class => "border_right" %>
+        </div>
             <div>
             <% if !(@user == current_user) %>
                 <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', 

@@ -7,7 +7,10 @@
   		<%= csrf_meta_tags %>
       
 	</head>
+
 	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+    
+
 
       <div id='notice' style="<%= 'display: none; ' if flash[:notice].blank? %> text-align: center;">
         <%= flash[:notice].html_safe  unless flash[:notice].blank? %>

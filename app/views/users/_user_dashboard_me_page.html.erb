@@ -1,8 +1,8 @@
 <div class="user_dashboard">
     <ul class="nav nav-tabs nav-stacked mrgn_btm">
-        <li class="active"><a herf="#">Tweets</a></li>
-        <li><a herf="#">Following</a></li>
-        <li><a herf="#">Followers</a></li>
+        <li class="active"><%= link_to 'Tweets', me_user_path(@user) %></li>
+        <li><%= link_to 'Follower',  followers_user_path(@user) %></li>
+        <li><%= link_to 'Following',  following_user_path(@user) %></li>
         <li><a herf="#">Favourites</a></li>
         <li><a herf="#">Lists</a></li>
     </ul>

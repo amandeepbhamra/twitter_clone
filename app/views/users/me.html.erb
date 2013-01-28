@@ -7,36 +7,8 @@
     
 </div><!-- span4 -->
 
-
 <div class="span7">
-	<div class="edit_profile_container">
-        <div class="mepage_padding">
-            <div class="user_cover_pic"></div><!-- user_cover_pic -->
-            <div class="row user_tweet_status">
-                <a href="#" class="span1 my_tweets_rating"> 
-                    <strong>12</strong> <br />Tweets</a>
-                <a href="#" class="span1 my_tweets_rating"> 
-                    <strong>12</strong> <br />Following</a>
-                <a href="#" class="span1 my_tweets_rating"> 
-                    <strong>12</strong> <br />
-                    Followers</a>
-            </div>
-
-        </div><!-- mepage_padding -->
-	</div><!-- edit_profile_container -->
-
-<div class="edit_profile_container">
-        <%= render 'tweets/tweets', :tweets => @tweets %>
-
-<div class="pagination pull-right">
-                  <ul>
-                    <li><a href="#">Prev</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">Next</a></li>
-                  </ul>
-            </div>
-    </div>
-</div><!-- span7 -->
+	<%= render 'user_cover_pic_me_page' %>
+    <%= render 'tweets/tweets', :tweets => @tweets %>
+</div>    
+<!-- span7 -->
