@@ -499,12 +499,17 @@ a.link_color{
 					
 				}/*new_tweet_container*/
 				.reply, .retweet, .favourite{
-					width: 20px;
+					width: 80px;
 					height: 20px;
 					display: inline-block;
-					background: url(/assets/reply.png) no-repeat -38px 0;
-					text-indent: -999999px;
+					background: url(/assets/reply.png) no-repeat 0 -100px;
+					text-indent: 24px;
 					cursor: pointer;
+					.ease;
+					&:hover{
+						color: #2FC2EF;
+						text-decoration: none;
+					}
 				}/* reply */
 				.retweet_background{
 					background: url(/assets/reply.png) no-repeat 1px 0;
