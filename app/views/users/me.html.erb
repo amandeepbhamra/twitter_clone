@@ -1,61 +1,10 @@
 <div class="span4">
-	<div class="user_dashboard">
-        <ul class="nav nav-tabs nav-stacked mrgn_btm">
-            <li class="active"><a herf="#">Tweets</a></li>
-            <li><a herf="#">Following</a></li>
-            <li><a herf="#">Followers</a></li>
-            <li><a herf="#">Favourites</a></li>
-            <li><a herf="#">Lists</a></li>
-        </ul>
-    </div><!-- user_dashboard -->
-
-	<div class="user_dashboard">
-		Who to Follow .
-        <%= link_to "Refresh", "#", :class => "refresh" %> .
-        <%= link_to "View All", "#", :class => "refresh" %>
-
-        <ul class="nav nav-pills nav-stacked">
-            
-            <% (1..3).each do |i| %>
-            <li>
-            <div class="media who_tofollow_padding">
-                <a class="pull-left" href="#">
-                    <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
-                </a>
-                <div class="media-body">
-                    <h5 class="media-heading">
-                        MagmaConf <small>&#169; MagmaConf</small>
-                    </h5>
-                    Followed by Gregg Pollack
-                    <br />
-                     <a class="btn" href="#">Follow</a>
-                </div><!-- media-body -->
-            </div><!-- media padding -->
-            </li>
-            <% end %>
-        </ul>
-	</div><!-- user_dashboard -->
- 
-    <div class="user_dashboard">
-        <ul class="copyright_wrapper">
-            <li class="copyright">&#169; 2013 Twitter</li>
-            <li><a herf="#">About</a></li>
-            <li><a herf="#">Help</a></li>
-            <li><a herf="#">Terms</a></li>
-            <li><a herf="#">Privacy</a></li>
-            <li><a herf="#">Blog</a></li>
-            <li><a herf="#">Status</a></li>
-            <li><a herf="#">Apps</a></li>
-            <li><a herf="#">Resources</a></li>
-            <li><a herf="#">Jobs</a></li>
-            <li><a herf="#">Advertisers</a></li>
-            <li><a herf="#">Businesses</a></li>
-            <li><a herf="#">Media</a></li>
-            <li><a herf="#">Developers</a></li>           
-
-            <br style="clear:both;">
-        </ul>
-    </div><!-- user_dashboard -->
+    <%= render 'user_dashboard_me_page'%>
+	
+    <%= render 'list_of_users_to_follow'%>
+	
+    <%= render 'copyright'%>
+    
 </div><!-- span4 -->
 
 
