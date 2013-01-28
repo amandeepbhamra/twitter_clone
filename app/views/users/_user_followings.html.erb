@@ -15,14 +15,12 @@
                     <h5 class="media-heading  border_bottom">
                         <%= link_to user.name, user %> 
                     </h5>
-                    	<%= link_to "Unfollow", unfollow_user_path(user) %>
+                    	<%= link_to "Unfollow", unfollow_user_path(user), :class => "btn btn-info" %>
 		
 				<% end %>
 				<% else %>
 			<h5><%= @user.name %> is not following to anyone.</h2>
 		<% end %>
-                    <div class="btn btn-info"> Following </div>
-
                 </div><!-- media-body -->
             </div><!-- media padding -->
             </li>
