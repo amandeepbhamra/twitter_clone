@@ -13,11 +13,16 @@
         </div><!-- userpic_wrapper -->
   
         <div class="homepage_tweets_wrapper">
+            <div class="row">
         <% if @user == current_user %>
+        <div class="span1">
             <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
+        </div>
         <% end %>
+        <div class="span1">
             <%= @user.tweets.count %>
             <%= link_to 'Tweets', @user %>
+        </div>
             <%= @user.following_users.count %>
             <%= link_to 'Follower',  followers_user_path(@user) %>
             <%= @user.user_followers.count %>
@@ -28,7 +33,7 @@
                         follow_user_path(@user) end %>
             <% end %>
         </div>
-            
+            </div>
     </div>
 
     <%= render 'new_tweet' %>
