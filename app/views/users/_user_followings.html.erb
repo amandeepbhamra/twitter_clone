@@ -9,7 +9,7 @@
             <li>
             <div class="media tweetbox_padding border">
                 <a class="pull-left" href="#">
-                    <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
+                    <%= image_tag(user.photo.url(:thumb)) %>
                 </a>
                 <div class="media-body">
                     <h5 class="media-heading  border_bottom">
