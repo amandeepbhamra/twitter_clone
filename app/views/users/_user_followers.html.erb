@@ -1,13 +1,30 @@
-<% if !@followers.nil? %> 
-	<h5><%= @user.name %>'s Followers </h5>
-	<table>
-	<% @followers.each do |user| %>
-		<tr>
-			<td><%= link_to user.name, user %></td>
-			<td><%= link_to "Follow", follow_user_path(user) %></td>
-		</tr>
+<div class="edit_profile_container">
+	<div class="edit_profile_title">
+		<h3>Followers</h3>
+	</div>
+
+<ul class="nav nav-pills nav-stacked">
+    <% if !@followers.nil? %>  
+        <% @followers.each do |user| %>
+            <li>
+            <div class="media tweetbox_padding border">
+                <a class="pull-left" href="#">
+                    <%= image_tag(user.photo.url(:thumb)) %>
+                </a>
+                <div class="media-body">
+                    <h5 class="media-heading  border_bottom">
+                        <%= link_to user.name, user %> <%= user.email %>
+                    </h5>
+                    	<%= user.bio %>
+
+                    	<%= link_to "Follow", follow_user_path(user), :class => "btn btn-info" %>
+
+				</div><!-- media-body -->
+			</div><!-- media padding -->
+			</li>
+		<% end %>
+	<% else %>
+		<h5><%= @user.name %> is not following to anyone.</h2>
 	<% end %>
-	</table>
-<% else %>
-	<h5><%= @user.name %> has no followers.</h2>
-<% end %>
+</ul>                
+</div>
