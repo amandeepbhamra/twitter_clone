@@ -16,8 +16,11 @@
         <% if @user == current_user %>
             <%= link_to 'New Tweet',  new_user_tweet_path(@user) %> 
         <% end %>
-            <%= link_to 'View Tweets', @user %>
+            <%= @user.tweets.count %>
+            <%= link_to 'Tweets', @user %>
+            <%= @user.following_users.count %>
             <%= link_to 'Follower',  followers_user_path(@user) %>
+            <%= @user.user_followers.count %>
             <%= link_to 'Following',  following_user_path(@user), :class => "border_right" %>
             <div>
             <% if !(@user == current_user) %>

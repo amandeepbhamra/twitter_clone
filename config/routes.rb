@@ -12,6 +12,7 @@ Twitter::Application.routes.draw do
       get 'followers'
       get 'me'
       get 'discover'
+      get 'connect'
     end
     collection do
       get 'search'
