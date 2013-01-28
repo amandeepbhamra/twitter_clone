@@ -13,18 +13,23 @@
                 </a>
                 <div class="media-body">
                     <h5 class="media-heading  border_bottom">
-                        <%= link_to user.name, user %> 
+                        <%= link_to user.name, user %> <%= user.email %>
                     </h5>
+                    	<%= user.bio %>
+
                     	<%= link_to "Unfollow", unfollow_user_path(user), :class => "btn btn-info" %>
-		
-				<% end %>
-				<% else %>
-			<h5><%= @user.name %> is not following to anyone.</h2>
+
+				</div><!-- media-body -->
+			</div><!-- media padding -->
+			</li>
 		<% end %>
-                </div><!-- media-body -->
-            </div><!-- media padding -->
-            </li>
+	<% else %>
+		<h5><%= @user.name %> is not following to anyone.</h2>
+	<% end %>
+</ul>                
+            
+            
 
             
-            </ul>
+            
 </div>
