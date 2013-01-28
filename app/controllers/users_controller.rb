@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   
   # GET /users/1
   # GET /users/1.json
-  def show    
+  def show
+    @tweets = @user.tweets.paginate(:per_page => 10, :page => params[:page])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
