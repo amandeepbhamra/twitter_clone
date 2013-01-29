@@ -1,6 +1,21 @@
 <div class="edit_profile_container">
     <div class="mepage_padding">
-        <div class="user_cover_pic"></div><!-- user_cover_pic -->
+        <div class="user_cover_pic">
+            <div class="row">
+                
+                <div class="span7 padding_top margin">
+                    <div class="thumbnail border_none">
+                  <img src="/assets/usertweet_profilepic.png">
+                  <div class="caption">
+                    <h3 class="white_color">Nitin Grover</h3>
+                    <p class="white_color">Tagline = I restore when i'm alone</p>
+                    
+                  </div>
+                </div>
+                    
+                </div>
+            </div>
+        </div><!-- user_cover_pic -->
         <div class="row user_tweet_status">
             <a href="#" class="span1 my_tweets_rating"> 
                 <strong><%= @user.tweets.count %></strong> <br />Tweets</a>
