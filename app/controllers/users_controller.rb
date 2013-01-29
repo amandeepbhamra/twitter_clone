@@ -58,40 +58,54 @@ class UsersController < ApplicationController
   end
 
   #---------------To Follow any User-------------#
+  
   def follow
     @user.follow(current_user)
     redirect_to current_user, notice: 'You are following now to ' + @user.email 
   end
   
   #---------------To Unfollow any user------------#
+  
   def unfollow
     @user.stop_following(current_user)
     redirect_to current_user, notice: 'You are not following now to ' + @user.email
   end
   
   #---------------To view list of Followers------------#
+  
   def followers
     @followers = @user.following_users
   end
 
   #-------------To view list of Followings-------------#
+  
   def following
     @following = @user.user_followers
   end
   
   #---------------------Search------------------------#  
+  
   def search 
     @users_searched = User.search(params[:search],:page => params[:page], :per_page => 10)
     @users_count = User.search(params[:search]).count
     @tweets_count = Tweet.search(params[:search]).count
   end
   
+  #---------For getting list of user's tweets at user's me page--------#
+  
   def me
     @tweets = @user.tweets.paginate(:per_page => 10, :page => params[:page])
   end
 
+  #-----------To get list of Followable Users----------#
+
+  def followable_users
+    @followable_users = Follow.for_follower(@user).order('created_at')
+  end
+
   private
   #-------------To get user_id as before filter for actions----------#
+  
   def get_user_id
     @user = User.find_by_id(params[:id])
     if @user.nil?
@@ -100,6 +114,7 @@ class UsersController < ApplicationController
   end
 
   #-------------To authorize user for editing and update-----------------#
+  
   def authorize_user
     if !(@user == current_user)
       redirect_to current_user, notice: 'You are not authorized for this action.'

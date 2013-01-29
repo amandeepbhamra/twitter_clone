@@ -16,8 +16,7 @@
                 <h5 class="media-heading"><%= tweet.user.name %></h5>
                 <div class="user_tweet_bio"><%= tweet.content %></div>
                 
-                <%= image_tag "/assets/retweet.png" "#" %>
-                <%= link_to_if(!(@user == current_user), 'Retweet', retweet_user_tweet_path(current_user, tweet)) do 'Retweeted by Me' if (current_user == tweet.user && !(tweet.parent_tweet_id.nil?)) end %>
+                <%= link_to_if(!(@user == current_user),(image_tag("/assets/retweet.png")+"Retweet"), retweet_user_tweet_path(current_user, tweet)) do (image_tag("/assets/retweet.png")+"Retweeted") if (current_user == tweet.user && !(tweet.parent_tweet_id.nil?)) end %>
                 <%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id), :class => "reply" %>
                 <%#= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%>
                 <% if current_user == tweet.user %>
