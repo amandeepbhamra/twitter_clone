@@ -13,9 +13,12 @@
                 </a>
                 <div class="media-body">
                     <h5 class="media-heading  border_bottom">
-                        <%= link_to user.name, user %> <%= user.email %>
+                        <%= link_to user.name, user %> 
+                        <%= user.email %>
                     </h5>
+                    <div>
                     	<%= user.bio %>
+                    </div>   
 
                     	<%= link_to "Unfollow", unfollow_user_path(user), :class => "btn btn-info" %>
 
