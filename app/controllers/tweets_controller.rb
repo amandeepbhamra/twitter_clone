@@ -46,7 +46,7 @@ class TweetsController < ApplicationController
     @tweet = @user.tweets.find(params[:id])
     @tweet.destroy
     respond_to do |format|
-      format.html { redirect_to  user_tweets_path(@user) }
+      format.html { redirect_to @user }
       format.json { head :no_content }
     end
   end
@@ -66,10 +66,10 @@ class TweetsController < ApplicationController
     @retweet.parent_tweet_id = @old_tweet.id
     respond_to do |format|
       if @retweet.save
-        format.html { redirect_to user_tweets_path(@user), notice: 'Retweet Done.' }
+        format.html { redirect_to @user, notice: 'Retweet Done.' }
         format.json 
       else
-        format.html { redirect_to user_tweets_path(@user), notice: 'Retweet not done.' }
+        format.html { redirect_to @user, notice: 'Retweet not done.' }
         format.json 
       end
     end
@@ -83,9 +83,7 @@ class TweetsController < ApplicationController
   
   #-------------To authorize user for tweet destroy-----------------#
   def authorize_user
-    if @user == current_user
-      render :action => :destroy
-    else
+    if @user != current_user
       redirect_to current_user, notice: 'you are not authorized for this action.'
     end
   end
