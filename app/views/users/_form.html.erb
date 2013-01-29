@@ -2,19 +2,17 @@
     <div class="user_dashboard">
         <div class="userpic_wrapper">
             <div class="userpic">
-                <%=link_to image_tag(@user.photo.url(:thumb)), "#" %>
+                <%= link_to image_tag(@user.photo.url(:thumb)), "#" %>
             </div><!-- userpic -->
             <% if !@user.name.nil? %>
-                <%=link_to @user.name, "#", :class => "username" %>
+                <%= link_to @user.name, "#", :class => "username" %>
             <% else %>
-                <%=link_to @user.email, "#", :class => "username" %>
+                <%= link_to @user.email, "#", :class => "username" %>
             <% end %>
             <br />
-            <%=link_to "View My Profile page", "#", :class => "view_profile" %>
+            <%= link_to "View My Profile page", "#", :class => "view_profile" %>
         </div><!-- userpic_wrapper -->
     </div><!-- userprofile_section -->
-
-  
     
     <div class="user_dashboard">
         <ul class="nav nav-tabs nav-stacked">
@@ -28,9 +26,7 @@
             <li><a herf="#">Widget</a></li>
         </ul>
     </div><!-- user_dashboard -->
-    
-
-   
+       
     <div class="user_dashboard">
         <ul class="copyright_wrapper">
             <li class="copyright">&#169; 2013 Twitter</li>
@@ -116,16 +112,7 @@
             </div>
             <% end %>
         </div><!-- edit_profile_form_wrapper -->
-        <div class="pagination pull-right">
-                  <ul>
-                    <li><a href="#">Prev</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">Next</a></li>
-                  </ul>
-            </div>
+       
     </div><!-- edit_profile_container -->
 
 </div><!-- span5 -->
