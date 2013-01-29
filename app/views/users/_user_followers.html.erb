@@ -16,10 +16,10 @@
                         <%= link_to user.name, user, :class => "user_name" %>  &nbsp;
                         <%= link_to user.email, user, :class => "user_email" %>
                     </h5>
-                    <div>
+                    <div class="user_bio">
                     	<%= user.bio %>
                     </div>
-                    	<%= link_to "Follow", follow_user_path(user), :class => "btn btn-info" %>
+                    	<%= link_to "Follow", follow_user_path(user), :class => "btn" %>
 
 				</div><!-- media-body -->
 			</div><!-- media padding -->

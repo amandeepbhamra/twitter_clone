@@ -13,14 +13,14 @@
                 </a>
                 <div class="media-body">
                     <h5 class="media-heading  border_bottom">
-                        <%= link_to user.name, user %> 
-                        <%= user.email %>
+                        <%= link_to user.name, user, :class => "user_name"  %> 
+                        <%=link_to user.email, user, :class => "user_email" %>
                     </h5>
-                    <div>
-                    	<%= user.bio %>
-                    </div>   
+                    <div class="user_bio">
+                        <%= user.bio %>
+                    </div>  
 
-                    	<%= link_to "Unfollow", unfollow_user_path(user), :class => "btn btn-info" %>
+                    	<%= link_to "Unfollow", unfollow_user_path(user), :class => "btn" %>
 
 				</div><!-- media-body -->
 			</div><!-- media padding -->

@@ -21,8 +21,7 @@
         </div>
         <% end %>
         <div class="span1">
-
-            <%= @user.tweets.count %>
+            <div><%= @user.tweets.count %></div>
             <%= link_to 'Tweets', me_user_path(@user) %>
         </div>
         <div class="span1">

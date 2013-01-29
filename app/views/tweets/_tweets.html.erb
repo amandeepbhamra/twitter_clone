@@ -14,8 +14,8 @@
             </a>
             <div class="media-body">
                 <h5 class="media-heading"><%= tweet.user.name %></h5>
-                <%= tweet.content %>
-                <br />
+                <div class="user_tweet_bio"><%= tweet.content %></div>
+                
                 <%= image_tag "/assets/retweet.png" "#" %>
                 <%= link_to_if(!(@user == current_user), 'Retweet', retweet_user_tweet_path(current_user, tweet)) do 'Retweeted by Me' if (current_user == tweet.user && !(tweet.parent_tweet_id.nil?)) end %>
                 <%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id), :class => "reply" %>
