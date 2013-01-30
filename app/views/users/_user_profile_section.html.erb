@@ -37,11 +37,4 @@
     </div>
 
     <%= render 'tweets/form' %>
-
-    <div>
-        <% if !(@user == current_user) %>
-            <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', 
-                    follow_user_path(@user) end %>
-        <% end %>
-    </div>
 </div>

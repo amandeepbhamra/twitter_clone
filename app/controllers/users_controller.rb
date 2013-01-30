@@ -88,7 +88,7 @@ class UsersController < ApplicationController
   #---------------------Search------------------------#  
   
   def search
-    
+    @user = current_user
     @users_searched = User.search(params[:search],:page => params[:page], :per_page => 10)
     @users_count = User.search(params[:search]).count
     @tweets_count = Tweet.search(params[:search]).count
@@ -118,6 +118,7 @@ class UsersController < ApplicationController
   def get_user_id
     @user = User.find_by_id(params[:id])
     if @user.nil?
+     @user ||= current_user
      redirect_to current_user
     end
   end
