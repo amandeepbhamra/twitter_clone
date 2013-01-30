@@ -1,25 +1,20 @@
 <div class="user_dashboard">
     <div class="userpic_wrapper">
         <div class="userpic">
-            <%=link_to image_tag(@user.photo.url(:thumb)), "#", :class => "userpic_link_hover" %>
+            <%= link_to image_tag(@user.photo.url(:thumb)), "#", :class => "userpic_link_hover" %>
             </div><!-- userpic -->
             <% if !@user.name.nil? %>
-                <%=link_to @user.name, "#", :class => "username" %>
+                <%= link_to @user.name, "#", :class => "username" %>
             <% else %>
-                <%=link_to @user.email, "#", :class => "username" %>
+                <%= link_to @user.email, "#", :class => "username" %>
             <% end %>
             <br />
-            <%=link_to "View My Profile page", "#", :class => "view_profile" %>
+            <%= link_to "View My Profile page", "#", :class => "view_profile" %>
         </div><!-- userpic_wrapper -->
   
         <div class="homepage_tweets_wrapper">
             <div class="row">
-        <% if @user == current_user %>
-        <div class="span1">
-            <div>&nbsp;</div>
-            <%= link_to 'New Tweet',  new_user_tweet_path(@user) %>
-        </div>
-        <% end %>
+        
         <div class="span1">
             <div><%= @user.tweets.count %></div>
             <%= link_to 'Tweets', me_user_path(@user) %>
@@ -41,7 +36,7 @@
             </div>
     </div>
 
-    <%= render 'new_tweet' %>
+    <%= render 'tweets/form' %>
 
     <div>
         <% if !(@user == current_user) %>

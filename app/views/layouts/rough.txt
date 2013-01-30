@@ -78,3 +78,29 @@ _tweets.html.erb
                   </ul>
             </div>
     </div>
+_tweets form
+<%= form_for([@user,@tweet]) do |f| %>
+  <% if @tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:
+      </h2>
+      <ul>
+        <% @tweet.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    
+    <%= f.text_area :content, :maxlength=>'140', :rows=>4, :cols=>40 %>
+      <%= f.hidden_field :reply_tweet_id, :value => params[:reply_tweet_id] %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

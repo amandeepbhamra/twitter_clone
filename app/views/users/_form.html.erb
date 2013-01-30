@@ -89,11 +89,9 @@
                 <%= f.text_area :bio, :rows=> 4, :cols => 800, :class => "span5 full_width" %>
                 <p>About yourself in 160 characters or less.</p>
                 
-                <%= f.radio_button(:gender, "Male", :class => "radio") %>
                 <%= f.label(:gender, "Male", :class => "radio inline padding_left") %>
-
+                <%= f.radio_button(:gender, "Male", :class => "radio") %>
                 <%= f.radio_button(:gender, "Female", :class => "radio") %>
-                <%= f.label(:gender, "Female", :class => "radio inline padding_left") %>
                 <p>Specify Your Gender</p>
                 
                 <%= f.label :city, :class => "" %>

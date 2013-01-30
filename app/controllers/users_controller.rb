@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
   
   before_filter :authenticate_user!
-  before_filter :get_user_id, :only => [:show, :edit, :update, :follow, :unfollow, :following, :followers, :authorize_user, :me]
+  before_filter :get_user_id, :only => [:show, :edit, :update, :follow, :unfollow, :following, :followers, :authorize_user, :me, :connect, :discover]
   before_filter :authorize_user, :only => [:edit, :update]
   
   # GET /users/1
   # GET /users/1.json
   def show
     @tweets = @user.tweets.paginate(:per_page => 10, :page => params[:page])
+    @tweet = @user.tweets.new
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -85,7 +87,8 @@ class UsersController < ApplicationController
   
   #---------------------Search------------------------#  
   
-  def search 
+  def search
+    
     @users_searched = User.search(params[:search],:page => params[:page], :per_page => 10)
     @users_count = User.search(params[:search]).count
     @tweets_count = Tweet.search(params[:search]).count
@@ -101,6 +104,12 @@ class UsersController < ApplicationController
 
   def followable_users
     @followable_users = Follow.for_follower(@user).order('created_at')
+  end
+
+  def connect
+  end
+
+  def discover
   end
 
   private

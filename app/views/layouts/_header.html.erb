@@ -18,9 +18,9 @@
             
                 <ul class="nav">
                     
-                    <li><%= link_to "Connect", connect_user_path(current_user) %></li>
-                    <li><%= link_to "Discover", discover_user_path(current_user) %></li>
-                    <li><%= link_to "Me", me_user_path(current_user) %></li>
+                    <li><%= link_to "Connect", connect_user_path(@user) %></li>
+                    <li><%= link_to "Discover", discover_user_path(@user) %></li>
+                    <li><%= link_to "Me", me_user_path(@user) %></li>
                 </ul>
 
                 <%= form_tag search_users_path, :class => "navbar-search pull-right", :placeholder => "Search", method: :get do %>

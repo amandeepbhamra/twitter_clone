@@ -10,9 +10,7 @@
 
 	<body data-spy="scroll" data-target=".bs-docs-sidebar">
     
-
-
-      <div id='notice' style="<%= 'display: none; ' if flash[:notice].blank? %> text-align: center;">
+     <div id='notice' style="<%= 'display: none; ' if flash[:notice].blank? %> text-align: center;">
         <%= flash[:notice].html_safe  unless flash[:notice].blank? %>
       </div><!-- notice -->
  
@@ -21,7 +19,7 @@
       </div>
         <!-- error -->
 
-		<%=render 'layouts/header' %>
+		<%= render 'layouts/header' %>
 
 		<div class="container padding_top">
 			<%= yield %>
