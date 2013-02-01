@@ -33,9 +33,11 @@ class TweetsController < ApplicationController
       if @tweet.save
         format.html { redirect_to @user, notice: 'Tweet was successfully created.' }
         format.json { render json: @tweet, content: :created, location: @tweet }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @tweet.errors, content: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -53,6 +55,7 @@ class TweetsController < ApplicationController
 
   #-----------Searching users and tweets--------------#  
   def search
+    @user = current_user
     @tweets = Tweet.search(params[:search],:page => params[:page], :per_page => 10)
     @tweets_count = Tweet.search(params[:search]).count
     @users_count = User.search(params[:search]).count
