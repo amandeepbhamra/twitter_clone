@@ -12,7 +12,7 @@
     </div>
   <% end %>  
   <div class="new_tweet_container">
-    <%= f.text_area :content, :maxlength=>'140', :class => "expand full_width", :placeholder => "Compose new tweet" %> 
+    <%= f.text_area :content, :class => "expand full_width", :placeholder => "Compose new tweet" %> 
     <%= f.hidden_field :reply_tweet_id, :value => params[:reply_tweet_id] %> 
     <!-- <textarea rows="" placeholder="Compose new tweet &#8230;" class="expand full_width" ></textarea> -->
 </div><!-- new_tweet_container -->
