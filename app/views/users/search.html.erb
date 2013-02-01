@@ -17,30 +17,29 @@
 
 	    		<div class="media tweetbox_padding border">
 	    			<% if @users_count > 0 %>
-	<%= link_to "Users (#{@users_count})", 
-	search_users_path(:search => params[:search]) %>
-<% else %>
-	Users (0)
-<% end %>
+						<%= link_to "Users (#{@users_count})", 
+						search_users_path(:search => params[:search]) %>
+					<% else %>
+						Users (0)
+					<% end %>
 
-<% if @tweets_count > 0 %>
-	<%= link_to "Tweets (#{@tweets_count})", 
-	search_tweets_path(:search => params[:search]) %>
-<% else %>
-	Tweets (0)
-<% end %>
-
-<br />
-
-<% @users_searched.each do |user| %>
-	<%= link_to user.name, user %>
-<% end %>
-	    			
+					<% if @tweets_count > 0 %>
+						<%= link_to "Tweets (#{@tweets_count})", 
+						search_tweets_path(:search => params[:search]) %>
+					<% else %>
+						Tweets (0)
+					<% end %>
+					<% @users_searched.each do |user| %>
 	    			<div class="media">
               <%= link_to image_tag ("/assets/usertweet_profilepic.png"), :class => "pull-left" %>
               <div class="media-body">
-                <h4 class="media-heading">Media heading</h4>
+                <h5 class="media-heading">
+						<%= link_to user.name, user, :class => "search_username" %>
+					<% end %>
+                </h5>
+                <div class="user_tweet_bio">
                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
               </div>
             </div>
 	    		</div>
