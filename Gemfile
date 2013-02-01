@@ -19,11 +19,11 @@ gem 'execjs'
 gem "paperclip", "~> 3.0"
 gem 'geocoder'
 gem 'thinking-sphinx', '2.0.10'
-gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
+#gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
 gem 'quiet_assets', :group => :development
-gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
+#gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
 
-gem 'ruby-debug19', :require => 'ruby-debug'
+#gem 'ruby-debug19', :require => 'ruby-debug'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -55,4 +55,4 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
