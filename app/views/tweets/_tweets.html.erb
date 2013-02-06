@@ -1,7 +1,7 @@
  <div class="edit_profile_container">
     <div class="edit_profile_title">
         <h3>Tweets</h3>
-       
+
     </div>
     <div class="new_tweet_container">
         <div class="new_tweets">4 new tweets</div>
@@ -17,11 +17,11 @@
                 <h5 class="media-heading"><%= tweet.user.name %></h5>
                 <div class="user_tweet_bio"><%= tweet.content %></div>
                 
-                <%= link_to_if(!(@user == current_user),(image_tag("/assets/retweet.png")+"Retweet"), retweet_user_tweet_path(current_user, tweet)) do (image_tag("/assets/retweet.png")+"Retweeted") if (current_user == tweet.user && !(tweet.parent_tweet_id.nil?)) end %>
-                <%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id), :class => "reply" %>
+                    <%= link_to_if(!(@user == current_user),(image_tag("/assets/retweet.png")+"Retweet"), retweet_user_tweet_path(current_user, tweet)) do (image_tag("/assets/retweet.png")+"Retweeted") if (current_user == tweet.user && !(tweet.parent_tweet_id.nil?)) end %>
+                    <%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id), :class => "reply" %>
                 <%#= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%>
                 <% if current_user == tweet.user %>
-                <%= link_to 'Delete', user_tweet_path(tweet.user, tweet) , :method => :delete, confirm: 'Are you sure?' , :class => "delete" %>
+                    <%= link_to 'Delete', user_tweet_path(tweet.user, tweet) , :method => :delete, confirm: 'Are you sure?' , :class => "delete" %>
                 <% end %>
         <% end %>
         <br />

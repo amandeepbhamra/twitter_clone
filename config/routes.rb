@@ -1,7 +1,5 @@
 Twitter::Application.routes.draw do
   
-
-
   devise_for :users
 
   resources :users, :except => [ :destroy] do
@@ -23,7 +21,7 @@ Twitter::Application.routes.draw do
         get 'retweet'
         get 'reply'
       end
-      
+
     end
     
   end
