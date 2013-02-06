@@ -23,7 +23,7 @@ Twitter::Application.routes.draw do
         get 'retweet'
         get 'reply'
       end
-      match 'user_tweets' => 'tweets#create', :as => 'new_tweet', :via => :post
+      
     end
     
   end

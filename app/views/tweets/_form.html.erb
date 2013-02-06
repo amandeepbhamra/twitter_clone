@@ -1,4 +1,4 @@
-<%= form_for [@user, @tweet], :remote => true, :url => user_tweets_path do |f| %>
+<%= form_for [@user, @tweet] do |f| %>
   <% if @tweet.errors.any? %>
     <div id="error_explanation">
       <h2>

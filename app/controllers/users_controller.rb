@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    #@tweet = @user.tweets.build
+    #@tweet = @user.tweets.new
 
     respond_to do |format|
       format.html # show.html.erb
