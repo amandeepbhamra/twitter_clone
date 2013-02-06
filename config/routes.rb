@@ -18,15 +18,16 @@ Twitter::Application.routes.draw do
       get 'search'
     end
 
-    resources :tweets, :execpt=> [:show, :edit, :update] do
+    resources :tweets, :execpt=> [:index, :show, :edit, :update] do
       member do
         get 'retweet'
         get 'reply'
       end
+      match 'user_tweets' => 'tweets#create', :as => 'new_tweet', :via => :post
     end
+    
   end
 
-  
   resources :tweets, :only => [] do
     collection do
       get 'search'

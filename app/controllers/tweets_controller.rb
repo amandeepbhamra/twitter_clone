@@ -4,17 +4,6 @@ class TweetsController < ApplicationController
   before_filter :get_user_id, :except => :search
   before_filter :authorize_user, :only => :destroy
   
-  # GET /tweets
-  # GET /tweets.json
-  def index
-
-    @tweets = @user.tweets
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tweets }
-    end
-  end
-
   # GET /tweets/new
   # GET /tweets/new.json
   def new
@@ -32,10 +21,10 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to @user, notice: 'Tweet was successfully created.' }
-        format.js
+        
       else
         format.html { render action: "new" }
-        format.js
+       
       end
     end
   end
@@ -46,7 +35,7 @@ class TweetsController < ApplicationController
     @tweet = @user.tweets.find(params[:id])
     @tweet.destroy
     respond_to do |format|
-      format.html { redirect_to @user }
+      format.html { redirect_to @user, notice: 'Tweet was destroyed'}
       format.json { head :no_content }
     end
   end

@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   before_filter :get_user_id, :only => [:show, :edit, :update, :follow, :unfollow, :following, :followers, :authorize_user, :me, :connect, :discover]
   before_filter :authorize_user, :only => [:edit, :update]
+  before_filter :user_tweets_paginated, :only => [:show, :me]
   
   # GET /users/1
   # GET /users/1.json
   def show
-    @tweets = @user.tweets.paginate(:per_page => 10, :page => params[:page])
-    @tweet = @user.tweets.new
+    #@tweet = @user.tweets.build
 
     respond_to do |format|
       format.html # show.html.erb
@@ -98,13 +98,19 @@ class UsersController < ApplicationController
   #---------For getting list of user's tweets at user's me page--------#
   
   def me
-    @tweets = @user.tweets.paginate(:per_page => 10, :page => params[:page])
+    
   end
 
   #-----------To get list of Followable Users----------#
 
   def followable_users
     @followable_users = Follow.for_follower(@user).order('created_at')
+  end
+
+  #-----------To get list of user's tweets with pagination----------#
+  
+  def user_tweets_paginated
+    @tweets = @user.tweets.paginate(:per_page => 10, :page => params[:page])
   end
 
   def connect
