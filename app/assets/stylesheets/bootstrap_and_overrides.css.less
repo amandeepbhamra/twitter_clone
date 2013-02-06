@@ -148,6 +148,13 @@ a.link_color{
 }
 .tweetbox_padding{
 	padding: @pad;
+	.search_username{
+		color: #000;
+		&:hover{
+			background: none;
+			text-decoration: none;
+		}
+	}
 }
 .border_bottom{
 	border-bottom: 1px dashed #ccc;
@@ -372,6 +379,17 @@ a.link_color{
 							.border_right{
 									border-right: none;
 								}/* border_right */
+								.tweet_status_padding{
+									padding: 10px 10px 10px 32px;
+									a{
+										color: #000;
+										&:hover{
+											background: none;
+											text-decoration: none;
+											color: #2FC2EF;
+										}
+									}
+								}
 						}
 						.new_tweet_container{
 							padding: 14px 0 0 0;

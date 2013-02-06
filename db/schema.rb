@@ -25,13 +25,20 @@ ActiveRecord::Schema.define(:version => 20130125123034) do
   add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
 
+  create_table "replies", :force => true do |t|
+    t.string   "content",    :limit => 128
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "tweet_id"
+  end
+
   create_table "tweets", :force => true do |t|
-    t.text     "content"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.text     "content",         :limit => 255
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
     t.integer  "user_id"
-    t.integer  "parent_tweet_id", :default => 0
-    t.integer  "reply_tweet_id",  :default => 0
+    t.integer  "parent_tweet_id"
+    t.integer  "reply_tweet_id",                 :default => 0
   end
 
   create_table "users", :force => true do |t|
