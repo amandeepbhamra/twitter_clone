@@ -11,6 +11,6 @@ class Tweet < ActiveRecord::Base
  	belongs_to :user, :counter_cache => true
  	
  	define_index do
-		indexes :status
+		indexes :content
 	end
 end
