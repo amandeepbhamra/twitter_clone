@@ -2,39 +2,36 @@
     <div class="userpic_wrapper">
         <div class="userpic">
             <%= link_to image_tag(@user.photo.url(:thumb)), "#", :class => "userpic_link_hover" %>
-            </div><!-- userpic -->
-            <% if !@user.name.nil? %>
-                <%= link_to @user.name, "#", :class => "username" %>
-            <% else %>
-                <%= link_to @user.email, "#", :class => "username" %>
-            <% end %>
-            <br />
-            <%= link_to "View My Profile page", "#", :class => "view_profile" %>
-        </div><!-- userpic_wrapper -->
+        </div><!-- userpic -->
+        <% if !@user.name.nil? %>
+            <%= link_to @user.name, "#", :class => "username" %>
+        <% else %>
+            <%= link_to @user.email, "#", :class => "username" %>
+        <% end %>
+        <br />
+        <%= link_to "View My Profile page", "#", :class => "view_profile" %>
+    </div><!-- userpic_wrapper -->
   
-        <div class="homepage_tweets_wrapper">
-            <div class="row tweet_status_padding">
-        
-        <div class="span1 ">
-            <div><%= @user.tweets.count %></div>
-            <%= link_to 'Tweets', me_user_path(@user) %>
-        </div>
-        <div class="span1">
-            <div><%= @user.following_users.count %></div>
-            <%= link_to 'Follower',  followers_user_path(@user) %>
-        </div>
-        <div class="span1">
-            <div><%= @user.user_followers.count %></div>
-            <%= link_to 'Following',  following_user_path(@user), :class => "border_right" %>
-        </div>
-            <div>
-            <% if !(@user == current_user) %>
-                <%= link_to_if(@user.following?(current_user), "Unfollow", unfollow_user_path(@user)) do link_to 'Follow', 
-                        follow_user_path(@user) end %>
-            <% end %>
-        </div>
+    <div class="homepage_tweets_wrapper">
+        <div class="row tweet_status_padding">
+            <div class="span1 ">
+                <div><%= @user.tweets.count %></div>
+                    <%= link_to 'Tweets', me_user_path(@user) %>
             </div>
+            <div class="span1">
+                <div><%= @user.following_users.count %></div>
+                    <%= link_to 'Follower',  followers_user_path(@user) %>
+            </div>
+            <div class="span1">
+                    <div><%= @user.user_followers.count %></div>
+                    <%= link_to 'Following',  following_user_path(@user), :class => "border_right" %>
+            </div>
+        </div>
     </div>
+    <span id = "follow_unfollow_<%= @user.id %>" >
+        <%= render "follow_unfollow_button" %>
+    </span>
+                
     <% if @user == current_user %>
         <%= render 'tweets/form', :@tweet => Tweet.new %>
     <% end %>

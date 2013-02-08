@@ -17,8 +17,10 @@ class User < ActiveRecord::Base
   :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix,
   :message => "It must be full like http://www.twitter.com",
   :if => lambda{|a| !a.new_record?}
+  validates :content , :presence => true
 
-	has_many :tweets, :order => "created_at DESC"
+	has_many :tweets, :order => "created_at DESC", :dependent => :destroy
+  #accepts_nested_attributes_for :tweets, :reject_if => lambda { |a| a[:content].empty? }
   
   has_attached_file :photo, :styles => { :medium => "100x100>", :thumb => "38x38>" }, 
   :default_url => "/assets/users_sticker.png"

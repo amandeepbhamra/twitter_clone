@@ -11,8 +11,8 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @user }
-      format.js
+      format.json 
+      
     end
   end
 
@@ -63,14 +63,22 @@ class UsersController < ApplicationController
   
   def follow
     @user.follow(current_user)
-    redirect_to current_user, notice: 'You are following now to ' + @user.email 
+     respond_to do |format|
+      format.html { redirect_to current_user, notice: 'You are following now to ' + @user.email }
+      format.js
+    end
+     
   end
   
   #---------------To Unfollow any user------------#
   
   def unfollow
     @user.stop_following(current_user)
-    redirect_to current_user, notice: 'You are not following now to ' + @user.email
+    respond_to do |format|
+      format.html { redirect_to current_user, notice: 'You are not following now to ' + @user.email }
+      format.js
+    end
+    
   end
   
   #---------------To view list of Followers------------#
