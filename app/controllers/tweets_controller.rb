@@ -17,14 +17,18 @@ class TweetsController < ApplicationController
   # POST /tweets
   # POST /tweets.json
   def create
-    @tweet = @user.tweets.build(params[:tweet])
-    respond_to do |format|
-      if @tweet.save
-        format.html { redirect_to @user, notice: 'Tweet was successfully created.' }
-        
-      else
-        format.html { render action: "new" }
-       
+    if params[:tweet][:content].blank?
+      redirect_to @user , notice: 'Tweet Failed as content is null.'
+    else
+      @tweet = @user.tweets.build(params[:tweet])
+      respond_to do |format|
+        if @tweet.save
+          format.html { redirect_to @user, notice: 'Tweet was successfully created.' }
+          
+        else
+          format.html { render action: "new" }
+         
+        end
       end
     end
   end
