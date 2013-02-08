@@ -19,9 +19,9 @@
                     <div class="user_bio">
                     	<%= user.bio %>
                     </div>
-                    <% if !(user == current_user)%>
-                        <%= link_to_if(!(user.following?(current_user)), "Follow", follow_user_path(user), :class => "btn") do link_to 'Unfollow', unfollow_user_path(user), :class => "btn" end %>	
-                    <% end %>
+                    <span id = "follow_unfollow_<%= user.id %>" >
+                        <%= render "follow_unfollow_button", :@user => user  %>
+                    </span>
 				</div><!-- media-body -->
 			</div><!-- media padding -->
 			</li>

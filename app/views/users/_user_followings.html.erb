@@ -19,8 +19,10 @@
                     <div class="user_bio">
                         <%= user.bio %>
                     </div>  
-
-                    	<%= link_to "Unfollow", unfollow_user_path(user), :class => "btn" %>
+                    <span id = "follow_unfollow_<%= user.id %>" >
+                        <%= render "follow_unfollow_button", :@user => user  %>
+                    </span>
+                    	<%#= link_to "Unfollow", unfollow_user_path(user), :class => "btn" %>
 
 				</div><!-- media-body -->
 			</div><!-- media padding -->
