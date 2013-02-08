@@ -13,7 +13,7 @@
     </div><!-- userpic_wrapper -->
   
     <div class="homepage_tweets_wrapper">
-        <%= render "tweet_follow_unfollow_links_with_counts", :@user => @user %>
+        <%= render "tweet_followers_followings_links_with_counts", :@user => @user %>
     </div>
     <br />
     <span id = "follow_unfollow_<%= @user.id %>" >

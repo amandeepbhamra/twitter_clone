@@ -1,13 +1,13 @@
 <div class="row tweet_status_padding">
-    <div class="span1 ">
+    <div class="span1 my_tweets_rating">
         <div><%= @user.tweets.count %></div>
         <%= link_to 'Tweets', me_user_path(@user) %>
     </div>
-    <div class="span1">
+    <div class="span1 my_tweets_rating">
         <div><%= @user.following_users.count %></div>
         <%= link_to 'Follower',  followers_user_path(@user) %>
     </div>
-    <div class="span1">
+    <div class="span1 my_tweets_rating">
         <div><%= @user.user_followers.count %></div>
         <%= link_to 'Following',  following_user_path(@user), :class => "border_right" %>
     </div>

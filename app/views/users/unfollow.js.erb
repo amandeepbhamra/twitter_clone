@@ -1,2 +1,2 @@
 $('#follow_unfollow_<%= @user.id %>').html("<%= j render "follow_unfollow_button", :@user => @user %>");
-$('.homepage_tweets_wrapper').html("<%= j render "tweet_follow_unfollow_links_with_counts", :@user => @user %>");
+$('.homepage_tweets_wrapper').html("<%= j render "tweet_followers_followings_links_with_counts", :@user => @user %>");
