@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125123034) do
+ActiveRecord::Schema.define(:version => 20130212091545) do
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",   :null => false
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(:version => 20130125123034) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "tweets_count",           :default => 0
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
