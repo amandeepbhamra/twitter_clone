@@ -50,6 +50,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        Notify.update_notification(@user).deliver
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
