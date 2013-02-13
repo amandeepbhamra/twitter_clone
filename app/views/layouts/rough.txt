@@ -1,106 +1,50 @@
-<%= image_tag(current_user.photo.url(:thumb)) %>
+<div class="row-fluid padding_top">
 
-_tweets.html.erb
-
- <div class="edit_profile_container">
-    <div class="edit_profile_title">
-        <h3>Tweets</h3>
+<div class="span7">
+    <div class="frnt_welcome_text">
+        <h3>Welcome to Tweety Tweet.</h3>
+        <p>Find out what’s happening, right now, with the people and organizations you care about.</p>
     </div>
-    <div class="new_tweet_container">
-        <div class="new_tweets">4 new tweets</div>
-        </div><!-- new_tweet_container -->
-        <ul class="nav nav-pills nav-stacked">
-            <table>
-                <% tweets.each do |tweet| %>
-                <tr>
-                    <li>
-                        <div class="media tweetbox_padding border">
-                        <a class="pull-left" href="#">
-                        <td><%= tweet.content %></td>
-                        <td><%= link_to "Reply", new_user_tweet_path(:user_id => current_user.id, :reply_tweet_id => tweet.id) %></td> 
-                <td><%= 'Retweeted' if !(tweet.parent_tweet_id.nil?)%></td>
+</div>
+<div class="span4">
+<div class="signin_background user_dashboard">
+        <h3 class="form-signin-heading headingborder_color">Sign in</h3>
 
-                <% if current_user == tweet.user %>
-                  <td><%= link_to 'Destroy', user_tweet_path(tweet.user, tweet) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <% end %>
-                
-                <% if !(@user == current_user) %>
-                  <td><%= link_to 'Retweet', retweet_user_tweet_path(current_user, tweet) %></td>
-                <% end %>
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :email, :placeholder => "nitin@fizzysoftware.com", :class => "input-block-level" %>
 
-              </tr>
-              <tr>
-                <td><%#= tweet.content %></td>
-              </tr>
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => "input-block-level", :placeholder => "*********"  %>
+
+ <div class="row-fluid">
+          <div class="span7">
+            <% if devise_mapping.rememberable? -%>
+            <%= f.check_box :remember_me, :class => "checkbox" %>&nbsp;Remember me 
+            <%#= f.label :remember_me, :class => "checkbox" %>
+
+    </div>
+   
+          <div class="span12">
+            <%= f.submit "Sign in", :class => "btn btn-info signin_btn" %>
+            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+            <%= link_to "Sign up", new_registration_path(resource_name), :class => "signinpage_singup_btn btn" %>
+        </div>
+       
+            <div class="span12">
+                <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "forgot_password" %><!-- forgot password -->
+        <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), :class => "signin_receive_confirmation" %>
+
+            <% end -%>
             <% end %>
-          </table>
+        
 
-<br />
-
-<%#= will_paginate @tweets %>
-            <%# (1..5).each do |i| %>
-            <!-- <li>
-            <div class="media tweetbox_padding border">
-                <a class="pull-left" href="#">
-                    <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="/assets/usertweet_profilepic.png">
-                </a>
-                <div class="media-body">
-                    <h5 class="media-heading">
-                        HCL Technologies <small>&#169; hcltech</small>
-                    </h5>
-                    Neil-Vikram-Vinay's Fun-Musical Exclusive Interview On 'David' | Bollywood Videos - Bollywood Hungama
-                    
-                    <br />
-                    
-                    <a class="link_color" href="#">bollywoodhungama.com/more/videos/view/id/1662221 …</a>
-                    
-                    <br />
-                     -->
-                    <%#= image_tag "/assets/retweet.png" "#" %>
-                    <!-- <small>Retweeted by</small>  -->
-                    <%#= link_to "Neil Nitin Mukesh", "#", :class => "link_color" %>
-                <!-- </div> -->
-                <!-- media-body -->
-           <!--  </div> -->
-            <!-- media padding -->
-            <!-- </li> -->
-
-            <%# end %>
-            </ul>
-            <div class="pagination pull-right">
-                  <ul>
-                    <li><a href="#">Prev</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">Next</a></li>
-                  </ul>
+        <%#= link_to "Sign up for twitter", new_registration_path(resource_name), :class => "signinpage_singup_btn btn" %>
+        
             </div>
-    </div>
-_tweets form
-<%= form_for([@user,@tweet]) do |f| %>
-  <% if @tweet.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:
-      </h2>
-      <ul>
-        <% @tweet.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+        </div><!-- row fluid -->
 
-  <div class="field">
-    
-    <%= f.text_area :content, :maxlength=>'140', :rows=>4, :cols=>40 %>
-      <%= f.hidden_field :reply_tweet_id, :value => params[:reply_tweet_id] %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<% end %>
+        
+</div>
+</div>
+</div><!-- row-fluid -->

@@ -1,6 +1,6 @@
 Twitter::Application.routes.draw do
   
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :users, :except => [ :destroy] do
     member do
@@ -15,15 +15,12 @@ Twitter::Application.routes.draw do
     collection do
       get 'search'
     end
-
     resources :tweets, :execpt=> [:index, :show, :edit, :update] do
       member do
         get 'retweet'
         get 'reply'
       end
-
     end
-    
   end
 
   resources :tweets, :only => [] do
@@ -31,7 +28,9 @@ Twitter::Application.routes.draw do
       get 'search'
     end 
   end 
-
+  
+  match 'facebook' => 'sessions#facebook', :as=>:facebook
+  
   root :to => 'users#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
