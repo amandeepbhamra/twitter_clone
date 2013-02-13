@@ -7,7 +7,17 @@ Twitter::Application.configure do
   config.cache_classes = false
  
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+ActionMailer::Base.smtp_settings = {
 
+ :user_name => "mohitjain",
+ :password => "mohitjain",
+ :domain => "launchgator.com",
+ :address => "smtp.sendgrid.net",
+ :port => 587,
+ :authentication => :plain,
+ :enable_starttls_auto => true
+
+ }
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
 

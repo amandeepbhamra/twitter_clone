@@ -36,6 +36,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
+        Notify.registration_confirmation(@user).deliver
         format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
