@@ -50,7 +50,9 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        # To notfiy user that profile is updated, a mail is sent after 2 mins #
         Notify.delay(queue: "update email notification", priority: 3, run_at: 2.minutes.from_now ).update_notification(@user)
+        
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
