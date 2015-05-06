@@ -11,17 +11,7 @@ Twitter::Application.configure do
   config.action_mailer.default_url_options = { :host => 'http://tweetdweek.herokuapp.com/' }
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
-ActionMailer::Base.smtp_settings = {
 
- :user_name => "mohitjain",
- :password => "mohitjain",
- :domain => "launchgator.com",
- :address => "smtp.sendgrid.net",
- :port => 587,
- :authentication => :plain,
- :enable_starttls_auto => true
-
- }
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
